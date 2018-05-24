@@ -19,6 +19,7 @@ import scenarios.HelpPageScenarios;
 import scenarios.LicenseScenarios;
 import scenarios.LoginScenario;
 import scenarios.MyProfilePageScenarios;
+import scenarios.SecretScenarios;
 
 @Listeners({Utilities.HtmlReport.class})  
 public class TestCases
@@ -31,6 +32,7 @@ public class TestCases
 	HelpPageScenarios helppagescenarios;
 	MyProfilePageScenarios myprofilepagescenarios;
 	LicenseScenarios licensescenarios;
+	SecretScenarios secretscenarios;
 	
 	////////////////////////////////////////////////////////////////////////////////
 	//Function Name  :
@@ -1508,6 +1510,27 @@ public class TestCases
 			dashboardscenarios.copyToClipBoard();	
 		}
 		obj.testFailure=dashboardscenarios.testFailure;
+		TestEnd();
+	}
+	
+	
+//SecretScenarios secretscenarios;
+	
+	@Test(alwaysRun=true)
+	@Parameters({ "selenium.machinename"})
+	public void TC_43381(String machineName,Method method) throws IOException 
+	{
+
+		TestStart("Validate Strong field is displayed after clicking generate button",machineName,method.getName());
+		secretscenarios = new SecretScenarios(obj);
+		for(int i=0;i<secretscenarios.iterationCount.size();i++)
+		{
+
+			secretscenarios.dataRowNo=Integer.parseInt(secretscenarios.iterationCount.get(i).toString());
+			secretscenarios.writeHtmlTestStepReport("<font size=4 style='color:blue'>DataSet:"+(i+1)+"</font><br/>", secretscenarios.currentExecutionMachineName, secretscenarios.currentTestCaseName);
+			secretscenarios.VerifyLockGenerateButtonWithPasseord();	
+		}
+		obj.testFailure=secretscenarios.testFailure;
 		TestEnd();
 	}
 	
