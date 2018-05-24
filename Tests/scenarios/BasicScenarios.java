@@ -118,6 +118,7 @@ public class BasicScenarios extends ApplicationKeywords{
 			deleteSecretfromdashboard(SecretName);
 			
 			loginpage.Logout();
+			System.out.println("Changes");
 			
 			
 
