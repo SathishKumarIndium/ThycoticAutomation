@@ -84,6 +84,7 @@ public class ApplicationKeywords extends APIKeywords
 		}
 		catch(Exception e) {
 			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 	
