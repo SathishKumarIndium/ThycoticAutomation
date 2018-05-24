@@ -70,9 +70,7 @@ public class BasicScenarios extends ApplicationKeywords{
 			
 			loginpage.Logout();
 		
-		
-        	
-			
+	
 		
 		}catch(Exception e){
 			e.printStackTrace();
@@ -118,8 +116,8 @@ public class BasicScenarios extends ApplicationKeywords{
 			deleteSecretfromdashboard(SecretName);
 			
 			loginpage.Logout();
-			
-		
+			System.out.println("Changes");
+
 		}catch(Exception e){
 			e.printStackTrace();
 		}
