@@ -119,8 +119,7 @@ public class BasicScenarios extends ApplicationKeywords{
 			
 			loginpage.Logout();
 			
-			System.out.println("Testing");
-
+		
 		}catch(Exception e){
 			e.printStackTrace();
 		}
