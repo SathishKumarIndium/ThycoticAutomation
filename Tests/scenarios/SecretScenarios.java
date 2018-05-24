@@ -46,7 +46,7 @@ public class SecretScenarios extends ApplicationKeywords{
 			loginpage.Login(Username, Password, "Yes");
 			secretpage.validateGenerateButtonWithPasseords(SecretTempalte,  SecretName, Domain, TemplateUsername, Note, SecretTemplateFields);
 			
-			System.out.println("te st");
+			System.out.println("te  st");
 			
 			loginpage.Logout();
 			
