@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><suite name="Suite" parallel="tests" thread-count="20">
+  <test id="1" name="PC">
+    <parameter name="selenium.machinename" value="PC"/>
+    <parameter name="selenium.host" value="Localhost"/>
+    <parameter name="selenium.port" value="5555"/>
+    <parameter name="selenium.browser" value="Chrome"/>
+    <parameter id="1" name="selenium.url" value="http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer"/>
+    <parameter id="1" name="selenium.os" value="Windows"/>
+    <parameter id="1" name="selenium.browserVersion" value="64"/>
+    <parameter id="1" name="selenium.osVersion" value="7"/>
+    <parameter id="1" name="TestData.SheetNumber" value="1"/>
+    <classes name="1">
+      <class id="1" name="TestCases.TestCases"/>
+      <methods id="1">
+        <exclude name="TC_43709"/>
+        <exclude name="TC_43710"/>
+        <exclude name="TC_43711"/>
+        <exclude name="TC_43712"/>
+        <exclude name="TC_43713"/>
+        <exclude name="TC_43714"/>
+        <exclude name="TC_43715"/>
+        <exclude name="TC_43716"/>
+        <exclude name="TC_43717"/>
+        <include name="TC_42340"/>
+        <include name="TC_42377"/>
+        <include name="TC_42351"/>
+        <include name="TC_42389"/>
+        <include name="TC_42414"/>
+        <include name="TC_42401"/>
+        <include name="TC_42420"/>
+        <include name="TC_42442"/>
+        <include name="TC_42443"/>
+        <include name="TC_42444"/>
+        <include name="TC_42453"/>
+        <include name="TC_42459"/>
+        <include name="TC_42468"/>
+        <include name="TC_42469"/>
+        <include name="TC_42471"/>
+        <include name="TC_42473"/>
+        <include name="TC_42475"/>
+        <include name="TC_42478"/>
+        <include name="TC_42482"/>
+        <include name="TC_42484"/>
+        <include name="TC_42485"/>
+        <include name="TC_42486"/>
+        <include name="TC_42488"/>
+        <include name="TC_42495"/>
+        <include name="TC_42496"/>
+        <include name="TC_42541"/>
+        <include name="TC_42543"/>
+        <include name="TC_42550"/>
+        <include name="TC_42561"/>
+        <include name="TC_42578"/>
+        <include name="TC_42587"/>
+        <include name="TC_42598"/>
+        <include name="TC_42599"/>
+        <include name="TC_42625"/>
+        <include name="TC_42627"/>
+        <exclude name="TC_42776"/>
+        <exclude name="TC_42778"/>
+        <exclude name="TC_42782"/>
+        <exclude name="TC_42788"/>
+        <include name="TC_42342"/>
+        <include name="TC_42380"/>
+        <include name="TC_42397"/>
+        <include name="TC_42439"/>
+        <include name="TC_42440"/>
+        <include name="TC_42441"/>
+        <include name="TC_42447"/>
+        <include name="TC_42451"/>
+        <include name="TC_42456"/>
+        <include name="TC_42457"/>
+        <include name="TC_42467"/>
+        <include name="TC_42487"/>
+        <include name="TC_42535"/>
+        <include name="TC_42536"/>
+        <include name="TC_42542"/>
+        <include name="TC_42545"/>
+        <include name="TC_42547"/>
+        <include name="TC_42569"/>
+        <include name="TC_42584"/>
+        <include name="TC_42606"/>
+        <include name="TC_42616"/>
+        <include name="TC_42624"/>
+        <include name="TC_42635"/>
+        <include name="TC_42638"/>
+        <include name="TC_42643"/>
+        <include name="TC_42649"/>
+        <include name="TC_42791"/>
+        <include name="TC_42559"/>
+        <exclude name="TC_42786"/>
+        <include name="TC_42565"/>
+      </methods>
+    </classes>
+  </test>
+</suite>

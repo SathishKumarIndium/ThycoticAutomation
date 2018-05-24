@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="Tests"/>
+	<classpathentry kind="lib" path="ext/activation.jar"/>
+	<classpathentry kind="lib" path="ext/apache-commons-lang.jar"/>
+	<classpathentry kind="lib" path="ext/couchdb4j-0.1.2.jar"/>
+	<classpathentry kind="lib" path="ext/ezmorph-1.0.jar"/>
+	<classpathentry kind="lib" path="ext/iSAFE_3.0_20180511.jar"/>
+	<classpathentry kind="lib" path="ext/itextpdf-5.2.1.jar"/>
+	<classpathentry kind="lib" path="ext/java-client-3.3.0.jar"/>
+	<classpathentry kind="lib" path="ext/java-client-4.1.2.jar"/>
+	<classpathentry kind="lib" path="ext/java-client-5.0.0-BETA6.jar"/>
+	<classpathentry kind="lib" path="ext/json-20090211.jar"/>
+	<classpathentry kind="lib" path="ext/json-lib.jar"/>
+	<classpathentry kind="lib" path="ext/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="ext/jtidy-r872-jdk15.jar"/>
+	<classpathentry kind="lib" path="ext/jxl.jar"/>
+	<classpathentry kind="lib" path="ext/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="ext/mail.jar"/>
+	<classpathentry kind="lib" path="ext/postgresql-9.4-1201.jdbc4.jar"/>
+	<classpathentry kind="lib" path="ext/selenium-server-standalone-3.4.0.jar"/>
+	<classpathentry kind="lib" path="ext/selenium-server-standalone-3.5.3.jar"/>
+	<classpathentry kind="lib" path="ext/selenium-server-standalone-3.7.0.jar"/>
+	<classpathentry kind="lib" path="ext/testng-6.8.5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

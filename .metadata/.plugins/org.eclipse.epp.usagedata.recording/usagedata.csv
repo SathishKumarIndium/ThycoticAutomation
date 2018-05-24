@@ -1,0 +1,14 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.php.server.ui,2.1.1.v20090707-1108,"org.eclipse.php.server.ui",1311944729052
+stopped,bundle,org.eclipse.php.debug.ui,2.1.1.v20090921-1100,"org.eclipse.php.debug.ui",1311944729052
+stopped,bundle,org.eclipse.php.debug.core,2.1.1.v20090921-1100,"org.eclipse.php.debug.core",1311944729052
+stopped,bundle,org.eclipse.php.ui,2.1.1.v20090921-1100,"org.eclipse.php.ui",1311944729052
+stopped,bundle,org.eclipse.wst.jsdt.web.ui,1.0.201.v2010012803,"org.eclipse.wst.jsdt.web.ui",1311944729053
+stopped,bundle,org.eclipse.wst.web.ui,1.1.301.v201001252130,"org.eclipse.wst.web.ui",1311944729053
+stopped,bundle,org.eclipse.wst.html.ui,1.0.401.v200908111935,"org.eclipse.wst.html.ui",1311944729054
+stopped,bundle,org.eclipse.wst.css.ui,1.0.401.v200907171457,"org.eclipse.wst.css.ui",1311944729054
+stopped,bundle,org.eclipse.wst.xsl.ui,1.0.100.v200907172129,"org.eclipse.wst.xsl.ui",1311944729055
+stopped,bundle,org.eclipse.wst.xml.xpath.ui,1.0.0.v200904240436,"org.eclipse.wst.xml.xpath.ui",1311944729056
+stopped,bundle,org.eclipse.wst.xsl.debug.ui,1.0.0.v200904240436,"org.eclipse.wst.xsl.debug.ui",1311944729057
+stopped,bundle,org.eclipse.wst.xml.ui,1.1.2.v201001222130,"org.eclipse.wst.xml.ui",1311944729057
+stopped,bundle,org.eclipse.wst.common.ui,1.1.402.v200901262305,"org.eclipse.wst.common.ui",1311944729058
