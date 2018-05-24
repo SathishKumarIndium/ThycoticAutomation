@@ -118,6 +118,8 @@ public class BasicScenarios extends ApplicationKeywords{
 			deleteSecretfromdashboard(SecretName);
 			
 			loginpage.Logout();
+			
+			System.out.println("Testing");
 
 		}catch(Exception e){
 			e.printStackTrace();
