@@ -541,23 +541,23 @@ public class DashboardPage extends ApplicationKeywords {
 	}
     
 	
-	public void BulkopetionCompletePage(String BulkOperation, String BulkOpertioErrorMessagexpath, String BulkOpertioErrorMessage) {
-		waitTime(4);
-		if (elementPresent("Bulk operation "+BulkOperation+" completed page#xpath=//span[text()='Bulk Operation: "+BulkOperation+"']")) {
-			testStepPassed("Bulk operation "+BulkOperation+" completed page is displayed");
-			waitForElementToDisplay("text for Bulk operation completed#xpath=//div[@id='CompleteMessage']", 10);
-			waitForElement("text for Bulk operation completed#xpath=//div[@id='CompleteMessage']");
-			validateWebElements("//div[@id='CompleteMessage']", "Bulk operation completed.");
-			//System.out.println("BulkOpertioErrorMessage");
-			validateWebElements(BulkOpertioErrorMessagexpath, BulkOpertioErrorMessage);
-			validateWebElements("//div[@class='ui-dialog-buttonset']/button[text()='Close']", "Close");
-			clickOn("close button #xpath=//div[@class='ui-dialog-buttonset']/button[text()='Close']");
-			validateDashboard();
-		}
-		else {
-			testStepFailed("Bulk operation  completed page is not displayed");
-		}
-	}
+//	public void BulkopetionCompletePage(String BulkOperation, String BulkOpertioErrorMessagexpath, String BulkOpertioErrorMessage) {
+//		waitTime(4);
+//		if (elementPresent("Bulk operation "+BulkOperation+" completed page#xpath=//span[text()='Bulk Operation: "+BulkOperation+"']")) {
+//			testStepPassed("Bulk operation "+BulkOperation+" completed page is displayed");
+//			waitForElementToDisplay("text for Bulk operation completed#xpath=//div[@id='CompleteMessage']", 10);
+//			waitForElement("text for Bulk operation completed#xpath=//div[@id='CompleteMessage']");
+//			validateWebElements("//div[@id='CompleteMessage']", "Bulk operation completed.");
+//			//System.out.println("BulkOpertioErrorMessage");
+//			validateWebElements(BulkOpertioErrorMessagexpath, BulkOpertioErrorMessage);
+//			validateWebElements("//div[@class='ui-dialog-buttonset']/button[text()='Close']", "Close");
+//			clickOn("close button #xpath=//div[@class='ui-dialog-buttonset']/button[text()='Close']");
+//			validateDashboard();
+//		}
+//		else {
+//			testStepFailed("Bulk operation  completed page is not displayed");
+//		}
+//	}
 	
 	
 	 public void verifyHBInBulkoperationWhenHBIsDisableInTemplate(String SecretTemplate, String FirstSecretName, 
@@ -716,33 +716,33 @@ public class DashboardPage extends ApplicationKeywords {
 	}
 	
 	
-	public void performAddShareInBulkOperationNoError (String SecretName, String BulkOperation, String BulkOperationErrorMessage, 
-			String UserGropParams, String Foldername) {
-		
-		String BulkOperationErrorMessagexpath = "//div[@id='NoErrorMessage']";
-		
-		clickOn(OR.btn_home_icon);
-		switchTofolders(Foldername);
-		
-		if (elementPresent("Secret in Dashboard#xpath=//td[text()='"+SecretName+"']")) {
-			selectCheckBox("enable secret in dashboard#xpath=//td[text()='"+SecretName+"']/preceding-sibling::td/input");
-		}
-		else {
-			testStepFailed("' "+SecretName+"' Secret is not present in Dashboard");
-		}
-		
-		selectFromDropdown(OR.drd_Bulk_Operation, BulkOperation);
-		if (elementPresent("Bulk Operation: "+BulkOperation+" box#xpath=//span[text()='Bulk Operation: "+BulkOperation+"']")) {
-			testStepPassed("'Bulk Operation: "+BulkOperation+"' page should be displayed");
-			selectFromDropdown(OR.drd_Shared_User_Group, UserGropParams);
-			clickOn(OR.btn_bulk_operation_ok_button);
-			BulkopetionCompletePage(BulkOperation, BulkOperationErrorMessagexpath, BulkOperationErrorMessage);
-		}
-		else {
-			testStepFailed("'Bulk Operation: "+BulkOperation+"' page should not be displayed");
-		}
-
-	}
+//	public void performAddShareInBulkOperationNoError (String SecretName, String BulkOperation, String BulkOperationErrorMessage, 
+//			String UserGropParams, String Foldername) {
+//		
+//		String BulkOperationErrorMessagexpath = "//div[@id='NoErrorMessage']";
+//		
+//		clickOn(OR.btn_home_icon);
+//		switchTofolders(Foldername);
+//		
+//		if (elementPresent("Secret in Dashboard#xpath=//td[text()='"+SecretName+"']")) {
+//			selectCheckBox("enable secret in dashboard#xpath=//td[text()='"+SecretName+"']/preceding-sibling::td/input");
+//		}
+//		else {
+//			testStepFailed("' "+SecretName+"' Secret is not present in Dashboard");
+//		}
+//		
+//		selectFromDropdown(OR.drd_Bulk_Operation, BulkOperation);
+//		if (elementPresent("Bulk Operation: "+BulkOperation+" box#xpath=//span[text()='Bulk Operation: "+BulkOperation+"']")) {
+//			testStepPassed("'Bulk Operation: "+BulkOperation+"' page should be displayed");
+//			selectFromDropdown(OR.drd_Shared_User_Group, UserGropParams);
+//			clickOn(OR.btn_bulk_operation_ok_button);
+//			BulkopetionCompletePage(BulkOperation, BulkOperationErrorMessagexpath, BulkOperationErrorMessage);
+//		}
+//		else {
+//			testStepFailed("'Bulk Operation: "+BulkOperation+"' page should not be displayed");
+//		}
+//
+//	}
 	
 	public void CheckBulkOpertionWithErrorMsg(String SecretName, String BulkOperation, String BulkOperationErrorMessage, String Foldername) {
 		String xpath = "Error Message for Bulk Operation#xpath=//div[@id='gview_BulkOperationErrorMessageGrid']//div//td";	

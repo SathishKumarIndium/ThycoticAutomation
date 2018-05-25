@@ -91,6 +91,8 @@
         <exclude name="TC_42786"/>
         <exclude name="TC_42565"/>
         <include name="TC_43381"/>
+        <include name="TC_43384"/>
+        <include name="TC_43458"/>
       </methods>
     </classes>
   </test>

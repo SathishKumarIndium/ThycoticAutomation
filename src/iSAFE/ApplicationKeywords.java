@@ -64,7 +64,8 @@ public class ApplicationKeywords extends APIKeywords
 		}
 	}
 	
-	public void validateWebElements(String Xpath, String fields) {
+	public boolean validateWebElements(String Xpath, String fields) {
+		boolean elem_Status = false;
 		try {
 			List<WebElement> elements= driver.findElementsByXPath(Xpath);
 			String[] values = fields.split("##");
@@ -74,18 +75,26 @@ public class ApplicationKeywords extends APIKeywords
 					String elementvalue = ele.getText();
 					if (elementvalue.equalsIgnoreCase(uservalue)) {
 						status = true;
+						elem_Status = true;
 					    testStepPassed("'"+uservalue+"' Field is present");
+					    break;
 					}
 				}
 				if(!status) {
 					testStepFailed("'"+uservalue+"' Field is not present");
+					elem_Status = false;
+					break;
 				}
 			}
+			
 		}
 		catch(Exception e) {
+			elem_Status = false;
 			e.printStackTrace();
 			System.out.println(e);
 		}
+		
+		return elem_Status;
 	}
 	
 	
@@ -1065,9 +1074,23 @@ public class ApplicationKeywords extends APIKeywords
 	public boolean ValidateEnterValusInTextField(String Xpath, String TextValue, String Field) {
 		boolean Status = false;
 		String Username_value = getAttributeValue(Xpath, "value");
+		if (Username_value.equals(TextValue)) {
+			testStepPassed(Field+" is able to enter in textfield");
+			Status = true;
+		}
+		else {
+			testStepFailed(Field+" is not able to enter in textfield");
+		}
+		return Status;
+	}
+	
+	
+	public boolean ValidatetextfieldwithEnteringtext(String Xpath, String TextValue, String Field) {
 		
-		System.out.println("SSSS"+ Username_value);
-		
+		boolean Status = false;
+		typeIn(Xpath, TextValue);
+		waitTime(2);
+		String Username_value = getAttributeValue(Xpath, "value");
 		if (Username_value.equals(TextValue)) {
 			testStepPassed(Field+" is able to enter in textfield");
 			Status = true;
