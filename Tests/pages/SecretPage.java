@@ -357,6 +357,8 @@ public class SecretPage extends ApplicationKeywords{
 				if (gettextselectfolder.equals("\\"+folderPath)) { 
 					testStepPassed("Selected folder link is present after clicking clear link");
 					vstsTestStepPassed("Selected folder link is present after clicking clear link", true);
+					System.out.println("verify");
+					
 				}
 				else {
 					testStepFailed("Seleted folder link is not present after clicking clear link");
