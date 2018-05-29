@@ -673,7 +673,13 @@ public class ApplicationKeywords extends APIKeywords
 	
 	public void deleteSecretfromdashboard(String SecretNames) {
 		try {
-			clickOn(OR.btn_home_icon);
+			
+			if(!elementPresent(OR.lbl_Browse))
+			{
+				clickOn(OR.btn_home_icon);
+				clickOn(OR.btn_AdbancedTab);
+			}
+			
 			clickOn("All Folder in Home Page#xpath=//label[text()='< All Folders >']");
 			String[] secretname = SecretNames.split("##");
 			for (String Name:secretname) {

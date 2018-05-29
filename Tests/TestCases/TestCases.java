@@ -913,7 +913,7 @@ public class TestCases
 	public void TC_42782(String machineName,Method method) throws MalformedURLException 
 	{
 	
-		TestStart("Verify the user is able to view 'thycotic' page by clicking Thycotic Logo in the footer section",machineName,method.getName());
+		TestStart("Verify the user is able launch the sql server",machineName,method.getName());
 		basicscenarios = new BasicScenarios(obj);
 		for(int i=0;i<basicscenarios.iterationCount.size();i++)
 		{
@@ -922,7 +922,7 @@ public class TestCases
 			basicscenarios.writeHtmlTestStepReport("<font size=4 style='color:blue'>DataSet:"+(i+1)+"</font><br/>", basicscenarios.currentExecutionMachineName, basicscenarios.currentTestCaseName);
 			basicscenarios.verifySQLServerLaunch();			
 		}
-		obj.testCaseExecutionStatus=basicscenarios.testCaseExecutionStatus;
+		obj.testFailure=basicscenarios.testFailure;
 		TestEnd();
 	}
 	
@@ -931,7 +931,7 @@ public class TestCases
 	public void TC_42788(String machineName,Method method) throws MalformedURLException 
 	{
 	
-		TestStart("Verify the user is able to view 'thycotic' page by clicking Thycotic Logo in the footer section",machineName,method.getName());
+		TestStart("Verify the user is able to connect the Remort Machine ",machineName,method.getName());
 		basicscenarios = new BasicScenarios(obj);
 		for(int i=0;i<basicscenarios.iterationCount.size();i++)
 		{
@@ -940,7 +940,7 @@ public class TestCases
 			basicscenarios.writeHtmlTestStepReport("<font size=4 style='color:blue'>DataSet:"+(i+1)+"</font><br/>", basicscenarios.currentExecutionMachineName, basicscenarios.currentTestCaseName);
 			basicscenarios.verifyRemoteMachineLaunch();			
 		}
-		obj.testCaseExecutionStatus=basicscenarios.testCaseExecutionStatus;
+		obj.testFailure=basicscenarios.testFailure;
 		TestEnd();
 	}
 	
@@ -1570,6 +1570,61 @@ public class TestCases
 		TestEnd();
 	}
 	
+	@Test(alwaysRun=true)
+	@Parameters({ "selenium.machinename"})
+	public void TC_43460(String machineName,Method method) throws MalformedURLException 
+	{
+	
+		TestStart("verify the search box function in Basic link ",machineName,method.getName());
+		basicscenarios = new BasicScenarios(obj);
+		for(int i=0;i<basicscenarios.iterationCount.size();i++)
+		{
+			
+			basicscenarios.dataRowNo=Integer.parseInt(basicscenarios.iterationCount.get(i).toString());
+			basicscenarios.writeHtmlTestStepReport("<font size=4 style='color:blue'>DataSet:"+(i+1)+"</font><br/>", basicscenarios.currentExecutionMachineName, basicscenarios.currentTestCaseName);
+			basicscenarios.verifySecretSearchboxwithvalues();			
+		}
+		obj.testFailure=basicscenarios.testFailure;
+		TestEnd();
+	}
+	
+	
+	@Test(alwaysRun=true)
+	@Parameters({ "selenium.machinename"})
+	public void TC_43463(String machineName,Method method) throws IOException 
+	{
+
+		TestStart("create a New Secret for the template Pin Account in basic link page",machineName,method.getName());
+		secretscenarios = new SecretScenarios(obj);
+		for(int i=0;i<secretscenarios.iterationCount.size();i++)
+		{
+
+			secretscenarios.dataRowNo=Integer.parseInt(secretscenarios.iterationCount.get(i).toString());
+			secretscenarios.writeHtmlTestStepReport("<font size=4 style='color:blue'>DataSet:"+(i+1)+"</font><br/>", secretscenarios.currentExecutionMachineName, secretscenarios.currentTestCaseName);
+			secretscenarios.CreateSecretPinAccountInBasiclink();	
+		}
+		obj.testFailure=secretscenarios.testFailure;
+		TestEnd();
+	}
+	
+	
+	@Test(alwaysRun=true)
+	@Parameters({ "selenium.machinename"})
+	public void TC_43469(String machineName,Method method) throws IOException 
+	{
+
+		TestStart("create a New Secret for the template Pin Account in basic link page",machineName,method.getName());
+		secretscenarios = new SecretScenarios(obj);
+		for(int i=0;i<secretscenarios.iterationCount.size();i++)
+		{
+
+			secretscenarios.dataRowNo=Integer.parseInt(secretscenarios.iterationCount.get(i).toString());
+			secretscenarios.writeHtmlTestStepReport("<font size=4 style='color:blue'>DataSet:"+(i+1)+"</font><br/>", secretscenarios.currentExecutionMachineName, secretscenarios.currentTestCaseName);
+			secretscenarios.ValidateConvertionSecretFromActiveDirectoryToWindow();	
+		}
+		obj.testFailure=secretscenarios.testFailure;
+		TestEnd();
+	}
 	
 	
 	public void TestEnd() {

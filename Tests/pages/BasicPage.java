@@ -1,9 +1,5 @@
 package pages;
 
-
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.List;
 import org.openqa.selenium.WebElement;
 
@@ -21,6 +17,10 @@ public class BasicPage extends ApplicationKeywords{
 	public static final String btn_Back_Button = "Back Button for Secret Template#id=BackToSearchResultsButton";
 	public static final String txt_recent_secret = "text in basic link#xpath=//legend[text()='Recent Secrets']";
 	public static final String btn_launch_icon = "launch Icon for Secret Server#id=launcherTypeId";
+	public static final String Secret_search_message= "//div[@class='Note' and text()='There were no results found that matched the search.']";
+	public static final String icon_cancel_button= "search cancel icon#id=ClearSearchIcon";
+	public static final String basic_home_page = "Basic link page#xpath=//div[@id='homeContainer']/fieldset[@class='searchContainer']";
+	public static final String Search_field = "Search fields#xpath=//div[@id='homeContainer']//input[@placeholder='Search Secrets']";
 	
 	public BasicPage(BaseClass obj) {
 		super(obj);
@@ -311,6 +311,98 @@ public class BasicPage extends ApplicationKeywords{
 		else {
 			testStepFailed("Basic link page is not displayed");
 		} 
+		
+	}
+	
+	
+	public void validatesecretsearchtextbox(String secretname, String InvalidateSecret, String Expectederror) {
+		
+		try {
+			clickOn(Basic_link);
+			
+			if (elementPresent(basic_home_page)) {
+				testStepPassed("Simple page is displayed");
+				vstsTestStepPassed("Simple page is not displayed", true);
+			}
+			else {
+				testStepFailed("Simple page is not displayed");
+				vstsTestStepFailed("Simple page is not displayed", true);
+			}
+			
+			if (elementPresent(Search_field)) {
+				testStepPassed("Search box is present");
+				vstsTestStepPassed("Search box is present", true);
+			}
+			else {
+				testStepFailed("Search box is not present");
+				vstsTestStepFailed("Search box is not present", true);
+			}
+			
+			if(ValidatetextfieldwithEnteringtext(Search_field, secretname, "Search fields")
+					&& Searchesecretispresent(secretname)) {
+				testStepPassed("Search secrets should displayed in the Secrets section");
+				 vstsTestStepPassed("Search secrets should displayed in the Secrets section", true);
+			}
+			else {
+				testStepFailed("Search secrets is not displayed in the Secrets section");
+				vstsTestStepFailed("Search secrets is not displayed in the Secrets section", true);
+			}
+			
+			clickOn(icon_cancel_button);
+			
+			String emptysearchvalue = getAttributeValue(Search_field, "value");
+			if(emptysearchvalue.isEmpty()) {
+				testStepPassed("Search field have empty value after clicking cancel button");
+				vstsTestStepPassed("Search field have empty value after clicking cancel button", true);
+			}
+			else {
+				testStepFailed("Search field have value after clicking cancel button");
+				vstsTestStepFailed("Search field have value after clicking cancel button", true);
+			}
+			
+			typeIn(Search_field, InvalidateSecret);
+			
+			waitTime(3);
+			
+			if (elementDisplayed(Secret_search_message, "Invalid Error message")) {
+				testStepPassed("Invalid secret search message is displayed");
+				vstsTestStepPassed("Invalid secret search message is displayed", true);
+			}
+			else {
+				testStepFailed("Invalid secret message is not displayed");
+				vstsTestStepFailed("Invalid secret message is not displayed", true);
+			}
+			
+			clickOn(Advance_page_link);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean Searchesecretispresent(String SearchValue) {
+		boolean status = false;
+		try {
+			List<WebElement> Searchelements = driver.findElementsByXPath("//div[@id='secretCreateContainer']/following-sibling::div//div[@class='SecretTitle']");	
+			
+			for (WebElement ele:Searchelements ) {
+				String elementvalue = ele.getText();
+				if (elementvalue.equalsIgnoreCase(SearchValue)) {
+					status = true;
+				    testStepPassed("Search secrets should displayed in the Secrets section");
+				    break;
+				}
+			}
+			if(!status) {
+				testStepFailed("Search secrets is not displayed in the Secrets section");
+				status = false;
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return status;
 		
 	}
 	
