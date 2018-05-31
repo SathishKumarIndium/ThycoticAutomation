@@ -24,8 +24,8 @@ public class OR
     public static final String btn_content = "To click the content button#xpath=//span[text()='Content']";
     
     public static final String btn_AdbancedTab = "click on advanced tab#xpath=//span[text()='Advanced']";
-
-    
+    public static final String lst_SecretElements = "Elements in Secrets#xpath=//table[@class='InlineSecretViewTable']/following-sibling::table/tbody/tr/td/a";
+    public static final String btn_Admin_DistributedEngine = "Distributed Engine#xpath=//li//a[text()='Distributed Engine']";
     //Dashboard elements
     public static final String lbl_Browse = "To retrive the browse label#xpath=//td[contains(@id,'pinTab') and text()='Browse']";
     public static final String btn_home_icon = "home icon in dashboard#xpath=//a[contains(@id,'HomeLink') and text()='Home']";
@@ -45,7 +45,7 @@ public class OR
     public static final String btn_Personal_Folders_DashBoard = "Personal Folders button#xpath=//label[text()='Personal Folders']";
     public static final String btn_Admin_Folder_DashBoard = "Admin Folders button#xpath=//label[text()='Admin']";
     public static final String drd_Shared_User_Group = "User/Group dropdown box#id=UserGroupList";
-    
+    public static final String btn_newFolder ="NO folder#xpath=//td//a[text()='No Selected Folder']";
     
     //help 
     public static final String bth_help_icon           = "Help icon button#xpath=//a[@href='Help']/i";
@@ -62,8 +62,8 @@ public class OR
     public static final String btn_Admin_Licenses_tab = "clicking on Licenses tab#xpath=//a[text()='Licenses']";
     public static final String Licenses_page_header = "License Page title#xpath=//td[text()='Licenses']";
     
-    
-    
+    public static final String lbl_SecretPageTitle = "Secrets page header in a secret #xpath=//table[@id='SecretViewDialog_DialogTable']//td";
+    public static final String lbl_secretPagetabs = "Tabs in the secret page#xpath=//div[@id='MainTabControl']//li/a";
     
     // profile page
     public static final String txt_Session_page = "title for session page#xpath=//table[@id='SessionsDialog_DialogTable']//td[@class='dialog_top' and contains(text(),'Current')]";
@@ -173,7 +173,8 @@ public class OR
   	public static final String drd_Default_SecretPermissions = "select Default secret permission option#xpath=//span[text()='Default Secret Permissions']/parent::td/following-sibling::td/select";
   	public static final String btn_Configuration_Page_Save_button = "Configuration page save button#id='SaveButton'";
   	public static final String txt_Default_Secret_Permissions  = "Text for Default Secret Permissions in configuration page#xpath=//span[text()='Default Secret Permissions']/parent::td/following-sibling::td/span";
-  	
+  	public static final String btn_BasicTab = "Basic tab#xpath=//span[@id='BasicLabel' and text()='Basic']";
+  	public static final String btn_BasicPage_createNew = "Create New button#xpath=//a[@class='Button']//span[text()='Create New']";
   	
   	// Heartbeat
     public static final String Enable_Heartbeat = "Bulk opertion for Enable Heartbeat#xpath=//select[@id='OperationDropDownList']//option[text()='Enable Heartbeat']";
@@ -187,5 +188,10 @@ public class OR
 	public static final String drag_src_Welcome = "//li/nobr[text()='Welcome']";
 	public static final String drop_Destination = "//ul[@id='Ul3']";
 	public static final String drag_src_FavoriteSecrets = "//li/nobr[text()='Favorite Secrets']";
+	public static final String lbl_BasicPage = "Basic Page#xpath=//legend[text()='Secrets']";
+	
+	public static final String btn_SaveAndShare = "Save and Share#xpath=//button[@name='SaveAndShareButton']";
+	public static final String btn_shareButtonInSecretDetails = "Share button in secret details#xpath=//a[@class='Button' and text()='Share']";
+	public static final String btn_advancedTab_dashboard = "Advanced tab in start page#xpath=//span[@id='AdvancedLabel' and text()='Advanced']";
     
 }

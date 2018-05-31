@@ -1,6 +1,9 @@
 package pages;
 
-import java.io.IOException;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.reporters.jq.TestPanel;
 
 import baseClass.BaseClass;
 import iSAFE.ApplicationKeywords;
@@ -50,13 +53,7 @@ public class SecretPage extends ApplicationKeywords{
 	
 	public static final String btn_convert_button = "convert button#id=ConvertSecretButton";
 	//public static final String txt_convert_header = "Convert header#xpath=//table[@id='SecretViewDialog_DialogTable']//td[contains(text(),'ConvertionSecret')]";
-	public static final String btn_Unlock_password = "unlock a password#xpath=//span[text()='Password']/parent::td/following-sibling::td/a[@class='iconlink fa-fw fa fa-lock']";
 	
-	public static final String txt_Security_fields = "Security fields#xpath=//table[@class='formTable']//td[@class='TDShrinkNoWrap']/span";
-	
-	public static final String btn_GenericDis_fileupdate = "choose file path#xpath=//input[@id='SecretItemDisplay_SecretItemsRepeater_ctl03_FileUploadControl']";
-	
-	public static final String Publickey_file_update = "public key file update#id=SecretItemDisplay_SecretItemsRepeater_ctl04_FileUploadControl";
 	
 	
 	public SecretPage(BaseClass obj) {
@@ -206,7 +203,18 @@ public class SecretPage extends ApplicationKeywords{
 		
 		folderfunctionincreatesecret(folderName, folderPath, true);
 		
-		ClickSaveAndSecretisCreated(SecretName);
+		clickOn(secret_save_button);
+		if (elementPresent(secret_template_name)) {
+			String SecretnameGUI =  getText(secret_template_name);
+			if (SecretnameGUI.equals(SecretName)) {
+				testStepPassed("Secret Name is same : "+SecretName);
+				vstsTestStepPassed("Secret Name is same : "+SecretName, true);
+			}
+			else {
+				testStepFailed("Secret Name is different : "+SecretName);
+				vstsTestStepFailed("Secret Name is different : "+SecretName, true);
+			}
+		}
 		
 		validateSecretispresent(SecretName, folderName, true);
 		
@@ -228,20 +236,18 @@ public class SecretPage extends ApplicationKeywords{
 			vstsTestStepFailed("Inherit Secret Policy is not displayed after select folder", true);
 		}
 		
-//		clickOn(secret_save_button);
-//		if (elementPresent(secret_template_name)) {
-//			String SecretnameGUI =  getText(secret_template_name);
-//			if (SecretnameGUI.equals(SecretName)) {
-//				testStepPassed("Secret Name is same : "+SecretName);
-//				vstsTestStepPassed("Secret Name is same : "+SecretName, true);
-//			}
-//			else {
-//				testStepFailed("Secret Name is different : "+SecretName);
-//				vstsTestStepFailed("Secret Name is different : "+SecretName, true);
-//			}
-//		}
-		
-		ClickSaveAndSecretisCreated(SecretName);
+		clickOn(secret_save_button);
+		if (elementPresent(secret_template_name)) {
+			String SecretnameGUI =  getText(secret_template_name);
+			if (SecretnameGUI.equals(SecretName)) {
+				testStepPassed("Secret Name is same : "+SecretName);
+				vstsTestStepPassed("Secret Name is same : "+SecretName, true);
+			}
+			else {
+				testStepFailed("Secret Name is different : "+SecretName);
+				vstsTestStepFailed("Secret Name is different : "+SecretName, true);
+			}
+		}
 		
 		clickOn(OR.btn_home_icon);
 		if(elementPresent("new secret#xpath=//label[text()='"+SecretName+"']")) {
@@ -256,250 +262,7 @@ public class SecretPage extends ApplicationKeywords{
 	}
 	
 	
-	public void ValidateActiveDirectorySecretwithcheckinhert(String SecretItem, String SecretName, String Server, String Username, String Password, 
-			String Notes, String folderPath, String folderName, String Secretfields, String DefaultFolder, boolean Basiclink, String Securityfields) {
-		
-		CreateSecretuptofoldersteps(SecretItem, SecretName, Server, Username, Password, Notes, Secretfields, DefaultFolder, Basiclink);
-		
-		folderfunctionincreatesecret(folderName, folderPath, true);
-		
-		if (validateAllElementisDisplay(Secret_template_fields, "Inherit Secret Policy")) {
-			testStepPassed("Inherit Secret Policy is displayed after select folder");
-			vstsTestStepPassed("Inherit Secret Policy is displayed after select folder", true);
-		}
-		else {
-			testStepFailed("Inherit Secret Policy is not displayed after select folder");
-			vstsTestStepFailed("Inherit Secret Policy is not displayed after select folder", true);
-		}
-		
-		selectCheckBox("Inherit Secret Policy#id=EnableInheritSecretPolicyCheckBox"); 
-		ValidateCheckboxischecked("//input[@id='EnableInheritSecretPolicyCheckBox']", "Inherit Secret Policy");
-		
-		ClickSaveAndSecretisCreated(SecretName);
-		
-		clickOn("Security#xpath=//a[@title='Security']");
-		
-		if (validateAllElementisDisplay(txt_Security_fields, Securityfields)) {
-			testStepPassed("The fields under the Securtiy tab should be displayed");
-			vstsTestStepPassed("The fields under the Securtiy tab should be displayed", true);
-		}
-		else {
-			testStepFailed("Some fields under the Securtiy tab should be not displayed");
-			vstsTestStepFailed("Some fields under the Securtiy tab should be not displayed", true);
-		}
-		
-		clickOn("Security#id=EditButton");
-		
-		if (ValidateElementisEditable(Securityfields)) {
-			vstsTestStepPassed("All element are Editable", true);
-		}
-		else {
-			vstsTestStepFailed("Some element are not editable", true);
-		}
-		
-		String DisableDoublelock = getAttributeValue("fields for secrity#xpath=//span[text()='Enable DoubleLock']/parent::td/following-sibling::td//input[@type='checkbox']", "disabled");
-			
-		if (DisableDoublelock != null && DisableDoublelock.equalsIgnoreCase("true")) {
-			testStepPassed("Enable DoubleLock is disable");
-			vstsTestStepPassed("Enable DoubleLock is disable", true);
-		}
-		else {
-			testStepFailed("Enable DoubleLock is not Disable");
-			vstsTestStepFailed("Enable DoubleLock is not Disable", true);
-		}
 	
-	}
-	
-	public void GenericDiscoveryUpdatingKeyfile(String SecretItem, String SecretName, String Username, String Password, 
-			String Notes, String folderPath, String folderName, String Secretfields, String DefaultFolder, boolean Basiclink, String Updatefilepath ) {
-		
-		String dir = System.getProperty("user.dir");
-		
-		try {
-			CreateSecretuptofoldersteps(SecretItem, SecretName, null, Username, Password, Notes, Secretfields, DefaultFolder, Basiclink);
-			
-			clickOn(btn_GenericDis_fileupdate);
-			
-			waitTime(3);
-			if (validatetitleWithAutoit(dir+"\\AutoIt\\ReturnTitle.exe "+"Open", "File &name:")) {
-				testStepPassed("File upload box should be displayed");
-				vstsTestStepPassed("File upload box should be displayed", true);
-			}
-			else {
-				testStepFailed("File upload box should not displayed");
-				vstsTestStepFailed("File upload box should not displayed", true);
-			}
-			
-			String updatefilepath = dir+"\\AutoIt\\"+Updatefilepath;
-			
-			if (validatetitleWithAutoit(dir+"\\AutoIt\\Updateakeyfile.exe "+updatefilepath, updatefilepath)) {
-				testStepPassed("File upload path is same");
-				vstsTestStepPassed("File upload path is same", true);
-			}
-			else {
-				testStepFailed("File upload path is Different");
-				vstsTestStepFailed("File upload path is Different", true);
-			}
-			
-			Runtime.getRuntime().exec(dir+"\\AutoIt\\ClickingokButton.exe");
-			
-			
-			waitTime(5);
-			
-			
-			String filepath = getAttributeValue(btn_GenericDis_fileupdate, "value");
-			
-			if (filepath.contains(Updatefilepath)) {
-				testStepPassed("File updated successfully");
-				vstsTestStepPassed("File updated successfully", true);
-			}
-			else {
-				testStepFailed("File is not updated successfully");
-				vstsTestStepFailed("File is not updated successfully", true);
-			}
-			
-			folderfunctionincreatesecret(folderName, folderPath, true);
-			
-			if (validateAllElementisDisplay(Secret_template_fields, "Inherit Secret Policy") &&
-					validateAllElementisDisplay(Secret_template_fields, "Secret Policy") ) {
-				testStepPassed("Inherit Secret Policy and Secret Policy is displayed after select folder");
-				vstsTestStepPassed("Inherit Secret Policy and Secret Policy is displayed after select folder", true);
-			}
-			else {
-				testStepFailed("Inherit Secret Policy or Secret Policy is not displayed after select folder");
-				vstsTestStepFailed("Inherit Secret Policy or Secret Policy is not displayed after select folder", true);
-			}
-			
-			String loclstatus = getAttributeValue("default local value#xpath=//select[@id='SiteDropDownList']/option[text()='Local']", "Selected");
-			if(loclstatus != null && loclstatus.equalsIgnoreCase("true")) {
-				testStepPassed("Local should be selected as default in Site field");
-				vstsTestStepPassed("Local should be selected as default in Site field", true);
-			}
-			else {
-				testStepFailed("Local should be selected as not a default in Site field");
-				vstsTestStepFailed("Local should be selected as not a default in Site field", true);
-			}
-			
-			ClickSaveAndSecretisCreated(SecretName);
-			
-			validateSecretispresent(SecretName, folderName, true);
-			
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
-	
-	public void ValidateCreateUnixAccount(String SecretItem, String SecretName, String Machine, String Username, String Password, 
-			String Notes, String folderPath, String folderName, String Secretfields, String DefaultFolder, boolean Basiclink, String Updatefilepath ) {
-		String dir = System.getProperty("user.dir");
-		
-		try {
-			CreateSecretuptofoldersteps(SecretItem, SecretName, Machine, Username, Password, Notes, Secretfields, DefaultFolder, Basiclink);
-						
-			clickOn(Publickey_file_update);
-
-			waitTime(3);
-			if (validatetitleWithAutoit(dir+"\\AutoIt\\ReturnTitle.exe "+"Open", "File &name:")) {
-				testStepPassed("File upload box should be displayed");
-				vstsTestStepPassed("File upload box should be displayed", true);
-			}
-			else {
-				testStepFailed("File upload box should not displayed");
-				vstsTestStepFailed("File upload box should not displayed", true);
-			}
-			
-			String updatefilepath = dir+"\\AutoIt\\"+Updatefilepath;
-			
-			if (validatetitleWithAutoit(dir+"\\AutoIt\\Updateakeyfile.exe "+updatefilepath, updatefilepath)) {
-				testStepPassed("File upload path is same");
-			}
-			else {
-				testStepFailed("File upload path is Different");
-			}
-			
-			Runtime.getRuntime().exec(dir+"\\AutoIt\\ClickingokButton.exe");
-			
-			
-			waitTime(5);
-			
-			String filepath = getAttributeValue(Publickey_file_update, "value");
-			
-			if (filepath.contains(Updatefilepath)) {
-				testStepPassed("File updated successfully");
-				vstsTestStepPassed("File updated successfully", true);
-			}
-			else {
-				testStepFailed("File is not updated successfully");
-				vstsTestStepFailed("File is not updated successfully", true);
-			}
-			
-			folderfunctionincreatesecret(folderName, folderPath, true);
-			
-			ClickSaveAndSecretisCreated(SecretName);
-			
-			clickOn("back button from secret#id=BackToSearchResultsButton");
-			
-			String confirmDashboard = getText(OR.lbl_Browse);
-			if(confirmDashboard.equalsIgnoreCase("Browse")) {
-				testStepPassed("Dashboard page is displayed");
-				vstsTestStepPassed("Dashboard page is displayed", true);
-			}
-			else {
-				testStepFailed("Dashboard page is not displayed");
-				vstsTestStepFailed("Dashboard page is not displayed", true);
-			}
-			
-			validateSecretispresent(SecretName, folderName, true);
-			
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-	}
-	
-	
-	/*public void validateSendEmailWhenChangedSecret(String SecretName) {
-		switchTofolders(foldername);
-		
-		clickOn("Expaending Secret is present#xpath=//td[text()='"+SecretName+"']");
-		
-		if(elementPresent("xpath=")) {
-			
-		}
-		else {
-			
-		}
-		
-		
-	}*/
-	
-	public boolean ValidateElementisEditable(String fields) {
-		boolean Mainstatus = true;
-		
-		String[] SecurityFields = fields.split("##");
-		
-		for(String elem: SecurityFields) {
-			boolean Status = false;
-			if(elementPresent("fields for secrity#xpath=//span[text()='"+elem+"']/parent::td/following-sibling::td//input[@type='checkbox']")) {
-				testStepInfo(elem+" is eaditable");
-				Status = true;
-			}
-			else {
-				testStepFailed(elem+" is not eaditable");
-			}
-			if (Mainstatus && !Status) {
-				Mainstatus = false;
-			}
-		}
-		return Mainstatus;
-	}
-
 	public void CreateSecretuptofoldersteps(String SecretItem, String SecretName, String Server, String Username, String Password, 
 			String Notes, String Secretfields, String DefaultFolder, boolean Basiclink) {
 		if (Basiclink) {
@@ -752,6 +515,776 @@ public class SecretPage extends ApplicationKeywords{
 		SelectConvertonwithoptions(ValidSeleteoption, "", SecretDataValue);		
 	}
 	
+	public void deleteSecret(String createSec_elements,String SecretName,String Tabs, String AlertMessage,String foldername)
+	{
+
+
+		clickOn("Secret Name#xpath=//table[@id='secretTable_2']//td[@title='"+SecretName+"']");
+
+		if(validateAllElementisDisplay(OR.lst_SecretElements, createSec_elements)==true)
+		{
+			testStepPassed("The Secret Elements are found");
+			vstsTestStepPassed("The Secret Elements are found", false);
+		}
+		else
+		{
+			testStepFailed("The Secret element is not found");
+			vstsTestStepFailed("The Secret element is not found", true);
+		}
+
+		clickOn("View button#xpath=//a[text()='View']");
+
+		if(validateElementisDisplay(OR.lbl_SecretPageTitle, SecretName)==1)
+		{
+			testStepPassed("Secret Page is validated");
+			vstsTestStepPassed("Secret Page is validated", false);
+		}
+		else
+		{
+			testStepFailed("Unable to navigate to Secretpage");
+			vstsTestStepFailed("Unable to navigate to Secretpage", true);
+		}
+
+		if(validateAllElementisDisplay(OR.lbl_secretPagetabs, Tabs)==true)
+		{
+			testStepPassed("Elements validated in secrets page");
+			vstsTestStepPassed("Elements validated in secrets page", false);
+		}
+		else
+		{
+			testStepFailed("Unable to Elements in secrets page");
+			vstsTestStepFailed("Unable to Elements in secrets page", true);
+		}
+
+		clickOn("DeleteButton#xpath=//button[@name='DeleteButton']");
+
+		String alertText = getAlertText();
+
+		if(alertText.contains(AlertMessage))
+		{
+			testStepPassed("Deletion Pop-Up is displayed");
+			vstsTestStepPassed("Deletion Pop-Up is displayed", false);
+		}
+		else
+		{
+			testStepFailed("Deletion Pop-Up is not displayed");
+			vstsTestStepFailed("Deletion Pop-Up is not displayed", true);
+		}
+
+		alertOk();
+
+		String confirmDashboard = getText(OR.lbl_Browse);
+
+		if(confirmDashboard.equalsIgnoreCase("Browse"))
+		{
+			testStepPassed("Navigated to DashBoard Page");
+			vstsTestStepPassed("Navigated to DashBoard Page", false);
+		}
+
+		else
+		{
+			testStepFailed("Unable to navigate to DashBoard Page");
+			vstsTestStepFailed("Unable to navigate to DashBoard Page", true);
+		}
+
+		switchTofolders(foldername);
+
+		if (elementPresent("Secret in Dashboard Page#xpath=//td[text()='"+SecretName+"']")) {
+			testStepPassed("Secret is not present in Dashboard page");
+			vstsTestStepPassed("Secret is not present in Dashboard page", false);
+		}
+		else {
+			testStepFailed("Secret is  present in Dashboard page");
+			vstsTestStepFailed("Secret is  present in Dashboard page", true);
+		}
+
+	}
+	
+	public void PerformingSecretActionswithAD(String SecretItem,String SecretName,String Domain, String Username,String Password,String Notes,String folderPath, String folderName,String Inherit,String Secret_Policy, String AutoChange)
+	{
+		openSecreteTemplatePage(SecretItem);
+
+		if(validateElementisDisplay("Validating Header New in Secrets#xpath=//table[@id='SecretViewDialog_DialogTable']//td", "New")==1)
+		{
+			testStepPassed("Navigated to the secret page");
+			vstsTestStepPassed("Navigated to the secret page", false);
+		}
+		else
+		{
+			testStepFailed("Unable to navigate to Secret page");
+			vstsTestStepFailed("Unable to navigate to Secret page", true);
+		}
+
+		String SecretType = getText("Getting secret Type#xpath=//select[@name='SecretTypeDropDown']/option[@selected='selected']");
+
+		if(SecretType.equals(SecretItem))
+		{
+			testStepPassed("Verified Presence of Active directory Account");
+			vstsTestStepPassed("Verified Presence of Active directory Account", false);
+		}
+		else
+		{
+			testStepFailed("Unable to verify the presence of Active Directory Account");
+			vstsTestStepFailed("Unable to verify the presence of Active Directory Account", true);
+		}
+
+
+
+		clickOn("Clear button#xpath=//td//a[text()='Clear']");
+
+		if(elementPresent(OR.btn_newFolder))
+		{
+			testStepPassed("Folder path cleared");
+			vstsTestStepPassed("Folder path cleared", false);
+		}
+		else
+		{
+			testStepFailed("Unable to clear folder");
+			vstsTestStepFailed("Unable to clear folder", true);
+		}
+
+		typeIn("Secret Name#id=SecretNameTextBox", SecretName);
+		typeIn("Entering Server or Doman name#id=SecretItemDisplay_SecretItemsRepeater_ctl00_ItemValueTextBox", Domain);
+		typeIn("Entering Username textbox#id=SecretItemDisplay_SecretItemsRepeater_ctl01_ItemValueTextBox", Username);
+		typeIn("Entering Password textbox#id=SecretItemDisplay_SecretItemsRepeater_ctl02_ItemValueTextBox", Password);
+		typeIn("Entering Note textbox#id=SecretItemDisplay_SecretItemsRepeater_ctl03_ItemValueTextBox", Notes);
+
+		boolean secName = ValidateEnterValusInTextField("Secret Name#id=SecretNameTextBox", SecretName, SecretName);
+		boolean dom = ValidateEnterValusInTextField("Entering Server or Doman name#id=SecretItemDisplay_SecretItemsRepeater_ctl00_ItemValueTextBox", Domain, Domain);
+		boolean usr = ValidateEnterValusInTextField("Entering Username textbox#id=SecretItemDisplay_SecretItemsRepeater_ctl01_ItemValueTextBox", Username, Username);
+		boolean pwd = ValidateEnterValusInTextField("Entering Password textbox#id=SecretItemDisplay_SecretItemsRepeater_ctl02_ItemValueTextBox", Password, Password);
+		boolean note = ValidateEnterValusInTextField("Entering Note textbox#id=SecretItemDisplay_SecretItemsRepeater_ctl03_ItemValueTextBox", Notes, Notes);
+
+		if(secName==true&&dom==true&&usr==true&&pwd==true&&note==true)
+		{
+			testStepPassed("Able to enter text in respective text fields");
+			vstsTestStepPassed("Able to enter text in respective text fields", false);
+		}
+		else
+		{
+			testStepFailed("Unable to enter text in respective text fields");
+			vstsTestStepFailed("Unable to enter text in respective text fields", true);
+		}
+
+		clickOn(OR.btn_newFolder);
+
+		if(elementPresent("Select a folder#xpath=//div[@id='popupTitle' and text()='Select a Folder']"))
+		{
+			testStepPassed("Select a folder pop up is present");
+			vstsTestStepPassed("Select a folder pop up is present", false);
+		}
+		else
+		{
+			testStepFailed("Select a folder pop up is not present");
+			vstsTestStepFailed("Select a folder pop up is not present", true);
+		}
+
+		switchToFrame("iframe#xpath=//iframe[@id='popupFrame']");
+
+		typeIn("Folder Search#xpath=//div[@id='FolderSearchControl']/input[@name='SearchTextBox']", folderName);
+
+		if(elementPresent("Link of folder#xpath=//li[@class='ui-menu-item']/div[@class='ui-menu-item-wrapper']"))
+		{
+			testStepPassed("The link is present after entering folder name");
+			vstsTestStepPassed("The link is present after entering folder name", false);
+		}
+		else
+		{
+			testStepFailed("The link is not present after entering folder name");
+			vstsTestStepFailed("The link is not present after entering folder name", true);
+		}
+
+		clickOn("Link of folder#xpath=//li[@class='ui-menu-item']/div[@class='ui-menu-item-wrapper']");
+
+		clickOn("click on SaveandNew#xpath=//button[@name='SaveAndAddNewButton']");
+
+		if(validateElementisDisplay("Validating Header New in Secrets#xpath=//table[@id='SecretViewDialog_DialogTable']//td", "New")==1)
+		{
+			testStepPassed("Navigated to the secret page");
+			vstsTestStepPassed("Navigated to the secret page", false);
+		}
+		else
+		{
+			testStepFailed("Unable to navigate to Secret page");
+			vstsTestStepFailed("Unable to navigate to Secret page", true);
+		}
+
+
+	}
+	
+	public void PerformsqlServerAccountValidation(String SecretItem,String SecretName, String Server,String Username,String Password,String Notes,String folderPath, String folderName,String Inherit,String Secret_Policy, String AutoChange,String sqlpageElements)
+	{
+
+
+		openSecreteTemplatePage(SecretItem);
+
+		if(validateElementisDisplay("Validating Header New in Secrets#xpath=//table[@id='SecretViewDialog_DialogTable']//td", "New")==1)
+		{
+			testStepPassed("Navigated to the secret page");
+			vstsTestStepPassed("Navigated to the secret page", false);
+		}
+		else
+		{
+			testStepFailed("Unable to navigate to Secret page");
+			vstsTestStepFailed("Unable to navigate to Secret page", true);
+		}
+
+		String SecretType = getText("Getting secret Type#xpath=//select[@name='SecretTypeDropDown']/option[@selected='selected']");
+
+		if(SecretType.equals(SecretItem))
+		{
+			testStepPassed("Verified Presence of Active directory Account");
+			vstsTestStepPassed("Verified Presence of Active directory Account", false);
+		}
+		else
+		{
+			testStepFailed("Unable to verify the presence of Active Directory Account");
+			vstsTestStepFailed("Unable to verify the presence of Active Directory Account", true);
+		}
+
+		if(validateAllElementisDisplay("Elements in sql page#xpath=//td[contains(@class,'FormFieldLabelContainer')]/span", sqlpageElements))
+		{
+			testStepPassed("Elements validated in sql page");
+			vstsTestStepPassed("Elements validated in sql page", false);
+		}
+		else
+		{
+			testStepFailed("Unable to validate in sql page");
+			vstsTestStepFailed("Unable to validate in sql page", true);
+		}
+
+		if(elementPresent("Folder Link#xpath=//a[@id='SecretFolderPicker_FolderLink']"))
+		{
+			testStepPassed("Validated the presence of folder link");
+			vstsTestStepPassed("Validated the presence of folder link", false);
+		}
+		else
+		{
+			testStepFailed("Unable to validate the presence of folder link");
+			vstsTestStepFailed("Unable to validate the presence of folder link", true);
+		}
+
+		if(elementPresent("clear#xpath=//a[@class='PickerClearLink']"))
+		{
+			testStepPassed("Element found");
+			vstsTestStepPassed("Element found", false);
+		}
+		else
+		{
+			testStepFailed("Element not found");
+			vstsTestStepFailed("Element not found", true);
+		}
+
+		clickOn("Clear button#xpath=//td//a[text()='Clear']");
+
+		if(elementPresent(OR.btn_newFolder))
+		{
+			testStepPassed("Folder path cleared");
+			vstsTestStepPassed("Folder path cleared", false);
+		}
+		else
+		{
+			testStepFailed("Unable to clear folder");
+			vstsTestStepFailed("Unable to clear folder", true);
+		}
+
+		typeIn("Secret Name#id=SecretNameTextBox", SecretName);
+		typeIn("Entering Server or Doman name#id=SecretItemDisplay_SecretItemsRepeater_ctl00_ItemValueTextBox", Server);
+		typeIn("Entering Username textbox#id=SecretItemDisplay_SecretItemsRepeater_ctl01_ItemValueTextBox", Username);
+		typeIn("Entering Password textbox#id=SecretItemDisplay_SecretItemsRepeater_ctl02_ItemValueTextBox", Password);
+		typeIn("Entering Note textbox#id=SecretItemDisplay_SecretItemsRepeater_ctl03_ItemValueTextBox", Notes);
+
+		boolean secName = ValidateEnterValusInTextField("Secret Name#id=SecretNameTextBox", SecretName, SecretName);
+		boolean dom = ValidateEnterValusInTextField("Entering Server or Doman name#id=SecretItemDisplay_SecretItemsRepeater_ctl00_ItemValueTextBox", Server, Server);
+		boolean usr = ValidateEnterValusInTextField("Entering Username textbox#id=SecretItemDisplay_SecretItemsRepeater_ctl01_ItemValueTextBox", Username, Username);
+		boolean pwd = ValidateEnterValusInTextField("Entering Password textbox#id=SecretItemDisplay_SecretItemsRepeater_ctl02_ItemValueTextBox", Password, Password);
+		boolean note = ValidateEnterValusInTextField("Entering Note textbox#id=SecretItemDisplay_SecretItemsRepeater_ctl03_ItemValueTextBox", Notes, Notes);
+
+		if(secName==true&&dom==true&&usr==true&&pwd==true&&note==true)
+		{
+			testStepPassed("Able to enter text in respective text fields");
+			vstsTestStepPassed("Able to enter text in respective text fields", false);
+		}
+		else
+		{
+			testStepFailed("Unable to enter text in respective text fields");
+			vstsTestStepFailed("Unable to enter text in respective text fields", true);
+		}
+
+		clickOn(OR.btn_newFolder);
+
+		if(elementPresent("Select a folder#xpath=//div[@id='popupTitle' and text()='Select a Folder']"))
+		{
+			testStepPassed("Select a folder pop up is present");
+			vstsTestStepPassed("Select a folder pop up is present", false);
+		}
+		else
+		{
+			testStepFailed("Select a folder pop up is not present");
+			vstsTestStepFailed("Select a folder pop up is not present", true);
+		}
+
+		switchToFrame("iframe#xpath=//iframe[@id='popupFrame']");
+
+		typeIn("Folder Search#xpath=//div[@id='FolderSearchControl']/input[@name='SearchTextBox']", folderName);
+
+		if(elementPresent("Link of folder#xpath=//li[@class='ui-menu-item']/div[@class='ui-menu-item-wrapper']"))
+		{
+			testStepPassed("The link is present after entering folder name");
+			vstsTestStepPassed("The link is present after entering folder name", false);
+		}
+		else
+		{
+			testStepFailed("The link is not present after entering folder name");
+			vstsTestStepFailed("The link is not present after entering folder name", true);
+		}
+
+		clickOn("Link of folder#xpath=//li[@class='ui-menu-item']/div[@class='ui-menu-item-wrapper']");
+
+		String site = getText("site#xpath=//select[@name='SiteDropDownList']/option[@selected='selected']");
+
+		if(site.equalsIgnoreCase("Local"))
+		{
+			testStepPassed("Local is selected by default");
+			vstsTestStepPassed("Local is selected by default", false);
+		}
+		else
+		{
+			testStepFailed("Local is not selected by default");
+			vstsTestStepFailed("Local is not selected by default", true);
+		}
+
+		clickOn("SecretTemplate Save button#id=SaveEditButton");
+
+		if(isElementDisplayed("secret saved#xpath=//td[@class='dialog_top' and contains(text(),'"+SecretName+"')]"))
+		{
+			testStepPassed("secret saved");
+			vstsTestStepPassed("secret saved", false);
+		}
+		else
+		{
+			testStepFailed("Secret not saved");
+			vstsTestStepFailed("Secret not saved", true);
+		}
+
+		clickOn("back#xpath=//button[@value='Back']");
+
+		String confirmDashboard = getText(OR.lbl_Browse);
+
+		if(confirmDashboard.equalsIgnoreCase("Browse"))
+		{
+			testStepPassed("Navigated to DashBoard Page");
+			vstsTestStepPassed("Navigated to DashBoard Page", false);
+		}
+
+		else
+		{
+			testStepFailed("Unable to navigate to DashBoard Page");
+			vstsTestStepFailed("Unable to navigate to DashBoard Page", true);
+		}
+
+		clickOn(OR.btn_home_icon);
+
+	}
+	
+	public void addSharePinSecretValidation(String SecretItem,String SecretName, String PIN,String Notes,String folderPath, String folderName,String pinPageElements,String Admindrp,String usersdrp)
+	{
+		clickOn(OR.btn_BasicTab);
+
+		if(elementPresent(OR.lbl_BasicPage))
+		{
+			testStepPassed("Navigated to basic page");
+			vstsTestStepPassed("Navigated to basic page", false);
+		}
+		else
+		{
+			testStepFailed("Unable to navigate to basic page");
+			vstsTestStepFailed("Unable to navigate to basic page", true);
+		}
+
+		clickOn(OR.btn_BasicPage_createNew);
+
+		if(validateElementisDisplay("Validating Header New in Secrets#xpath=//table[@id='SecretViewDialog_DialogTable']//td", "New")==1)
+		{
+			testStepPassed("Navigated to the secret page");
+			vstsTestStepPassed("Navigated to the secret page", false);
+		}
+		else
+		{
+			testStepFailed("Unable to navigate to Secret page");
+			vstsTestStepFailed("Unable to navigate to Secret page", true);
+		}
+
+
+		selectFromDropdown("Secret Dropdown#xpath=//select[@name='SecretTypeDropDown']", SecretItem);
+
+		String SecretType = getText("Getting secret Type#xpath=//select[@name='SecretTypeDropDown']/option[@selected='selected']");
+
+		if(SecretType.equals(SecretItem))
+		{
+			testStepPassed("Verified Presence of Active directory Account");
+			vstsTestStepPassed("Verified Presence of Active directory Account", false);
+		}
+		else
+		{
+			testStepFailed("Unable to verify the presence of Active Directory Account");
+			vstsTestStepFailed("Unable to verify the presence of Active Directory Account", true);
+		}
+
+		if(validateAllElementisDisplay("Elements in sql page#xpath=//td[contains(@class,'FormFieldLabelContainer')]/span", pinPageElements))
+		{
+			testStepPassed("Elements validated in sql page");
+			vstsTestStepPassed("Elements validated in sql page", false);
+		}
+		else
+		{
+			testStepFailed("Unable to validate in sql page");
+			vstsTestStepFailed("Unable to validate in sql page", true);
+		}
+
+		if(elementPresent("Default folder#xpath=//a[@id='SecretFolderPicker_FolderLink']"))
+		{
+			testStepPassed("Validated the presence of folder link");
+			vstsTestStepPassed("Validated the presence of folder link", false);
+		}
+		else
+		{
+			testStepFailed("Unable to validate the presence of folder link");
+			vstsTestStepFailed("Unable to validate the presence of folder link", true);
+		}
+
+		clickOn("Clear button#xpath=//td//a[text()='Clear']");
+
+		if(elementPresent(OR.btn_newFolder))
+		{
+			testStepPassed("Folder path cleared");
+			vstsTestStepPassed("Folder path cleared", false);
+		}
+		else
+		{
+			testStepFailed("Unable to clear folder");
+			vstsTestStepFailed("Unable to clear folder", true);
+		}
+
+		typeIn("Secret Name#id=SecretNameTextBox", SecretName);
+		typeIn("PIN code#xpath=//input[contains(@id,'SecretItemDisplay') and @class='SecretViewTextbox']", PIN);
+		typeIn("Entering Note textbox#xpath=//textarea[@class='SecretViewTextbox']", Notes);
+
+
+		boolean secName = ValidateEnterValusInTextField("Secret Name#id=SecretNameTextBox", SecretName, SecretName);
+		boolean pin = ValidateEnterValusInTextField("Entering pin#xpath=//input[contains(@id,'SecretItemDisplay') and @class='SecretViewTextbox']", PIN, PIN);
+		boolean note = ValidateEnterValusInTextField("Entering Note textbox#xpath=//textarea[@class='SecretViewTextbox']", Notes, Notes);
+
+
+		if(secName&&note&&pin)
+		{
+			testStepPassed("Values sucessfuly entered in textbox");
+			vstsTestStepPassed("Values sucessfuly entered in textbox", false);
+		}
+		else
+		{
+			testStepFailed("Unable to enter values");
+			vstsTestStepFailed("Unable to enter values", true);
+		}
+
+		clickOn("folder link#xpath=//a[@id='SecretFolderPicker_FolderLink']");
+
+		if(elementPresent("Select a folder#xpath=//div[@id='popupTitle' and text()='Select a Folder']"))
+		{
+			testStepPassed("Select a folder pop up is present");
+			vstsTestStepPassed("Select a folder pop up is present", false);
+		}
+		else
+		{
+			testStepFailed("Select a folder pop up is not present");
+			vstsTestStepFailed("Select a folder pop up is not present", true);
+		}
+
+		switchToFrame("iframe#xpath=//iframe[@id='popupFrame']");
+
+		typeIn("Folder Search#xpath=//div[@id='FolderSearchControl']/input[@name='SearchTextBox']", folderName);
+
+
+
+		boolean input = ValidateEnterValusInTextField("folder Searchbox#xpath=//input[@id='SearchTextBox']", folderName, folderName);
+
+		if(input)
+		{
+			testStepPassed("Value Entered in folder Search");
+			vstsTestStepPassed("Value Entered in folder Search", false);
+		}
+		else
+		{
+			testStepFailed("Unable to enter values in folder");
+			vstsTestStepFailed("Unable to enter values in folder", false);
+		}
+
+		if(elementPresent("Link of folder#xpath=//li[@class='ui-menu-item']/div[@class='ui-menu-item-wrapper']"))
+		{
+			testStepPassed("The link is present after entering folder name");
+			vstsTestStepPassed("The link is present after entering folder name", false);
+		}
+		else
+		{
+			testStepFailed("The link is not present after entering folder name");
+			vstsTestStepFailed("The link is not present after entering folder name", true);
+		}
+
+		clickOn("Link of folder#xpath=//li[@class='ui-menu-item']/div[@class='ui-menu-item-wrapper']");
+
+		if(elementPresent("Inherit secret#xpath=//span[text()='Inherit Secret Policy']"))
+		{
+			testStepPassed("Element Inherit secret policy is present");
+			vstsTestStepPassed("Element Inherit secret policy is present", false);
+		}
+		else
+		{
+			testStepFailed("Element Inherit secret policy is not present");
+			vstsTestStepFailed("Element Inherit secret policy is not present", true);
+		}
+
+		clickOn(OR.btn_SaveAndShare);
+
+
+		if(elementPresent("Inherit secret folders#xpath=//input[@id='EnableInheritPermissionsCheckbox' and @checked='checked']"))
+		{
+			testStepPassed("Checkbox checked");
+			vstsTestStepPassed("Checkbox checked", false);
+		}
+		else
+		{
+			testStepFailed("Unable to check checkbox");
+			vstsTestStepFailed("Unable to check checkbox", true);
+		}
+
+		unSelectCheckBox("Inherit secret folders#xpath=//input[@id='EnableInheritPermissionsCheckbox' and @checked='checked']");
+
+		int addUsergrp = validateElementisDisplay("Add user group dropdown#xpath=//div[@id='GroupUserSelectionControl_AddNewGroupPanel']//span", "Add Group/User");
+		boolean admindrp = elementPresent("Admin drp down#xpath=//select[contains(@data-bind,'options')]");
+
+		if(addUsergrp==1 && admindrp)
+		{
+			testStepPassed("Elementspresent");
+			vstsTestStepPassed("Elementspresent", false);
+		}
+		else
+		{
+			testStepFailed("Element not present");
+			vstsTestStepFailed("Element not present", true);
+		}
+
+		if(validateAllElementisDisplay("admin drp elements#xpath=//select[contains(@data-bind,'options')]/option", Admindrp))
+		{
+			testStepPassed("drop down elements present");
+			vstsTestStepPassed("drop down elements present", false);
+		}
+		else
+		{
+			testStepFailed("drop down elements not present");
+			vstsTestStepFailed("drop down elements not present", true);
+		}
+
+		if(validateAllElementisDisplay("admin drp elements#xpath=//select[@class='UserGroupDropdown']/option", usersdrp))
+		{
+			testStepPassed("drop down elements present");
+			vstsTestStepPassed("drop down elements present", false);
+		}
+		else
+		{
+			testStepFailed("drop down elements not present");
+			vstsTestStepFailed("drop down elements not present", true);
+		}
+
+		selectFromDropdown("users drop down#xpath=//select[@class='UserGroupDropdown']", "Everyone");
+
+
+		if(elementPresent("Everyone option#xpath=//a[@class='GroupIconImage' and contains(text(),'Everyone')]"))
+		{
+			testStepPassed("Everyone option is present");
+			vstsTestStepPassed("Everyone option is present", false);
+		}
+		else
+		{
+			testStepFailed("Everyone option is not present");
+			vstsTestStepFailed("Everyone option is not present", true);
+		}
+
+
+		if(elementPresent("Everyone option#xpath=//a[@class='GroupIconImage']/../following-sibling::td/select/option[text()='View']"))
+		{
+			testStepPassed("able to do operation");
+			vstsTestStepPassed("able to do operation", false);
+		}
+		else
+		{
+			testStepFailed("Unable to do operation");
+			vstsTestStepFailed("Unable to do operation", true);
+		}
+
+		if(elementPresent("Everyone option#xpath=//a[@class='GroupIconImage']/../following-sibling::td/select/option[text()='Owner']"))
+		{
+			testStepPassed("able to do operation");
+			vstsTestStepPassed("able to do operation", false);
+		}
+		else
+		{
+			testStepFailed("Unable to do operation");
+			vstsTestStepFailed("Unable to do operation", true);
+		}
+
+		clickOn("Remove everyone#xpath=//tr[@class='DataGridAlternatingItem']//td/button");
+
+		if(!elementPresent("Everyone option#xpath=//a[@class='GroupIconImage' and contains(text(),'Everyone')]"))
+		{
+			testStepPassed("Everyone option is not present");
+			vstsTestStepPassed("Everyone option is not present", false);
+		}
+		else
+		{
+			testStepFailed("Everyone option is present");
+			vstsTestStepFailed("Everyone option is present", true);
+		}
+
+		clickOn(OR.btn_Configuration_Page_Save_button);
+
+		if(validateElementisDisplay("secret saved#xpath=//td", SecretName)==1)
+		{
+			testStepPassed("secret saved");
+			vstsTestStepPassed("secret saved", false);
+		}
+		else
+		{
+			testStepFailed("secret not saved");
+			vstsTestStepFailed("secret not saved", true);
+		}
+
+		clickOn(OR.btn_advancedTab_dashboard);
+
+	}
+	
+	public void ValidatingPinSecretDetails(String SecretName,String SecretItem,String PinsSecretElements,String Admindrp,String usersdrp,String Usersname)
+	{
+		clickOn("Secret#xpath=//tr//td[text()='"+SecretName+"']");
+
+		if(validateAllElementisDisplay("Secret details of pin secret#xpath=//label[@class='FieldLabel']", PinsSecretElements))
+		{
+			testStepPassed("Pin Secret deatails Validated");
+			vstsTestStepPassed("Pin Secret deatails Validated", false);
+		}
+		else
+		{
+			testStepFailed("Unable to validate pin details ");
+			vstsTestStepFailed("Unable to validate pin details", true);
+		}
+
+		clickOn(OR.btn_shareButtonInSecretDetails);
+
+		boolean shareViewHeader = elementPresent("Share view page Header#xpath=//span[@id='SecretShareViewLabel']");
+		boolean sharedwith = elementPresent("Shared with#xpath=//span[@id='ViewPermissionsTableContainer']//table[@class='DataGrid']//span[text()='Admin']/../following-sibling::td/span");
+
+
+		if(shareViewHeader && sharedwith)
+		{
+			testStepPassed("Shared Page sucessfully validated");
+			vstsTestStepPassed("Shared Page sucessfully validated", false);
+		}
+		else
+		{
+			testStepFailed("Unable to validate Shared page");
+			vstsTestStepFailed("Unable to validate Shared page", true);
+		}
+		clickOn("Edit button#xpath=//button[@name='EditButton']");
+
+		if(elementPresent("Inherit folder permission#xpath=//input[@id='EnableInheritPermissionsCheckbox']"))
+		{
+			testStepPassed("Checkbox present");
+			vstsTestStepPassed("Checkbox present", false);
+		}
+		else
+		{
+			testStepFailed("Check box is not present");
+			vstsTestStepFailed("Check box is not present", true);
+		}
+
+		unSelectCheckBox("Inherit folder permission#xpath=//input[@id='EnableInheritPermissionsCheckbox']");
+
+		int addUsergrp = validateElementisDisplay("Add user group dropdown#xpath=//div[@id='GroupUserSelectionControl_AddNewGroupPanel']//span", "Add Group/User");
+		boolean admindrp = elementPresent("Admin drp down#xpath=//select[contains(@data-bind,'options')]");
+
+		if(addUsergrp==1 && admindrp)
+		{
+			testStepPassed("Elementspresent");
+			vstsTestStepPassed("Elementspresent", false);
+		}
+		else
+		{
+			testStepFailed("Element not present");
+			vstsTestStepFailed("Element not present", true);
+		}
+
+		if(validateAllElementisDisplay("admin drp elements#xpath=//select[contains(@data-bind,'options')]/option", Admindrp))
+		{
+			testStepPassed("drop down elements present");
+			vstsTestStepPassed("drop down elements present", false);
+		}
+		else
+		{
+			testStepFailed("drop down elements not present");
+			vstsTestStepFailed("drop down elements not present", true);
+		}
+
+		if(validateAllElementisDisplay("admin drp elements#xpath=//select[@class='UserGroupDropdown']/option", usersdrp))
+		{
+			testStepPassed("drop down elements present");
+			vstsTestStepPassed("drop down elements present", false);
+		}
+		else
+		{
+			testStepFailed("drop down elements not present");
+			vstsTestStepFailed("drop down elements not present", true);
+		}
+
+		selectFromDropdown("users drop down#xpath=//select[@class='UserGroupDropdown']", Usersname);
+
+
+		if(elementPresent("Everyone option#xpath=//span[@id='EditPermissionsTableContainer']//table//span[contains(text(),'"+Usersname+"')]"))
+		{
+			testStepPassed("Everyone option is present");
+			vstsTestStepPassed("Everyone option is present", false);
+		}
+		else
+		{
+			testStepFailed("Everyone option is not present");
+			vstsTestStepFailed("Everyone option is not present", true);
+		}
+
+		
+
+		if(validateAllElementisDisplay("Everyone option#xpath=//span[@id='EditPermissionsTableContainer']//table//span[contains(text(),'testsub')]/../following-sibling::td/select/option", Admindrp))
+		{
+			testStepPassed("able to do operation");
+			vstsTestStepPassed("able to do operation", false);
+		}
+		else
+		{
+			testStepFailed("Unable to do operation");
+			vstsTestStepFailed("Unable to do operation", true);
+		}
+		
+		clickOn(OR.btn_Configuration_Page_Save_button);
+		
+		if(validateDashboardwithVSTS())
+		{
+			testStepPassed("Navigated to Dashboard page");
+			vstsTestStepPassed("Navigated to Dashboard page", false);
+		}
+		else
+		{
+			testStepFailed("Unable to navigate to dashboard page");
+			vstsTestStepFailed("Unable to navigate to dashboard page", true);
+		}
+	}
+	
 	
 	public void SelectConvertonwithoptions(String ConvertionDatasfields, String Expectedmessage, String SecretValuesAfterConvertion) {
 		String[] fields = ConvertionDatasfields.split("##");
@@ -808,7 +1341,7 @@ public class SecretPage extends ApplicationKeywords{
 			String[] Con_Fields = element.split(":"); 
 			if((Con_Fields[0].equalsIgnoreCase("password"))) {
 				
-				clickOn(btn_Unlock_password);
+				clickOn("unlock a password#xpath=//span[text()='Password']/parent::td/following-sibling::td/a[@class='iconlink fa-fw fa fa-lock']");
 				waitTime(1);
 				textfieldxpath = "get text for password field#xpath=//span[text()='Password']/parent::td/following-sibling::td//span[@class='PasswordDisplayField']";
 			}
@@ -863,42 +1396,6 @@ public class SecretPage extends ApplicationKeywords{
 		
 		return status;
 		
-	}
-	
-	public void ClickSaveAndSecretisCreated(String SecretName) {
-		clickOn(secret_save_button);
-		if (elementPresent(secret_template_name)) {
-			String SecretnameGUI =  getText(secret_template_name);
-			if (SecretnameGUI.equals(SecretName)) {
-				testStepPassed("Secret Name is same : "+SecretName);
-				vstsTestStepPassed("Secret Name is same : "+SecretName, true);
-			}
-			else {
-				testStepFailed("Secret Name is different : "+SecretName);
-				vstsTestStepFailed("Secret Name is different : "+SecretName, true);
-			}
-		}
-	}
-	
-	public void ValidateCheckboxischecked(String xpath, String element) {
-
-		try {
-
-			System.out.println("SSS"+xpath);
-
-			if (driver.findElementByXPath(xpath).isEnabled()) {
-				testStepPassed(element+" is checked");
-				vstsTestStepPassed(element+" is checked", false);
-			}
-			else {
-				testStepFailed(element+ " is not checked");
-				vstsTestStepFailed(element+ " is not checked", true);
-			}
-		}
-		catch(Exception e) {
-			vstsTestStepFailed(element+ " is not checked", true);
-			e.printStackTrace();
-		}
 	}
 	
 }

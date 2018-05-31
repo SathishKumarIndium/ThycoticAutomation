@@ -6,6 +6,7 @@ import pages.BasicPage;
 import pages.DashboardPage;
 import pages.LoginPage;
 import pages.SecretPage;
+import pages.UsersPage;
 
 
 public class SecretScenarios extends ApplicationKeywords{
@@ -14,6 +15,7 @@ public class SecretScenarios extends ApplicationKeywords{
 	LoginPage loginpage  ;
 	SecretPage secretpage ;
 	DashboardPage dashboardpage ;
+	UsersPage userspage;
 	
 	private Boolean status = false;
 
@@ -224,50 +226,6 @@ public class SecretScenarios extends ApplicationKeywords{
 			e.printStackTrace();
 		}
 		finally{
-			if (loginpage.testFailure || secretpage.testFailure || dashboardpage.testFailure) {
-				 status = true;
-			}
-			this.testFailure = status;
-		}
-	}
-	
-	public void CreateActiveDirectorySecretwithinhertcheck() {
-		try {
-			loginpage = new LoginPage(obj);
-			secretpage = new SecretPage(obj);
-			
-			String url = retrieve("Secret server URL");
-			String Username = retrieve("User Name");
-			String Password = retrieve("Password");
-			String SecretTempalte =  retrieve("Secret Template Type");
-			String SecretName =  retrieve("Secret Name");
-			String Machine =  retrieve("Domain");
-			String TemplateUsername =  retrieve("Domain UserName");
-			String TemplatePassword = retrieve("Domain Password");
-			String Note = retrieve("Note") ;
-			String SecretTemplateFields = retrieve("Secret Fields");
-			String FolderPath = retrieve("Folder Path");
-			String FolderName = retrieve("Folder Name");
-			String DefaultFolder = retrieve("Default Folder");
-			String SecurityFields = retrieve("Security Fields");
-			
-			String Secrettemplateparams = retrieve("Secret Template Params");
-			String SecrettemplateparamsStatus = retrieve("Secret Template Status");
-			
-			loginpage.LaunchUrl(url, "No");
-			loginpage.Login(Username, Password, "Yes");
-			enableDiasableRemotePasswordandHBInSecretTemplates(SecretTempalte, Secrettemplateparams, SecrettemplateparamsStatus);
-			secretpage.ValidateActiveDirectorySecretwithcheckinhert(SecretTempalte,  SecretName, Machine, TemplateUsername, TemplatePassword,
-					Note, FolderPath, FolderName, SecretTemplateFields, DefaultFolder, false, SecurityFields);
-			deleteSecretfromdashboard(SecretName);
-						
-			loginpage.Logout();
-			
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
-		finally{
 			if (loginpage.testFailure || secretpage.testFailure) {
 				 status = true;
 			}
@@ -275,88 +233,241 @@ public class SecretScenarios extends ApplicationKeywords{
 		}
 	}
 	
-	public void CreateGenericDiscoverySecretwithKeyfileupdate() {
+	public void ableToDeleteSecret()
+	{
 		try {
-			loginpage = new LoginPage(obj);
-			secretpage = new SecretPage(obj);
-			
-			String url = retrieve("Secret server URL");
-			String Username = retrieve("User Name");
-			String Password = retrieve("Password");
-			String SecretTempalte =  retrieve("Secret Template Type");
-			String SecretName =  retrieve("Secret Name");
-			String TemplateUsername =  retrieve("Generic UserName");
-			String TemplatePassword = retrieve("Generic Password");
-			String Note = retrieve("Note") ;
-			String SecretTemplateFields = retrieve("Secret Fields");
-			String FolderPath = retrieve("Folder Path");
-			String FolderName = retrieve("Folder Name");
-			String DefaultFolder = retrieve("Default Folder");
-			String KeyFilename = retrieve("KeyFile");
-		
-			loginpage.LaunchUrl(url, "No");
-			loginpage.Login(Username, Password, "Yes");
 
-			secretpage.GenericDiscoveryUpdatingKeyfile(SecretTempalte,  SecretName, TemplateUsername, TemplatePassword,
-					Note, FolderPath, FolderName, SecretTemplateFields, DefaultFolder, false, KeyFilename);
-			
-			deleteSecretfromdashboard(SecretName);
-						
-			loginpage.Logout();
-			
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
-		finally{
-			if (loginpage.testFailure || secretpage.testFailure) {
-				 status = true;
-			}
-			this.testFailure = status;
-		}
-	}
-	
-	
-	public void CreateUnixAccount() {
-		try {
 			loginpage = new LoginPage(obj);
 			secretpage = new SecretPage(obj);
-			
+			dashboardpage = new DashboardPage(obj);
+
+
+
+
+
+
 			String url = retrieve("Secret server URL");
 			String Username = retrieve("User Name");
 			String Password = retrieve("Password");
 			String SecretTempalte =  retrieve("Secret Template Type");
 			String SecretName =  retrieve("Secret Name");
-			String Machine =  retrieve("Machine");
-			String TemplateUsername =  retrieve("Machine UserName");
-			String TemplatePassword = retrieve("Machine Password");
-			String Note = retrieve("Note") ;
-			String SecretTemplateFields = retrieve("Secret Fields");
-			String FolderPath = retrieve("Folder Path");
-			String FolderName = retrieve("Folder Name");
-			String DefaultFolder = retrieve("Default Folder");
-			String KeyFilename = retrieve("KeyFile");
-			
+
+			String PIN= retrieve("PIN");
+			String Notes= retrieve("Notes");
+			String folderName= retrieve("Folder Name");
+			String folderPath= retrieve("Folder Path");
+
+			String createSec_elements = retrieve("Secret Elements");
+			String Tabs = retrieve("Tabs");
+			String AlertMessage = retrieve("Alert Meassage");
+
 			loginpage.LaunchUrl(url, "No");
-			loginpage.Login(Username, Password, "Yes");
-			
-			secretpage.ValidateCreateUnixAccount(SecretTempalte,  SecretName, Machine, TemplateUsername, TemplatePassword,
-					Note, FolderPath, FolderName, SecretTemplateFields, DefaultFolder, false, KeyFilename);
+			loginpage.Login(Username, Password, "No");
+
+			CreatePinSecretTemplate(SecretTempalte, SecretName, PIN, Notes, folderName, folderPath);
+			dashboardpage.validateSecretispresent(SecretName, folderName, true);
+			secretpage.deleteSecret(createSec_elements, SecretName, Tabs, AlertMessage, folderName);
 			deleteSecretfromdashboard(SecretName);
-						
 			loginpage.Logout();
-			
-		}
-		catch(Exception e){
+
+
+		}catch(Exception e)
+		{
+			System.out.println("Exception in ableToDeleteSecret");
 			e.printStackTrace();
-		}
-		finally{
-			if (loginpage.testFailure || secretpage.testFailure) {
-				 status = true;
+		}finally{
+			if (loginpage.testFailure || secretpage.testFailure ||dashboardpage.testFailure) {
+				status = true;
 			}
 			this.testFailure = status;
 		}
 	}
 	
+	public void PerformingSecretActionswithActiveDirectory()
+	{
+		try {
+
+			loginpage = new LoginPage(obj);
+			secretpage = new SecretPage(obj);
+			dashboardpage = new DashboardPage(obj);
+
+			String url = retrieve("Secret server URL");
+			String Username = retrieve("User Name");
+			String Password = retrieve("Password");
+			String SecretItem = retrieve("Secret Template Type");
+			String SecretName= retrieve("Secret Name");
+			String Domain = retrieve("Domain");
+			String Notes = retrieve("Note");
+			String folderPath = retrieve("Folder Path");
+			String folderName = retrieve("Folder Name");
+			String Secret_Policy = retrieve("Secret Policy");
+			String AutoChange = retrieve("Auto Change");
+			String Inherit = retrieve("Inherit");
+
+
+			loginpage.LaunchUrl(url, "No");
+			loginpage.Login(Username, Password, "Yes");
+			secretpage.PerformingSecretActionswithAD(SecretItem, SecretName, Domain, Username, Password, Notes, folderPath, folderName, Inherit, Secret_Policy, AutoChange);
+			dashboardpage.validateSecretispresent(SecretName, folderName, true);	
+			deleteSecretfromdashboard(SecretName);
+			loginpage.Logout();
+
+		}catch(Exception e)
+		{
+			System.out.println("Exception in ableToDeleteSecret");
+			e.printStackTrace();
+		}finally{
+			if (loginpage.testFailure || secretpage.testFailure ||dashboardpage.testFailure) {
+				status = true;
+			}
+			this.testFailure = status;
+		}
+
+	}
+	
+	public void sqlServerAccountValidation()
+	{
+		try {
+			
+			loginpage = new LoginPage(obj);
+			secretpage = new SecretPage(obj);
+			dashboardpage= new DashboardPage(obj);
+			
+			String url = retrieve("Secret server URL");
+			String Username = retrieve("User Name");
+			String Password = retrieve("Password");
+			String DistributedEngineStatus = retrieve("Distributed Engine Status");
+			String SecretItem = retrieve("Secret Template Type");
+			String SecretName= retrieve("Secret Name");
+			String Server = retrieve("Server");
+			String Notes = retrieve("Note");
+			String folderPath = retrieve("Folder Path");
+			String folderName = retrieve("Folder Name");
+			String Secret_Policy = retrieve("Secret Policy");
+			String AutoChange = retrieve("Auto Change");
+			String Inherit = retrieve("Inherit");
+			String sqlpageElements = retrieve("SQL Page Elements");
+			
+			loginpage.LaunchUrl(url, "No");
+			loginpage.Login(Username, Password, "No");
+			enableDisableDistributedEngine(DistributedEngineStatus, true);
+			loginpage.Logout();
+			loginpage.LaunchUrl(url, "No");
+			loginpage.Login(Username, Password, "Yes");
+			secretpage.PerformsqlServerAccountValidation(SecretItem, SecretName, Server, Username, Password, Notes, folderPath, folderName, Inherit, Secret_Policy, AutoChange, sqlpageElements);
+			dashboardpage.validateSecretispresent(SecretName, folderName, true);
+			deleteSecretfromdashboard(SecretName);
+			loginpage.Logout();
+		}catch(Exception e)
+		{
+			System.out.println("Exception in ableToDeleteSecret");
+			e.printStackTrace();
+		}finally{
+			if (loginpage.testFailure || secretpage.testFailure || dashboardpage.testFailure) {
+				status = true;
+			}
+			this.testFailure = status;
+		}
+	}
+	
+	public void pinTemplateValidation()
+	{
+		try {
+			loginpage = new LoginPage(obj);
+			secretpage = new SecretPage(obj);
+			dashboardpage= new DashboardPage(obj);
+			
+			String url = retrieve("Secret server URL");
+			String Username = retrieve("User Name");
+			String Password = retrieve("Password");
+			String SecretItem = retrieve("Secret Template Type");
+			String SecretName= retrieve("Secret Name");
+			
+			String Notes = retrieve("Note");
+			String folderPath = retrieve("Folder Path");
+			String folderName = retrieve("Folder Name");
+			
+			
+			String PIN = retrieve("PIN");
+			String pinPageElements = retrieve("Pin Page Elements");
+			String Admindrp = retrieve("Admin drop down Elements");
+			String usersdrp = retrieve("User drop down Elements");
+			
+			loginpage.LaunchUrl(url, "No");
+			loginpage.Login(Username, Password, "Yes");
+			secretpage.addSharePinSecretValidation(SecretItem, SecretName, PIN, Notes, folderPath, folderName, pinPageElements, Admindrp, usersdrp);
+			deleteSecretfromdashboard(SecretName);
+			loginpage.Logout();
+			
+		}catch(Exception e)
+		{
+			System.out.println("Exception in ableToDeleteSecret");
+			e.printStackTrace();
+		}finally{
+			if (loginpage.testFailure || secretpage.testFailure || dashboardpage.testFailure) {
+				status = true;
+			}
+			this.testFailure = status;
+		}
+	}
+	
+	
+	public void PinSecretDetailsValidation()
+	{
+		try {
+			loginpage = new LoginPage(obj);
+			secretpage = new SecretPage(obj);
+			dashboardpage= new DashboardPage(obj);
+			userspage = new UsersPage(obj);
+			
+			String url = retrieve("Secret server URL");
+			String Username = retrieve("User Name");
+			String Password = retrieve("Password");
+			String SecretItem = retrieve("Secret Template Type");
+			String SecretName= retrieve("Secret Name");
+			
+			String Notes = retrieve("Note");
+			String folderPath = retrieve("Folder Path");
+			String folderName = retrieve("Folder Name");
+			String Usersname = retrieve("Users Name");
+			String TwoFactory= retrieve("Two Factory");
+			String EnabledUser= retrieve("Enabled User");
+			String LockedOut= retrieve("Locked Out");
+			String EmailAddress = retrieve("Email Address");
+			String PinsSecretElements = retrieve("Pin Secret Elements");
+			String Admindrp = retrieve("Admin drop down Elements");
+			String usersdrp = retrieve("User drop down Elements");
+			
+			String PIN = retrieve("PIN");
+			
+			loginpage.LaunchUrl(url, "No");
+			loginpage.Login(Username, Password, "NO");
+			userspage.createNewUsers(Usersname, Usersname, EmailAddress, Password, Password, TwoFactory, EnabledUser, LockedOut);
+			
+			CreatePinSecretTemplate(SecretItem, SecretName, PIN, Notes, folderName, folderPath);	
+			dashboardpage.validateSecretispresent(SecretName, folderName, true);
+			loginpage.Logout();
+			loginpage.LaunchUrl(url, "No");
+			loginpage.Login(Username, Password, "Yes");
+			secretpage.ValidatingPinSecretDetails(SecretName, SecretItem, PinsSecretElements, Admindrp, usersdrp, Usersname);
+			loginpage.Logout();
+			loginpage.LaunchUrl(url, "No");
+			loginpage.Login(Usersname, Password, "No");
+			isPasswordPagePresent(Password);
+			dashboardpage.validateSecretispresent(SecretName, folderName, true);
+			deleteSecretfromdashboard(SecretName);
+			loginpage.Logout();
+			
+		}catch(Exception e)
+		{
+			System.out.println("Exception in ableToDeleteSecret");
+			e.printStackTrace();
+		}finally{
+			if (loginpage.testFailure || secretpage.testFailure || dashboardpage.testFailure) {
+				status = true;
+			}
+			this.testFailure = status;
+		}
+	}
 		
 }

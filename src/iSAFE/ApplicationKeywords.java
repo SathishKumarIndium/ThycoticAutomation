@@ -97,6 +97,75 @@ public class ApplicationKeywords extends APIKeywords
 		return elem_Status;
 	}
 	
+	public void isPasswordPagePresent(String CurrentPassword)
+	{
+		
+		if (elementPresent("change password title#xpath=//table[@id='AdministrationDialog_DialogTable']//td[@class='dialog_top']")) {
+			typeIn("change password field#id=ChangePasswordUserControl_CurrentPasswordTextBox", CurrentPassword);
+			typeIn("new password#id=ChangePasswordUserControl_NewPasswordTextBox", "test@1234");
+			typeIn("confirm password#id=ChangePasswordUserControl_ConfirmTextBox", "test@1234");
+			clickOn("Save button#id=ChangePasswordUserControl_SaveButton");
+			
+			if(elementPresent("welcome page#xpath=//span[text()='Welcome to Secret Server']")) {
+				clickOn("close#xpath=//button[@title='Close']");
+			}
+			
+			waitTime(3);
+			clickOn(OR.btn_Profile_Icon);
+			clickOn("Change password link#xpath=//ul[@class='linkList']//a[text()='Change Password']");
+			if (elementPresent("change password title#xpath=//table[@id='AdministrationDialog_DialogTable']//td[@class='dialog_top']")) {
+				typeIn("change password field#id=ChangePasswordUserControl_CurrentPasswordTextBox", "test@1234");
+				typeIn("new password#id=ChangePasswordUserControl_NewPasswordTextBox", CurrentPassword);
+				typeIn("confirm password#id=ChangePasswordUserControl_ConfirmTextBox", CurrentPassword);
+				clickOn("Save button#id=ChangePasswordUserControl_SaveButton");			
+			}
+		}
+	}
+	
+	public void enableDisableDistributedEngine(String DistributedEngineStatus, boolean vsts)
+	{
+		try
+		{
+		mouseOver("Admin#xpath=//a[@id='headerControl_Navigation1_AdministrationLink' and text()='Admin']");
+		clickOn(OR.btn_Admin_DistributedEngine);
+
+		String webDE_Status = getText("Distributed Engine status#xpath=//span[@id='EnableDistributedEngineFieldLabel']/../following-sibling::td/span");
+		
+		if(webDE_Status.equals(DistributedEngineStatus))
+		{
+			testStepInfo("Distributed engine status change to"+DistributedEngineStatus+"");
+			clickOn(OR.btn_home_icon);
+			if(vsts==true);
+			vstsTestStepPassed("Distributed Engine status passed", false);
+		}
+		else
+		{
+			clickOn(OR.btn_Configuration_Page_Edit_button);
+			if(DistributedEngineStatus.equalsIgnoreCase("Yes"))
+			{
+				selectCheckBox("Distributed Engine#xpath=//span[@class='CheckBox']/input[@id='EnableDistributedEngineCheckBox']");
+				if(vsts==true);
+				vstsTestStepPassed("Distributed Engine status passed", false);
+			}
+			else if(DistributedEngineStatus.equalsIgnoreCase("No"))
+			{
+				unSelectCheckBox("Distributed Engine#xpath=//span[@class='CheckBox']/input[@id='EnableDistributedEngineCheckBox']");
+				if(vsts==true);
+				vstsTestStepPassed("Distributed Engine status passed", false);
+			}
+			
+			clickOn(OR.btn_Configuration_Page_Save_button);
+		}
+		}catch(Exception ex)
+		{
+			if(vsts==true);
+			vstsTestStepFailed("Distributed Engine status failed", true);
+			
+			System.out.println("Exception in enableDisableDistributedEngine "+ex);
+			ex.printStackTrace();
+		}
+
+	}
 	
 	
 	public void validateElementSisDisplayed(String xpath) {
@@ -717,11 +786,6 @@ public class ApplicationKeywords extends APIKeywords
 				typeIn("confirm password#id=ChangePasswordUserControl_ConfirmTextBox", "test@1234");
 				clickOn("Save button#id=ChangePasswordUserControl_SaveButton");
 				
-				if(elementPresent("welcome page#xpath=//span[text()='Welcome to Secret Server']")) {
-					clickOn("close#xpath=//button[@title='Close']");
-				}
-				
-				waitTime(3);
 				clickOn(OR.btn_Profile_Icon);
 				clickOn("Change password link#xpath=//ul[@class='linkList']//a[text()='Change Password']");
 				if (elementPresent("change password title#xpath=//table[@id='AdministrationDialog_DialogTable']//td[@class='dialog_top']")) {
@@ -1310,7 +1374,7 @@ public class ApplicationKeywords extends APIKeywords
 				    break;
 				}
 				
-				System.out.println("line ======  "+line);
+				System.out.println("li ne ======  "+line);
 			}
 			if(!Status) {
 				testStepFailed(messages+"is not present");
