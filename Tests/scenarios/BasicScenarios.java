@@ -28,6 +28,7 @@ public class BasicScenarios extends ApplicationKeywords{
 		try{
 			
 			System.out.println("Testing2");
+			System.out.println("Testing3");
 			String Secrettemplate = retrieve("Secret Template Type");
 			String SecretName = retrieve("Secret Name");
 			String Server = retrieve("Server");
