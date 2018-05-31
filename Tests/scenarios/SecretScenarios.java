@@ -224,11 +224,139 @@ public class SecretScenarios extends ApplicationKeywords{
 			e.printStackTrace();
 		}
 		finally{
+			if (loginpage.testFailure || secretpage.testFailure || dashboardpage.testFailure) {
+				 status = true;
+			}
+			this.testFailure = status;
+		}
+	}
+	
+	public void CreateActiveDirectorySecretwithinhertcheck() {
+		try {
+			loginpage = new LoginPage(obj);
+			secretpage = new SecretPage(obj);
+			
+			String url = retrieve("Secret server URL");
+			String Username = retrieve("User Name");
+			String Password = retrieve("Password");
+			String SecretTempalte =  retrieve("Secret Template Type");
+			String SecretName =  retrieve("Secret Name");
+			String Machine =  retrieve("Domain");
+			String TemplateUsername =  retrieve("Domain UserName");
+			String TemplatePassword = retrieve("Domain Password");
+			String Note = retrieve("Note") ;
+			String SecretTemplateFields = retrieve("Secret Fields");
+			String FolderPath = retrieve("Folder Path");
+			String FolderName = retrieve("Folder Name");
+			String DefaultFolder = retrieve("Default Folder");
+			String SecurityFields = retrieve("Security Fields");
+			
+			String Secrettemplateparams = retrieve("Secret Template Params");
+			String SecrettemplateparamsStatus = retrieve("Secret Template Status");
+			
+			loginpage.LaunchUrl(url, "No");
+			loginpage.Login(Username, Password, "Yes");
+			enableDiasableRemotePasswordandHBInSecretTemplates(SecretTempalte, Secrettemplateparams, SecrettemplateparamsStatus);
+			secretpage.ValidateActiveDirectorySecretwithcheckinhert(SecretTempalte,  SecretName, Machine, TemplateUsername, TemplatePassword,
+					Note, FolderPath, FolderName, SecretTemplateFields, DefaultFolder, false, SecurityFields);
+			deleteSecretfromdashboard(SecretName);
+						
+			loginpage.Logout();
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		finally{
 			if (loginpage.testFailure || secretpage.testFailure) {
 				 status = true;
 			}
 			this.testFailure = status;
 		}
 	}
+	
+	public void CreateGenericDiscoverySecretwithKeyfileupdate() {
+		try {
+			loginpage = new LoginPage(obj);
+			secretpage = new SecretPage(obj);
+			
+			String url = retrieve("Secret server URL");
+			String Username = retrieve("User Name");
+			String Password = retrieve("Password");
+			String SecretTempalte =  retrieve("Secret Template Type");
+			String SecretName =  retrieve("Secret Name");
+			String TemplateUsername =  retrieve("Generic UserName");
+			String TemplatePassword = retrieve("Generic Password");
+			String Note = retrieve("Note") ;
+			String SecretTemplateFields = retrieve("Secret Fields");
+			String FolderPath = retrieve("Folder Path");
+			String FolderName = retrieve("Folder Name");
+			String DefaultFolder = retrieve("Default Folder");
+			String KeyFilename = retrieve("KeyFile");
+		
+			loginpage.LaunchUrl(url, "No");
+			loginpage.Login(Username, Password, "Yes");
+
+			secretpage.GenericDiscoveryUpdatingKeyfile(SecretTempalte,  SecretName, TemplateUsername, TemplatePassword,
+					Note, FolderPath, FolderName, SecretTemplateFields, DefaultFolder, false, KeyFilename);
+			
+			deleteSecretfromdashboard(SecretName);
+						
+			loginpage.Logout();
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		finally{
+			if (loginpage.testFailure || secretpage.testFailure) {
+				 status = true;
+			}
+			this.testFailure = status;
+		}
+	}
+	
+	
+	public void CreateUnixAccount() {
+		try {
+			loginpage = new LoginPage(obj);
+			secretpage = new SecretPage(obj);
+			
+			String url = retrieve("Secret server URL");
+			String Username = retrieve("User Name");
+			String Password = retrieve("Password");
+			String SecretTempalte =  retrieve("Secret Template Type");
+			String SecretName =  retrieve("Secret Name");
+			String Machine =  retrieve("Machine");
+			String TemplateUsername =  retrieve("Machine UserName");
+			String TemplatePassword = retrieve("Machine Password");
+			String Note = retrieve("Note") ;
+			String SecretTemplateFields = retrieve("Secret Fields");
+			String FolderPath = retrieve("Folder Path");
+			String FolderName = retrieve("Folder Name");
+			String DefaultFolder = retrieve("Default Folder");
+			String KeyFilename = retrieve("KeyFile");
+			
+			loginpage.LaunchUrl(url, "No");
+			loginpage.Login(Username, Password, "Yes");
+			
+			secretpage.ValidateCreateUnixAccount(SecretTempalte,  SecretName, Machine, TemplateUsername, TemplatePassword,
+					Note, FolderPath, FolderName, SecretTemplateFields, DefaultFolder, false, KeyFilename);
+			deleteSecretfromdashboard(SecretName);
+						
+			loginpage.Logout();
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		finally{
+			if (loginpage.testFailure || secretpage.testFailure) {
+				 status = true;
+			}
+			this.testFailure = status;
+		}
+	}
+	
 		
 }

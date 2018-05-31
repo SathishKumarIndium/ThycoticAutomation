@@ -14,7 +14,10 @@ public class ConfigurationPage  extends ApplicationKeywords  {
   	public static final String btn_Configuration_Page_Save_button = "Configuration page save button#id=SaveButton";
   	public static final String txt_Default_Secret_Permissions  = "Text for Default Secret Permissions in configuration page#xpath=//span[text()='Default Secret Permissions']/parent::td/following-sibling::td/span";
   	
-	
+  	public static final String btn_Email_tab = "Email Tab in configuration page#xpath=//a[@title='Email']";
+	public static final String btn_Email_edit_button = "Email edit button#id=EditButton";
+  	
+  	
 	public ConfigurationPage(BaseClass obj) {
 		super(obj);
 	}
@@ -54,4 +57,42 @@ public class ConfigurationPage  extends ApplicationKeywords  {
 		}
 		return Status;
 	}
+	
+	
+	public boolean SettingServerEmail(String EmailType, String EmailAddress) {
+		
+		boolean Status = false;
+		
+		mouseOver(OR.btn_Admin_Tab);
+		clickOn(btn_Admin_configuration_Icon);
+		if (elementPresent(txt_configuration_page_header)) {
+			testStepInfo("configuration tab is present");
+			clickOn(btn_Email_tab);
+			String gettextaddress = getText("geting value for "+EmailType+"#xpath=//span[text()='"+EmailType+"']/parent::td/following-sibling::td/span");
+			if (gettextaddress.equals(EmailAddress)) {
+				testStepInfo("Email address is same");
+				Status = true;
+			}
+			else {
+				clickOn(btn_Email_edit_button);
+				typeIn("email address#xpath=//span[text()='"+EmailType+"']/parent::td/following-sibling::td/input", EmailAddress);
+				clickOn("Save button#id=SaveButton");
+				String gettexEmailaddress = getText("geting value for "+EmailType+"#xpath=//span[text()='"+EmailType+"']/parent::td/following-sibling::td/span");
+				if (gettexEmailaddress.equals(EmailAddress)) {
+					testStepInfo("Email address is same");
+					Status = true;
+				}
+				else {
+					Status = false;	
+					testStepFailed("Email address is not same");
+				}
+			}
+		}
+		else {
+			testStepFailed("Configuration page is not present");
+		}
+		return Status;
+	}
+	
+	
 }

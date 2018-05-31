@@ -717,6 +717,11 @@ public class ApplicationKeywords extends APIKeywords
 				typeIn("confirm password#id=ChangePasswordUserControl_ConfirmTextBox", "test@1234");
 				clickOn("Save button#id=ChangePasswordUserControl_SaveButton");
 				
+				if(elementPresent("welcome page#xpath=//span[text()='Welcome to Secret Server']")) {
+					clickOn("close#xpath=//button[@title='Close']");
+				}
+				
+				waitTime(3);
 				clickOn(OR.btn_Profile_Icon);
 				clickOn("Change password link#xpath=//ul[@class='linkList']//a[text()='Change Password']");
 				if (elementPresent("change password title#xpath=//table[@id='AdministrationDialog_DialogTable']//td[@class='dialog_top']")) {
@@ -1305,7 +1310,7 @@ public class ApplicationKeywords extends APIKeywords
 				    break;
 				}
 				
-				System.out.println("li ne ======  "+line);
+				System.out.println("line ======  "+line);
 			}
 			if(!Status) {
 				testStepFailed(messages+"is not present");

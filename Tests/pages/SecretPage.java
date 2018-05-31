@@ -1,9 +1,6 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.reporters.jq.TestPanel;
+import java.io.IOException;
 
 import baseClass.BaseClass;
 import iSAFE.ApplicationKeywords;
@@ -53,7 +50,13 @@ public class SecretPage extends ApplicationKeywords{
 	
 	public static final String btn_convert_button = "convert button#id=ConvertSecretButton";
 	//public static final String txt_convert_header = "Convert header#xpath=//table[@id='SecretViewDialog_DialogTable']//td[contains(text(),'ConvertionSecret')]";
+	public static final String btn_Unlock_password = "unlock a password#xpath=//span[text()='Password']/parent::td/following-sibling::td/a[@class='iconlink fa-fw fa fa-lock']";
 	
+	public static final String txt_Security_fields = "Security fields#xpath=//table[@class='formTable']//td[@class='TDShrinkNoWrap']/span";
+	
+	public static final String btn_GenericDis_fileupdate = "choose file path#xpath=//input[@id='SecretItemDisplay_SecretItemsRepeater_ctl03_FileUploadControl']";
+	
+	public static final String Publickey_file_update = "public key file update#id=SecretItemDisplay_SecretItemsRepeater_ctl04_FileUploadControl";
 	
 	
 	public SecretPage(BaseClass obj) {
@@ -203,18 +206,7 @@ public class SecretPage extends ApplicationKeywords{
 		
 		folderfunctionincreatesecret(folderName, folderPath, true);
 		
-		clickOn(secret_save_button);
-		if (elementPresent(secret_template_name)) {
-			String SecretnameGUI =  getText(secret_template_name);
-			if (SecretnameGUI.equals(SecretName)) {
-				testStepPassed("Secret Name is same : "+SecretName);
-				vstsTestStepPassed("Secret Name is same : "+SecretName, true);
-			}
-			else {
-				testStepFailed("Secret Name is different : "+SecretName);
-				vstsTestStepFailed("Secret Name is different : "+SecretName, true);
-			}
-		}
+		ClickSaveAndSecretisCreated(SecretName);
 		
 		validateSecretispresent(SecretName, folderName, true);
 		
@@ -236,18 +228,20 @@ public class SecretPage extends ApplicationKeywords{
 			vstsTestStepFailed("Inherit Secret Policy is not displayed after select folder", true);
 		}
 		
-		clickOn(secret_save_button);
-		if (elementPresent(secret_template_name)) {
-			String SecretnameGUI =  getText(secret_template_name);
-			if (SecretnameGUI.equals(SecretName)) {
-				testStepPassed("Secret Name is same : "+SecretName);
-				vstsTestStepPassed("Secret Name is same : "+SecretName, true);
-			}
-			else {
-				testStepFailed("Secret Name is different : "+SecretName);
-				vstsTestStepFailed("Secret Name is different : "+SecretName, true);
-			}
-		}
+//		clickOn(secret_save_button);
+//		if (elementPresent(secret_template_name)) {
+//			String SecretnameGUI =  getText(secret_template_name);
+//			if (SecretnameGUI.equals(SecretName)) {
+//				testStepPassed("Secret Name is same : "+SecretName);
+//				vstsTestStepPassed("Secret Name is same : "+SecretName, true);
+//			}
+//			else {
+//				testStepFailed("Secret Name is different : "+SecretName);
+//				vstsTestStepFailed("Secret Name is different : "+SecretName, true);
+//			}
+//		}
+		
+		ClickSaveAndSecretisCreated(SecretName);
 		
 		clickOn(OR.btn_home_icon);
 		if(elementPresent("new secret#xpath=//label[text()='"+SecretName+"']")) {
@@ -262,7 +256,250 @@ public class SecretPage extends ApplicationKeywords{
 	}
 	
 	
+	public void ValidateActiveDirectorySecretwithcheckinhert(String SecretItem, String SecretName, String Server, String Username, String Password, 
+			String Notes, String folderPath, String folderName, String Secretfields, String DefaultFolder, boolean Basiclink, String Securityfields) {
+		
+		CreateSecretuptofoldersteps(SecretItem, SecretName, Server, Username, Password, Notes, Secretfields, DefaultFolder, Basiclink);
+		
+		folderfunctionincreatesecret(folderName, folderPath, true);
+		
+		if (validateAllElementisDisplay(Secret_template_fields, "Inherit Secret Policy")) {
+			testStepPassed("Inherit Secret Policy is displayed after select folder");
+			vstsTestStepPassed("Inherit Secret Policy is displayed after select folder", true);
+		}
+		else {
+			testStepFailed("Inherit Secret Policy is not displayed after select folder");
+			vstsTestStepFailed("Inherit Secret Policy is not displayed after select folder", true);
+		}
+		
+		selectCheckBox("Inherit Secret Policy#id=EnableInheritSecretPolicyCheckBox"); 
+		ValidateCheckboxischecked("//input[@id='EnableInheritSecretPolicyCheckBox']", "Inherit Secret Policy");
+		
+		ClickSaveAndSecretisCreated(SecretName);
+		
+		clickOn("Security#xpath=//a[@title='Security']");
+		
+		if (validateAllElementisDisplay(txt_Security_fields, Securityfields)) {
+			testStepPassed("The fields under the Securtiy tab should be displayed");
+			vstsTestStepPassed("The fields under the Securtiy tab should be displayed", true);
+		}
+		else {
+			testStepFailed("Some fields under the Securtiy tab should be not displayed");
+			vstsTestStepFailed("Some fields under the Securtiy tab should be not displayed", true);
+		}
+		
+		clickOn("Security#id=EditButton");
+		
+		if (ValidateElementisEditable(Securityfields)) {
+			vstsTestStepPassed("All element are Editable", true);
+		}
+		else {
+			vstsTestStepFailed("Some element are not editable", true);
+		}
+		
+		String DisableDoublelock = getAttributeValue("fields for secrity#xpath=//span[text()='Enable DoubleLock']/parent::td/following-sibling::td//input[@type='checkbox']", "disabled");
+			
+		if (DisableDoublelock != null && DisableDoublelock.equalsIgnoreCase("true")) {
+			testStepPassed("Enable DoubleLock is disable");
+			vstsTestStepPassed("Enable DoubleLock is disable", true);
+		}
+		else {
+			testStepFailed("Enable DoubleLock is not Disable");
+			vstsTestStepFailed("Enable DoubleLock is not Disable", true);
+		}
 	
+	}
+	
+	public void GenericDiscoveryUpdatingKeyfile(String SecretItem, String SecretName, String Username, String Password, 
+			String Notes, String folderPath, String folderName, String Secretfields, String DefaultFolder, boolean Basiclink, String Updatefilepath ) {
+		
+		String dir = System.getProperty("user.dir");
+		
+		try {
+			CreateSecretuptofoldersteps(SecretItem, SecretName, null, Username, Password, Notes, Secretfields, DefaultFolder, Basiclink);
+			
+			clickOn(btn_GenericDis_fileupdate);
+			
+			waitTime(3);
+			if (validatetitleWithAutoit(dir+"\\AutoIt\\ReturnTitle.exe "+"Open", "File &name:")) {
+				testStepPassed("File upload box should be displayed");
+				vstsTestStepPassed("File upload box should be displayed", true);
+			}
+			else {
+				testStepFailed("File upload box should not displayed");
+				vstsTestStepFailed("File upload box should not displayed", true);
+			}
+			
+			String updatefilepath = dir+"\\AutoIt\\"+Updatefilepath;
+			
+			if (validatetitleWithAutoit(dir+"\\AutoIt\\Updateakeyfile.exe "+updatefilepath, updatefilepath)) {
+				testStepPassed("File upload path is same");
+				vstsTestStepPassed("File upload path is same", true);
+			}
+			else {
+				testStepFailed("File upload path is Different");
+				vstsTestStepFailed("File upload path is Different", true);
+			}
+			
+			Runtime.getRuntime().exec(dir+"\\AutoIt\\ClickingokButton.exe");
+			
+			
+			waitTime(5);
+			
+			
+			String filepath = getAttributeValue(btn_GenericDis_fileupdate, "value");
+			
+			if (filepath.contains(Updatefilepath)) {
+				testStepPassed("File updated successfully");
+				vstsTestStepPassed("File updated successfully", true);
+			}
+			else {
+				testStepFailed("File is not updated successfully");
+				vstsTestStepFailed("File is not updated successfully", true);
+			}
+			
+			folderfunctionincreatesecret(folderName, folderPath, true);
+			
+			if (validateAllElementisDisplay(Secret_template_fields, "Inherit Secret Policy") &&
+					validateAllElementisDisplay(Secret_template_fields, "Secret Policy") ) {
+				testStepPassed("Inherit Secret Policy and Secret Policy is displayed after select folder");
+				vstsTestStepPassed("Inherit Secret Policy and Secret Policy is displayed after select folder", true);
+			}
+			else {
+				testStepFailed("Inherit Secret Policy or Secret Policy is not displayed after select folder");
+				vstsTestStepFailed("Inherit Secret Policy or Secret Policy is not displayed after select folder", true);
+			}
+			
+			String loclstatus = getAttributeValue("default local value#xpath=//select[@id='SiteDropDownList']/option[text()='Local']", "Selected");
+			if(loclstatus != null && loclstatus.equalsIgnoreCase("true")) {
+				testStepPassed("Local should be selected as default in Site field");
+				vstsTestStepPassed("Local should be selected as default in Site field", true);
+			}
+			else {
+				testStepFailed("Local should be selected as not a default in Site field");
+				vstsTestStepFailed("Local should be selected as not a default in Site field", true);
+			}
+			
+			ClickSaveAndSecretisCreated(SecretName);
+			
+			validateSecretispresent(SecretName, folderName, true);
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void ValidateCreateUnixAccount(String SecretItem, String SecretName, String Machine, String Username, String Password, 
+			String Notes, String folderPath, String folderName, String Secretfields, String DefaultFolder, boolean Basiclink, String Updatefilepath ) {
+		String dir = System.getProperty("user.dir");
+		
+		try {
+			CreateSecretuptofoldersteps(SecretItem, SecretName, Machine, Username, Password, Notes, Secretfields, DefaultFolder, Basiclink);
+						
+			clickOn(Publickey_file_update);
+
+			waitTime(3);
+			if (validatetitleWithAutoit(dir+"\\AutoIt\\ReturnTitle.exe "+"Open", "File &name:")) {
+				testStepPassed("File upload box should be displayed");
+				vstsTestStepPassed("File upload box should be displayed", true);
+			}
+			else {
+				testStepFailed("File upload box should not displayed");
+				vstsTestStepFailed("File upload box should not displayed", true);
+			}
+			
+			String updatefilepath = dir+"\\AutoIt\\"+Updatefilepath;
+			
+			if (validatetitleWithAutoit(dir+"\\AutoIt\\Updateakeyfile.exe "+updatefilepath, updatefilepath)) {
+				testStepPassed("File upload path is same");
+			}
+			else {
+				testStepFailed("File upload path is Different");
+			}
+			
+			Runtime.getRuntime().exec(dir+"\\AutoIt\\ClickingokButton.exe");
+			
+			
+			waitTime(5);
+			
+			String filepath = getAttributeValue(Publickey_file_update, "value");
+			
+			if (filepath.contains(Updatefilepath)) {
+				testStepPassed("File updated successfully");
+				vstsTestStepPassed("File updated successfully", true);
+			}
+			else {
+				testStepFailed("File is not updated successfully");
+				vstsTestStepFailed("File is not updated successfully", true);
+			}
+			
+			folderfunctionincreatesecret(folderName, folderPath, true);
+			
+			ClickSaveAndSecretisCreated(SecretName);
+			
+			clickOn("back button from secret#id=BackToSearchResultsButton");
+			
+			String confirmDashboard = getText(OR.lbl_Browse);
+			if(confirmDashboard.equalsIgnoreCase("Browse")) {
+				testStepPassed("Dashboard page is displayed");
+				vstsTestStepPassed("Dashboard page is displayed", true);
+			}
+			else {
+				testStepFailed("Dashboard page is not displayed");
+				vstsTestStepFailed("Dashboard page is not displayed", true);
+			}
+			
+			validateSecretispresent(SecretName, folderName, true);
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
+	/*public void validateSendEmailWhenChangedSecret(String SecretName) {
+		switchTofolders(foldername);
+		
+		clickOn("Expaending Secret is present#xpath=//td[text()='"+SecretName+"']");
+		
+		if(elementPresent("xpath=")) {
+			
+		}
+		else {
+			
+		}
+		
+		
+	}*/
+	
+	public boolean ValidateElementisEditable(String fields) {
+		boolean Mainstatus = true;
+		
+		String[] SecurityFields = fields.split("##");
+		
+		for(String elem: SecurityFields) {
+			boolean Status = false;
+			if(elementPresent("fields for secrity#xpath=//span[text()='"+elem+"']/parent::td/following-sibling::td//input[@type='checkbox']")) {
+				testStepInfo(elem+" is eaditable");
+				Status = true;
+			}
+			else {
+				testStepFailed(elem+" is not eaditable");
+			}
+			if (Mainstatus && !Status) {
+				Mainstatus = false;
+			}
+		}
+		return Mainstatus;
+	}
+
 	public void CreateSecretuptofoldersteps(String SecretItem, String SecretName, String Server, String Username, String Password, 
 			String Notes, String Secretfields, String DefaultFolder, boolean Basiclink) {
 		if (Basiclink) {
@@ -571,7 +808,7 @@ public class SecretPage extends ApplicationKeywords{
 			String[] Con_Fields = element.split(":"); 
 			if((Con_Fields[0].equalsIgnoreCase("password"))) {
 				
-				clickOn("unlock a password#xpath=//span[text()='Password']/parent::td/following-sibling::td/a[@class='iconlink fa-fw fa fa-lock']");
+				clickOn(btn_Unlock_password);
 				waitTime(1);
 				textfieldxpath = "get text for password field#xpath=//span[text()='Password']/parent::td/following-sibling::td//span[@class='PasswordDisplayField']";
 			}
@@ -626,6 +863,42 @@ public class SecretPage extends ApplicationKeywords{
 		
 		return status;
 		
+	}
+	
+	public void ClickSaveAndSecretisCreated(String SecretName) {
+		clickOn(secret_save_button);
+		if (elementPresent(secret_template_name)) {
+			String SecretnameGUI =  getText(secret_template_name);
+			if (SecretnameGUI.equals(SecretName)) {
+				testStepPassed("Secret Name is same : "+SecretName);
+				vstsTestStepPassed("Secret Name is same : "+SecretName, true);
+			}
+			else {
+				testStepFailed("Secret Name is different : "+SecretName);
+				vstsTestStepFailed("Secret Name is different : "+SecretName, true);
+			}
+		}
+	}
+	
+	public void ValidateCheckboxischecked(String xpath, String element) {
+
+		try {
+
+			System.out.println("SSS"+xpath);
+
+			if (driver.findElementByXPath(xpath).isEnabled()) {
+				testStepPassed(element+" is checked");
+				vstsTestStepPassed(element+" is checked", false);
+			}
+			else {
+				testStepFailed(element+ " is not checked");
+				vstsTestStepFailed(element+ " is not checked", true);
+			}
+		}
+		catch(Exception e) {
+			vstsTestStepFailed(element+ " is not checked", true);
+			e.printStackTrace();
+		}
 	}
 	
 }

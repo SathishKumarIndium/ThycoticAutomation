@@ -966,28 +966,7 @@ public class DashboardPage extends ApplicationKeywords {
 			testStepFailed("'" +Elements +"' is not present in dashboard");
 		}
 	}
-	
-//	public void ValidateCheckboxischecked(String xpath, String element) {
-//			
-//		try {
-//			
-//			System.out.println("SSS"+xpath);
-//			
-//			if (driver.findElementByXPath(xpath).isEnabled()) {
-//				testStepPassed(element+" is checked");
-//				vstsTestStepPassed(element+" is checked", false);
-//			}
-//			else {
-//				testStepFailed(element+ " is not checked");
-//				vstsTestStepFailed(element+ " is not checked", true);
-//			}
-//		}
-//		catch(Exception e) {
-//			vstsTestStepFailed(element+ " is not checked", true);
-//			e.printStackTrace();
-//		}
-//	}
-	
+		
 	public void checkSecretWidgetIspresent(String ContentIcon) {
 		try {
 			if (elementPresent(ContentIcon+" is pesent in  dashboard#xpath=//h2[text()='"+ContentIcon+"']")) {
@@ -1011,74 +990,6 @@ public class DashboardPage extends ApplicationKeywords {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
-//	public boolean validateSecretispresent(String SecretName, boolean WithvstsUpdate) {
-//		
-//		boolean Status = false;
-//		clickOn(OR.btn_home_icon);
-//		
-//		if (isElementDisplayed("Secret in Dashboard Page#xpath=//td[text()='"+SecretName+"']")) {
-//			testStepPassed("Secret is present in Dashboard page");
-//			Status = true;
-//			if (WithvstsUpdate)
-//			vstsTestStepPassed("Secret is present in Dashboard page", false);
-//		}
-//		else {
-//			testStepFailed("Secret is not present in Dashboard page");
-//			Status = false;
-//			if (WithvstsUpdate)
-//			vstsTestStepFailed("Secret is not present in Dashboard page", true);
-//		}
-//		return Status;
-//	}
-	
-//	public boolean performbulkoperationforPreCondition(String SecretName, String BulkOperation, String foldername, boolean WithVstsUpdate) {
-//		
-//		boolean status = true;
-//		clickOn(OR.btn_home_icon);
-//		switchTofolders(foldername);
-//				
-//		if (elementPresent("Secret in Dashboard#xpath=//td[text()='"+SecretName+"']")) {
-//			selectCheckBox("enable secret in dashboard#xpath=//td[text()='"+SecretName+"']/preceding-sibling::td/input");
-//			selectFromDropdown(OR.drpdown_Selectbulkoperation, BulkOperation);
-//			
-//			if (elementPresent("Bulk Operation: "+BulkOperation+" box#xpath=//span[text()='Bulk Operation: "+BulkOperation+"']")) {
-//				testStepPassed("'Bulk Operation: "+BulkOperation+"' page should be displayed");
-//			}
-//			else {
-//				testStepFailed("'Bulk Operation: "+BulkOperation+"' page should not be displayed");
-//			}
-//			
-//			clickOn("Ok button in Bulk Option#xpath=//div[@class='ui-dialog-buttonset']/button[text()='OK']");
-//			
-//			if (elementPresent("Bulk operation "+BulkOperation+" completed page#xpath=//span[text()='Bulk Operation: "+BulkOperation+"']")) {
-//				testStepPassed("Bulk operation "+BulkOperation+" completed page is displayed");
-//			}
-//			else {
-//				testStepFailed("Bulk operation  completed page is not displayed");
-//			}
-//			
-//			if (isElementDisplayed("No error Message#xpath=//div[@id='NoErrorMessage' and text()='There were no errors.']")) {
-//			   status = true;
-//				if(WithVstsUpdate)
-//				vstsTestStepPassed(BulkOperation +" is successfully", false);
-//			}
-//			else {
-//				 status = false;
-//				if(WithVstsUpdate)
-//				vstsTestStepFailed(BulkOperation+"is not Successfully", true);
-//			}
-//			
-//			waitTime(4);
-//			clickOn("close button #xpath=//div[@class='ui-dialog-buttonset']/button[text()='Close']");
-//		}
-//		else {
-//			testStepFailed("' "+SecretName+"' Secret is not present in Dashboard");
-//		}
-//		return status;
-//	}
 	
 	public void validatePrereDisableAutoChange(String SecretName, String BulkOperation, boolean RemotePasswordstatus, String foldername) {
 		

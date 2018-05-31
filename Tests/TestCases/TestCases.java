@@ -1613,7 +1613,7 @@ public class TestCases
 	public void TC_43469(String machineName,Method method) throws IOException 
 	{
 
-		TestStart("create a New Secret for the template Pin Account in basic link page",machineName,method.getName());
+		TestStart("Validate convert the Template of an existing Secret",machineName,method.getName());
 		secretscenarios = new SecretScenarios(obj);
 		for(int i=0;i<secretscenarios.iterationCount.size();i++)
 		{
@@ -1621,6 +1621,62 @@ public class TestCases
 			secretscenarios.dataRowNo=Integer.parseInt(secretscenarios.iterationCount.get(i).toString());
 			secretscenarios.writeHtmlTestStepReport("<font size=4 style='color:blue'>DataSet:"+(i+1)+"</font><br/>", secretscenarios.currentExecutionMachineName, secretscenarios.currentTestCaseName);
 			secretscenarios.ValidateConvertionSecretFromActiveDirectoryToWindow();	
+		}
+		obj.testFailure=secretscenarios.testFailure;
+		TestEnd();
+	}
+	
+
+	@Test(alwaysRun=true)
+	@Parameters({ "selenium.machinename"})
+	public void TC_43480(String machineName,Method method) throws IOException 
+	{
+
+		TestStart("create Active Direct with 'Inherit Secret Policy' checkbox and validate enable Doublelock is disable",machineName,method.getName());
+		secretscenarios = new SecretScenarios(obj);
+		for(int i=0;i<secretscenarios.iterationCount.size();i++)
+		{
+
+			secretscenarios.dataRowNo=Integer.parseInt(secretscenarios.iterationCount.get(i).toString());
+			secretscenarios.writeHtmlTestStepReport("<font size=4 style='color:blue'>DataSet:"+(i+1)+"</font><br/>", secretscenarios.currentExecutionMachineName, secretscenarios.currentTestCaseName);
+			secretscenarios.CreateActiveDirectorySecretwithinhertcheck();	
+		}
+		obj.testFailure=secretscenarios.testFailure;
+		TestEnd();
+	}
+	
+
+	@Test(alwaysRun=true)
+	@Parameters({ "selenium.machinename"})
+	public void TC_43514(String machineName,Method method) throws IOException 
+	{
+
+		TestStart("Create 'Generic Discovery Credentials' by manually uploading key for 'Private Key'",machineName,method.getName());
+		secretscenarios = new SecretScenarios(obj);
+		for(int i=0;i<secretscenarios.iterationCount.size();i++)
+		{
+
+			secretscenarios.dataRowNo=Integer.parseInt(secretscenarios.iterationCount.get(i).toString());
+			secretscenarios.writeHtmlTestStepReport("<font size=4 style='color:blue'>DataSet:"+(i+1)+"</font><br/>", secretscenarios.currentExecutionMachineName, secretscenarios.currentTestCaseName);
+			secretscenarios.CreateGenericDiscoverySecretwithKeyfileupdate();	
+		}
+		obj.testFailure=secretscenarios.testFailure;
+		TestEnd();
+	}
+	
+	@Test(alwaysRun=true)
+	@Parameters({ "selenium.machinename"})
+	public void TC_43532(String machineName,Method method) throws IOException 
+	{
+
+		TestStart("Create a New Secret  for 'Unix Account (SSH)' by manually uploading 'Private Key'",machineName,method.getName());
+		secretscenarios = new SecretScenarios(obj);
+		for(int i=0;i<secretscenarios.iterationCount.size();i++)
+		{
+
+			secretscenarios.dataRowNo=Integer.parseInt(secretscenarios.iterationCount.get(i).toString());
+			secretscenarios.writeHtmlTestStepReport("<font size=4 style='color:blue'>DataSet:"+(i+1)+"</font><br/>", secretscenarios.currentExecutionMachineName, secretscenarios.currentTestCaseName);
+			secretscenarios.CreateUnixAccount();	
 		}
 		obj.testFailure=secretscenarios.testFailure;
 		TestEnd();
