@@ -27,6 +27,7 @@ public class BasicScenarios extends ApplicationKeywords{
 	public void verifySQLServerLaunch() {
 		try{
 			
+			System.out.println("Testing2");
 			String Secrettemplate = retrieve("Secret Template Type");
 			String SecretName = retrieve("Secret Name");
 			String Server = retrieve("Server");
