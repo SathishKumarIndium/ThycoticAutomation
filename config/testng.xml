@@ -2,7 +2,7 @@
   <test id="1" name="PC">
     <parameter name="selenium.machinename" value="PC"/>
     <parameter name="selenium.host" value="Localhost"/>
-    <parameter name="selenium.port" value="5555"/>
+    <parameter name="selenium.port" value="2222"/>
     <parameter name="selenium.browser" value="Chrome"/>
     <parameter id="1" name="selenium.url" value="http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer"/>
     <parameter id="1" name="selenium.os" value="Windows"/>
@@ -90,9 +90,14 @@
         <exclude name="TC_42559"/>
         <exclude name="TC_42786"/>
         <exclude name="TC_42565"/>
-        <include name="TC_43381"/>
-        <include name="TC_43384"/>
-        <include name="TC_43458"/>
+        <exclude name="TC_43381"/>
+        <exclude name="TC_43380"/>
+        <exclude name="TC_43394"/>
+        <exclude name="TC_43447"/>
+        <exclude name="TC_43462"/>
+        <exclude name="TC_43468"/>
+        <include name="TC_43476"/>
+        <exclude name="TC_43515"/>
       </methods>
     </classes>
   </test>

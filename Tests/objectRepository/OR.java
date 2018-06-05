@@ -97,6 +97,8 @@ public class OR
     public static final String btn_bulk_operation_ok_button = "Ok button in Bulk Option#xpath=//div[@class='ui-dialog-buttonset']/button[text()='OK']";
     public static final String btn_bulk_operation_close_button = "close button #xpath=//div[@class='ui-dialog-buttonset']/button[text()='Close']";
     
+    public static final String btn_Ok = "Ok button#xpath=//button[text()='OK']";
+    
     
     
     //public static final String secret_General_tab = "";
@@ -171,11 +173,12 @@ public class OR
   	public static final String txt_configuration_page_header = "Configuration page header#xpath=//td[@class='dialog_top' and text()='Configuration']";
   	public static final String btn_Configuration_Page_Edit_button = "configuration page edit button#id='EditButton'";
   	public static final String drd_Default_SecretPermissions = "select Default secret permission option#xpath=//span[text()='Default Secret Permissions']/parent::td/following-sibling::td/select";
-  	public static final String btn_Configuration_Page_Save_button = "Configuration page save button#id='SaveButton'";
+  	public static final String btn_Configuration_Page_Save_button = "Configuration page save button#id=SaveButton";
   	public static final String txt_Default_Secret_Permissions  = "Text for Default Secret Permissions in configuration page#xpath=//span[text()='Default Secret Permissions']/parent::td/following-sibling::td/span";
   	public static final String btn_BasicTab = "Basic tab#xpath=//span[@id='BasicLabel' and text()='Basic']";
   	public static final String btn_BasicPage_createNew = "Create New button#xpath=//a[@class='Button']//span[text()='Create New']";
-  	
+  	public static final String btn_saveAndShare = "Save and Share#xpath=//button[text()='Save and Share']";
+	public static final String chk_InheritSecretFolders = "Inherit folders#xpath=//input[@id='EnableInheritPermissionsCheckbox']";
   	// Heartbeat
     public static final String Enable_Heartbeat = "Bulk opertion for Enable Heartbeat#xpath=//select[@id='OperationDropDownList']//option[text()='Enable Heartbeat']";
   	public static final String Disable_Heartbeat = "Bulk opertion for Disable Heartbeat#xpath=//select[@id='OperationDropDownList']//option[text()='Disable Heartbeat']";
@@ -184,7 +187,7 @@ public class OR
   	//logout
     public static final String Logout_Dialogbox        = "Logout Dialog box#id=NewDialogLogout_DialogTable";
     
-    // sathish
+    
 	public static final String drag_src_Welcome = "//li/nobr[text()='Welcome']";
 	public static final String drop_Destination = "//ul[@id='Ul3']";
 	public static final String drag_src_FavoriteSecrets = "//li/nobr[text()='Favorite Secrets']";
@@ -193,5 +196,18 @@ public class OR
 	public static final String btn_SaveAndShare = "Save and Share#xpath=//button[@name='SaveAndShareButton']";
 	public static final String btn_shareButtonInSecretDetails = "Share button in secret details#xpath=//a[@class='Button' and text()='Share']";
 	public static final String btn_advancedTab_dashboard = "Advanced tab in start page#xpath=//span[@id='AdvancedLabel' and text()='Advanced']";
+	public static final String Header_anypage = "Header for any page#xpath=//td[@class='dialog_top']";
+	
+	public static final String lbl_Sharedwith = "Sharewith table#xpath=//span[text()='Shared With']";
+	
+	public static final String lbl_AddGroup_User = "Label Add/Group User#xpath=//span[text()='Add Group/User']";
+	
+	public static final String drp_adminDropdown = "Admin dropdown in Secret share page#xpath=//select[contains(@data-bind,'options')]/option";
+	
+	public static final String drp_AddGroup_User = "Add Group/User dropdown#xpath=//select[@name='GroupUserSelectionControl$AssignGroupDropDownList']";
+	
+	public static final String btn_Admin_Doublelock = "Doublelock in Admin Tab#xpath=//a[text()='DoubleLock']";
+	
+	public static final String lbl_PageHeader_DoubleLocks = "Double locks page header#xpath=//td[text()='DoubleLocks']";
     
 }

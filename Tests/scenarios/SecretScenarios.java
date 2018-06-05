@@ -16,10 +16,10 @@ public class SecretScenarios extends ApplicationKeywords{
 	SecretPage secretpage ;
 	DashboardPage dashboardpage ;
 	UsersPage userspage;
-	
+
 	private Boolean status = false;
 
-	
+
 	public SecretScenarios(BaseClass obj) {
 		// TODO Auto-generated constructor stub
 		super(obj);
@@ -29,13 +29,13 @@ public class SecretScenarios extends ApplicationKeywords{
 
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public void VerifyGenerateButtonWithPasseord() {
-		
+
 		try {
 			loginpage = new LoginPage(obj);
 			secretpage = new SecretPage(obj);
-			
+
 			String url = retrieve("Secret server URL");
 			String Username = retrieve("User Name");
 			String Password = retrieve("Password");
@@ -45,32 +45,32 @@ public class SecretScenarios extends ApplicationKeywords{
 			String TemplateUsername =  retrieve("Directory UserName");
 			String Note =   retrieve("Note") ;
 			String SecretTemplateFields=   retrieve("Secret Fields");
-			
-			
+
+
 			loginpage.LaunchUrl(url, "No");
 			loginpage.Login(Username, Password, "Yes");
 			secretpage.validateGenerateButtonWithPasseords(SecretTempalte,  SecretName, Domain, TemplateUsername, Note, SecretTemplateFields);
-						
+
 			loginpage.Logout();
-			
+
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
 		finally{
 			if (loginpage.testFailure || secretpage.testFailure) {
-				 status = true;
+				status = true;
 			}
 			this.testFailure = status;
 		}
-		
+
 	}
-	
+
 	public void VerifyLockIconWithGeneratePassword() {
 		try {
 			loginpage = new LoginPage(obj);
 			secretpage = new SecretPage(obj);
-			
+
 			String url = retrieve("Secret server URL");
 			String Username = retrieve("User Name");
 			String Password = retrieve("Password");
@@ -80,31 +80,31 @@ public class SecretScenarios extends ApplicationKeywords{
 			String TemplateUsername =  retrieve("Directory UserName");
 			String Note =   retrieve("Note") ;
 			String SecretTemplateFields=   retrieve("Secret Fields");
-			
-			
+
+
 			loginpage.LaunchUrl(url, "No");
 			loginpage.Login(Username, Password, "Yes");
 			secretpage.validateLockIconWithPassword(SecretTempalte,  SecretName, Domain, TemplateUsername, Note, SecretTemplateFields);
-						
+
 			loginpage.Logout();
-			
+
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
 		finally{
 			if (loginpage.testFailure || secretpage.testFailure) {
-				 status = true;
+				status = true;
 			}
 			this.testFailure = status;
 		}
 	}
-	
+
 	public void CreateSecretWindowsAccount() {
 		try {
 			loginpage = new LoginPage(obj);
 			secretpage = new SecretPage(obj);
-			
+
 			String url = retrieve("Secret server URL");
 			String Username = retrieve("User Name");
 			String Password = retrieve("Password");
@@ -118,33 +118,33 @@ public class SecretScenarios extends ApplicationKeywords{
 			String FolderPath = retrieve("Folder Path");
 			String FolderName = retrieve("Folder Name");
 			String DefaultFolder = retrieve("Default Folder");
-			
-			
+
+
 			loginpage.LaunchUrl(url, "No");
 			loginpage.Login(Username, Password, "Yes");
 			secretpage.ValidateCreateWindowsAccount(SecretTempalte,  SecretName, Machine, TemplateUsername, TemplatePassword,
 					Note, FolderPath, FolderName, SecretTemplateFields, DefaultFolder, false);
 			deleteSecretfromdashboard(SecretName);
-						
+
 			loginpage.Logout();
-			
+
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
 		finally{
 			if (loginpage.testFailure || secretpage.testFailure) {
-				 status = true;
+				status = true;
 			}
 			this.testFailure = status;
 		}
 	}
-	
+
 	public void CreateSecretPinAccountInBasiclink() {
 		try {
 			loginpage = new LoginPage(obj);
 			secretpage = new SecretPage(obj);
-			
+
 			String url = retrieve("Secret server URL");
 			String Username = retrieve("User Name");
 			String Password = retrieve("Password");
@@ -156,29 +156,29 @@ public class SecretScenarios extends ApplicationKeywords{
 			String FolderPath = retrieve("Folder Path");
 			String FolderName = retrieve("Folder Name");
 			String DefaultFolder = retrieve("Default Folder");
-			
-			
+
+
 			loginpage.LaunchUrl(url, "No");
 			loginpage.Login(Username, Password, "Yes");
 			secretpage.ValidatecreatePinaccountInBasiclink(SecretTempalte,  SecretName, Machine,
 					Note, FolderPath, FolderName, SecretTemplateFields, DefaultFolder, true);
 			deleteSecretfromdashboard(SecretName);
-						
+
 			loginpage.Logout();
-			
+
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
 		finally{
 			if (loginpage.testFailure || secretpage.testFailure) {
-				 status = true;
+				status = true;
 			}
 			this.testFailure = status;
 		}
 	}
-	
-	
+
+
 	public void ValidateConvertionSecretFromActiveDirectoryToWindow() {
 		try {
 			String Secrettemplate = retrieve("Secret Template Type");
@@ -191,48 +191,48 @@ public class SecretScenarios extends ApplicationKeywords{
 			String FolderName = retrieve("Folder Name");
 			String InhertPolicy =  retrieve("Inherit Secret Policy");
 			String SecretPolicy = retrieve("Secret Policy");
-        	String AutoChange = retrieve("AutoChange");
-        	
-        	String Convertion_Secret = retrieve("Convertion Secret Template");
-        	String PreSecretFields  = retrieve("Pre Secret Fields");
-        	String PresentSecretFields = retrieve("Present Secret Fields");
-        	String InvalidSecretFields = retrieve("Invalid Select option");
-        	String ValidSecretFields = retrieve("valid Select option");
-        	String DataValues = retrieve("Convert Data Value");
-        	String ExpectedMessage = retrieve("ExpectedMessage");
-			
+			String AutoChange = retrieve("AutoChange");
+
+			String Convertion_Secret = retrieve("Convertion Secret Template");
+			String PreSecretFields  = retrieve("Pre Secret Fields");
+			String PresentSecretFields = retrieve("Present Secret Fields");
+			String InvalidSecretFields = retrieve("Invalid Select option");
+			String ValidSecretFields = retrieve("valid Select option");
+			String DataValues = retrieve("Convert Data Value");
+			String ExpectedMessage = retrieve("ExpectedMessage");
+
 			loginpage = new LoginPage(obj);
 			secretpage = new SecretPage(obj);
 			dashboardpage = new DashboardPage(obj);
-			
+
 			loginpage.LaunchUrl(retrieve("Secret server URL"), "No");
 			loginpage.Login(retrieve("User Name"), retrieve("Password"), "No");
 			CreateSqlSecretTemplate(Secrettemplate, SecretName, Machine, MachineUserName, MachinePassword,  
 					Note, FolderPath, FolderName, InhertPolicy, SecretPolicy, AutoChange);
 			dashboardpage.validateSecretispresent(SecretName,FolderName, true);
 			loginpage.Logout();
-			
+
 			loginpage.LaunchUrl(retrieve("Secret server URL"), "No");
 			loginpage.Login(retrieve("User Name"), retrieve("Password"), "yes");
 			secretpage.ValidateConvertActiveDirectorytoWindows(Convertion_Secret, Secrettemplate, SecretName, PreSecretFields,
 					PresentSecretFields, InvalidSecretFields, ValidSecretFields, DataValues, ExpectedMessage);
 
 			deleteSecretfromdashboard(SecretName);
-						
+
 			loginpage.Logout();
-			
+
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
 		finally{
 			if (loginpage.testFailure || secretpage.testFailure) {
-				 status = true;
+				status = true;
 			}
 			this.testFailure = status;
 		}
 	}
-	
+
 	public void ableToDeleteSecret()
 	{
 		try {
@@ -267,7 +267,6 @@ public class SecretScenarios extends ApplicationKeywords{
 			CreatePinSecretTemplate(SecretTempalte, SecretName, PIN, Notes, folderName, folderPath);
 			dashboardpage.validateSecretispresent(SecretName, folderName, true);
 			secretpage.deleteSecret(createSec_elements, SecretName, Tabs, AlertMessage, folderName);
-			deleteSecretfromdashboard(SecretName);
 			loginpage.Logout();
 
 
@@ -282,7 +281,7 @@ public class SecretScenarios extends ApplicationKeywords{
 			this.testFailure = status;
 		}
 	}
-	
+
 	public void PerformingSecretActionswithActiveDirectory()
 	{
 		try {
@@ -324,15 +323,15 @@ public class SecretScenarios extends ApplicationKeywords{
 		}
 
 	}
-	
+
 	public void sqlServerAccountValidation()
 	{
 		try {
-			
+
 			loginpage = new LoginPage(obj);
 			secretpage = new SecretPage(obj);
 			dashboardpage= new DashboardPage(obj);
-			
+
 			String url = retrieve("Secret server URL");
 			String Username = retrieve("User Name");
 			String Password = retrieve("Password");
@@ -347,7 +346,7 @@ public class SecretScenarios extends ApplicationKeywords{
 			String AutoChange = retrieve("Auto Change");
 			String Inherit = retrieve("Inherit");
 			String sqlpageElements = retrieve("SQL Page Elements");
-			
+
 			loginpage.LaunchUrl(url, "No");
 			loginpage.Login(Username, Password, "No");
 			enableDisableDistributedEngine(DistributedEngineStatus, true);
@@ -369,36 +368,36 @@ public class SecretScenarios extends ApplicationKeywords{
 			this.testFailure = status;
 		}
 	}
-	
+
 	public void pinTemplateValidation()
 	{
 		try {
 			loginpage = new LoginPage(obj);
 			secretpage = new SecretPage(obj);
 			dashboardpage= new DashboardPage(obj);
-			
+
 			String url = retrieve("Secret server URL");
 			String Username = retrieve("User Name");
 			String Password = retrieve("Password");
 			String SecretItem = retrieve("Secret Template Type");
 			String SecretName= retrieve("Secret Name");
-			
+
 			String Notes = retrieve("Note");
 			String folderPath = retrieve("Folder Path");
 			String folderName = retrieve("Folder Name");
-			
-			
+
+
 			String PIN = retrieve("PIN");
 			String pinPageElements = retrieve("Pin Page Elements");
 			String Admindrp = retrieve("Admin drop down Elements");
 			String usersdrp = retrieve("User drop down Elements");
-			
+
 			loginpage.LaunchUrl(url, "No");
 			loginpage.Login(Username, Password, "Yes");
 			secretpage.addSharePinSecretValidation(SecretItem, SecretName, PIN, Notes, folderPath, folderName, pinPageElements, Admindrp, usersdrp);
 			deleteSecretfromdashboard(SecretName);
 			loginpage.Logout();
-			
+
 		}catch(Exception e)
 		{
 			System.out.println("Exception in ableToDeleteSecret");
@@ -410,8 +409,8 @@ public class SecretScenarios extends ApplicationKeywords{
 			this.testFailure = status;
 		}
 	}
-	
-	
+
+
 	public void PinSecretDetailsValidation()
 	{
 		try {
@@ -419,13 +418,13 @@ public class SecretScenarios extends ApplicationKeywords{
 			secretpage = new SecretPage(obj);
 			dashboardpage= new DashboardPage(obj);
 			userspage = new UsersPage(obj);
-			
+
 			String url = retrieve("Secret server URL");
 			String Username = retrieve("User Name");
 			String Password = retrieve("Password");
 			String SecretItem = retrieve("Secret Template Type");
 			String SecretName= retrieve("Secret Name");
-			
+
 			String Notes = retrieve("Note");
 			String folderPath = retrieve("Folder Path");
 			String folderName = retrieve("Folder Name");
@@ -437,13 +436,13 @@ public class SecretScenarios extends ApplicationKeywords{
 			String PinsSecretElements = retrieve("Pin Secret Elements");
 			String Admindrp = retrieve("Admin drop down Elements");
 			String usersdrp = retrieve("User drop down Elements");
-			
+
 			String PIN = retrieve("PIN");
-			
+
 			loginpage.LaunchUrl(url, "No");
 			loginpage.Login(Username, Password, "NO");
 			userspage.createNewUsers(Usersname, Usersname, EmailAddress, Password, Password, TwoFactory, EnabledUser, LockedOut);
-			
+
 			CreatePinSecretTemplate(SecretItem, SecretName, PIN, Notes, folderName, folderPath);	
 			dashboardpage.validateSecretispresent(SecretName, folderName, true);
 			loginpage.Logout();
@@ -452,22 +451,165 @@ public class SecretScenarios extends ApplicationKeywords{
 			secretpage.ValidatingPinSecretDetails(SecretName, SecretItem, PinsSecretElements, Admindrp, usersdrp, Usersname);
 			loginpage.Logout();
 			loginpage.LaunchUrl(url, "No");
-			loginpage.Login(Usersname, Password, "No");
+			loginpage.Login(Usersname, Password, "Yes");
 			isPasswordPagePresent(Password);
-			dashboardpage.validateSecretispresent(SecretName, folderName, true);
+			dashboardpage.validateSecretispresent(SecretName, "< All Folders >", true);
 			deleteSecretfromdashboard(SecretName);
 			loginpage.Logout();
-			
+
 		}catch(Exception e)
 		{
 			System.out.println("Exception in ableToDeleteSecret");
 			e.printStackTrace();
 		}finally{
-			if (loginpage.testFailure || secretpage.testFailure || dashboardpage.testFailure) {
+			if (loginpage.testFailure || secretpage.testFailure || dashboardpage.testFailure || userspage.testFailure) {
 				status = true;
 			}
 			this.testFailure = status;
 		}
 	}
-		
+
+	public void createCustomSecretTemplate()
+	{
+		try {
+
+			loginpage = new LoginPage(obj);
+			secretpage = new SecretPage(obj);
+
+			String url = retrieve("Secret server URL");
+			String Username = retrieve("User Name");
+			String Password = retrieve("Password");
+			String newSecretTemp = retrieve("New Secret Temp");
+			String Field = retrieve("Field");
+
+			loginpage.LaunchUrl(url, "No");
+			loginpage.Login(Username, Password, "Yes");
+			secretpage.ValidateCreateCustomSecretTemplate(newSecretTemp, Field);
+			loginpage.Logout();
+
+
+		}catch(Exception e)
+		{
+			System.out.println("Exception in ableToDeleteSecret");
+			e.printStackTrace();
+		}finally{
+			if (loginpage.testFailure || secretpage.testFailure) {
+				status = true;
+			}
+			this.testFailure = status;
+		}
+	}
+
+	public void saveAndShareUsingActiveDirectory()
+	{
+		try
+		{
+
+
+			loginpage = new LoginPage(obj);
+			secretpage = new SecretPage(obj);
+
+
+
+			String url = retrieve("Secret server URL");
+			String Username = retrieve("User Name");
+			String Password = retrieve("Password");
+
+			String SecretItem = retrieve("Secret Template Type");
+			String SecretName= retrieve("Secret Name");
+			String Domain = retrieve("Domain");
+			String Notes = retrieve("Note");
+			String folderPath = retrieve("Folder Path");
+			String folderName = retrieve("Folder Name");
+			String Secret_Policy = retrieve("Secret Policy");
+			String AutoChange = retrieve("Auto Change");
+			String Inherit = retrieve("Inherit");
+			String ADpageElements = retrieve("AD page Elements");
+			String Addgrp_userDrpdown = retrieve("Add/Group User Dropdown");
+			String Admindrp = retrieve("Admin Drop Down Elements");
+			String Usersname = retrieve("Users Name");
+			String AdminPermission = retrieve("Admin Permission");
+			String UserPermission = retrieve("User Permission");
+
+			loginpage.LaunchUrl(url, "No");
+			loginpage.Login(Username, Password, "Yes");
+			secretpage.validationAddShareWithAD(AdminPermission, UserPermission, Addgrp_userDrpdown, Usersname, Admindrp, SecretItem, ADpageElements, SecretName, Domain, Username, Password, Notes, folderPath, folderName, Inherit, Secret_Policy, AutoChange);
+
+			loginpage.Logout();
+
+
+		}catch(Exception e)
+		{
+			System.out.println("Exception in ableToDeleteSecret");
+			e.printStackTrace();
+		}finally{
+			if (loginpage.testFailure || secretpage.testFailure) {
+				status = true;
+			}
+			this.testFailure = status;
+		}
+	}
+
+	public void DoubleLockWithWindows()
+	{
+		try
+		{
+			loginpage = new LoginPage(obj);
+			secretpage = new SecretPage(obj);
+
+
+
+			String url = retrieve("Secret server URL");
+			String Username = retrieve("User Name");
+			String Password = retrieve("Password");
+
+			String SecretItem = retrieve("Secret Template Type");
+			String SecretName= retrieve("Secret Name");
+			String Machine = retrieve("Domain");
+			String Notes = retrieve("Note");
+			String folderPath = retrieve("Folder Path");
+			String folderName = retrieve("Folder Name");
+			String Secret_Policy = retrieve("Secret Policy");
+			String AutoChange = retrieve("Auto Change");
+			String Inherit = retrieve("Inherit");
+			String DoubleLockName = retrieve("");
+
+
+			loginpage.LaunchUrl(url, "No");
+			loginpage.Login(Username, Password, "No");
+			CreateSqlSecretTemplate(SecretItem, SecretName, Machine, Username, Password, Notes, folderPath, folderName, Inherit, Secret_Policy, AutoChange);
+			createDoubleLock(DoubleLockName, Password);
+			loginpage.Logout();
+
+			loginpage.LaunchUrl(url, "No");
+			loginpage.Login(Username, Password, "Yes");
+
+
+		}catch(Exception e)
+		{
+			System.out.println("Exception in ableToDeleteSecret");
+			e.printStackTrace();
+		}finally{
+			if (loginpage.testFailure || secretpage.testFailure) {
+				status = true;
+			}
+			this.testFailure = status;
+		}
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

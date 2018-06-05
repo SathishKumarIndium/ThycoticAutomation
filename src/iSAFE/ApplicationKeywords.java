@@ -13,25 +13,9 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.XPath;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.server.handler.SwitchToWindow;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.css.ElementCSSInlineStyle;
-import org.xml.sax.SAXException;
-
-import com.google.common.util.concurrent.UncheckedExecutionException;
-
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -41,11 +25,10 @@ import AutomationFramework.GenericKeywords;
 import Utilities.Mailing;
 import Utilities.ZipReportFile;
 import baseClass.BaseClass;
-import net.sourceforge.htmlunit.corejs.javascript.ast.SwitchCase;
 import objectRepository.OR;
 public class ApplicationKeywords extends APIKeywords
 {
-    public static String password;
+	public static String password;
 	public ApplicationKeywords(BaseClass obj) {
 		// TODO Auto-generated constructor stub
 		super(obj);
@@ -54,7 +37,7 @@ public class ApplicationKeywords extends APIKeywords
 	{
 
 	}
-	
+
 	public static void sendMail()
 	{
 		if(GenericKeywords.getConfigProperty("SendMail(Yes/No)").equalsIgnoreCase("Yes"))
@@ -63,7 +46,7 @@ public class ApplicationKeywords extends APIKeywords
 			Mailing.sendAttachmentMail(GenericKeywords.timeStamp+".zip");
 		}
 	}
-	
+
 	public boolean validateWebElements(String Xpath, String fields) {
 		boolean elem_Status = false;
 		try {
@@ -76,8 +59,8 @@ public class ApplicationKeywords extends APIKeywords
 					if (elementvalue.equalsIgnoreCase(uservalue)) {
 						status = true;
 						elem_Status = true;
-					    testStepPassed("'"+uservalue+"' Field is present");
-					    break;
+						testStepPassed("'"+uservalue+"' Field is present");
+						break;
 					}
 				}
 				if(!status) {
@@ -86,30 +69,30 @@ public class ApplicationKeywords extends APIKeywords
 					break;
 				}
 			}
-			
+
 		}
 		catch(Exception e) {
 			elem_Status = false;
 			e.printStackTrace();
 			System.out.println(e);
 		}
-		
+
 		return elem_Status;
 	}
-	
+
 	public void isPasswordPagePresent(String CurrentPassword)
 	{
-		
+
 		if (elementPresent("change password title#xpath=//table[@id='AdministrationDialog_DialogTable']//td[@class='dialog_top']")) {
 			typeIn("change password field#id=ChangePasswordUserControl_CurrentPasswordTextBox", CurrentPassword);
 			typeIn("new password#id=ChangePasswordUserControl_NewPasswordTextBox", "test@1234");
 			typeIn("confirm password#id=ChangePasswordUserControl_ConfirmTextBox", "test@1234");
 			clickOn("Save button#id=ChangePasswordUserControl_SaveButton");
-			
+
 			if(elementPresent("welcome page#xpath=//span[text()='Welcome to Secret Server']")) {
 				clickOn("close#xpath=//button[@title='Close']");
 			}
-			
+
 			waitTime(3);
 			clickOn(OR.btn_Profile_Icon);
 			clickOn("Change password link#xpath=//ul[@class='linkList']//a[text()='Change Password']");
@@ -121,58 +104,58 @@ public class ApplicationKeywords extends APIKeywords
 			}
 		}
 	}
-	
+
 	public void enableDisableDistributedEngine(String DistributedEngineStatus, boolean vsts)
 	{
 		try
 		{
-		mouseOver("Admin#xpath=//a[@id='headerControl_Navigation1_AdministrationLink' and text()='Admin']");
-		clickOn(OR.btn_Admin_DistributedEngine);
+			mouseOver("Admin#xpath=//a[@id='headerControl_Navigation1_AdministrationLink' and text()='Admin']");
+			clickOn(OR.btn_Admin_DistributedEngine);
 
-		String webDE_Status = getText("Distributed Engine status#xpath=//span[@id='EnableDistributedEngineFieldLabel']/../following-sibling::td/span");
-		
-		if(webDE_Status.equals(DistributedEngineStatus))
-		{
-			testStepInfo("Distributed engine status change to"+DistributedEngineStatus+"");
-			clickOn(OR.btn_home_icon);
-			if(vsts==true);
-			vstsTestStepPassed("Distributed Engine status passed", false);
-		}
-		else
-		{
-			clickOn(OR.btn_Configuration_Page_Edit_button);
-			if(DistributedEngineStatus.equalsIgnoreCase("Yes"))
+			String webDE_Status = getText("Distributed Engine status#xpath=//span[@id='EnableDistributedEngineFieldLabel']/../following-sibling::td/span");
+
+			if(webDE_Status.equals(DistributedEngineStatus))
 			{
-				selectCheckBox("Distributed Engine#xpath=//span[@class='CheckBox']/input[@id='EnableDistributedEngineCheckBox']");
+				testStepInfo("Distributed engine status change to"+DistributedEngineStatus+"");
+				clickOn(OR.btn_home_icon);
 				if(vsts==true);
 				vstsTestStepPassed("Distributed Engine status passed", false);
 			}
-			else if(DistributedEngineStatus.equalsIgnoreCase("No"))
+			else
 			{
-				unSelectCheckBox("Distributed Engine#xpath=//span[@class='CheckBox']/input[@id='EnableDistributedEngineCheckBox']");
-				if(vsts==true);
-				vstsTestStepPassed("Distributed Engine status passed", false);
+				clickOn(OR.btn_Configuration_Page_Edit_button);
+				if(DistributedEngineStatus.equalsIgnoreCase("Yes"))
+				{
+					selectCheckBox("Distributed Engine#xpath=//span[@class='CheckBox']/input[@id='EnableDistributedEngineCheckBox']");
+					if(vsts==true);
+					vstsTestStepPassed("Distributed Engine status passed", false);
+				}
+				else if(DistributedEngineStatus.equalsIgnoreCase("No"))
+				{
+					unSelectCheckBox("Distributed Engine#xpath=//span[@class='CheckBox']/input[@id='EnableDistributedEngineCheckBox']");
+					if(vsts==true);
+					vstsTestStepPassed("Distributed Engine status passed", false);
+				}
+
+				clickOn(OR.btn_Configuration_Page_Save_button);
 			}
-			
-			clickOn(OR.btn_Configuration_Page_Save_button);
-		}
 		}catch(Exception ex)
 		{
 			if(vsts==true);
 			vstsTestStepFailed("Distributed Engine status failed", true);
-			
+
 			System.out.println("Exception in enableDisableDistributedEngine "+ex);
 			ex.printStackTrace();
 		}
 
 	}
-	
-	
+
+
 	public void validateElementSisDisplayed(String xpath) {
-		
+
 	}
-	
-	
+
+
 	public void validateElementType (String xpath,String Type) {
 		String attributetype = getAttributeValue(xpath, "type");
 		if (attributetype.equals(Type)) {
@@ -182,7 +165,7 @@ public class ApplicationKeywords extends APIKeywords
 			testStepFailed("Element Type is Not Same");
 		}
 	}
-	
+
 	public void validateDashboardPageDisplayed() {
 		waitTime(3);
 		if (elementPresent("Browser Button in DashBoard#xpath=//td[text()='Browse']")) {
@@ -194,8 +177,8 @@ public class ApplicationKeywords extends APIKeywords
 			vstsTestStepFailed("Failed to Login SecretServer", true);
 		}
 	}
-	
-	
+
+
 	public void dragAndDrop(String sourceLocator, String destinationLocator)
 	{
 		try {
@@ -214,14 +197,14 @@ public class ApplicationKeywords extends APIKeywords
 			ex.printStackTrace();
 		}
 	}
-	
-	
+
+
 	public void dragAndDropDashboard(String sourceLocator, String destinationLocator)
 	{
 		try {
 			if(elementDisplayed("//div[@class='ToolBoxContainer']", "ContentBox"))
 			{
-				
+
 				waitTime(2);
 				WebElement source = driver.findElement(By.xpath(sourceLocator));
 				WebElement destination = driver.findElement(By.xpath(destinationLocator));
@@ -247,8 +230,34 @@ public class ApplicationKeywords extends APIKeywords
 			ex.printStackTrace();
 		}
 	}
-	
-	
+
+	public void DradDrop(String Widget,String sourceLocator,String destinationLocator)
+	{
+		try {
+			if(elementPresent("Wiget Name#xpath=//h2[text()='"+Widget+"']"))
+			{
+				testStepInfo("Widget already present");
+			}
+			else
+			{
+				clickOn(OR.btn_content);
+				waitTime(2);
+				WebElement source = driver.findElement(By.xpath(sourceLocator));
+				WebElement destination = driver.findElement(By.xpath(destinationLocator));
+				Actions act=new Actions(driver);
+				Action dragAndDrop = act.clickAndHold(source).moveToElement(destination).release(destination).build();
+				dragAndDrop.perform();
+				clickOn(OR.btn_content);
+			}
+
+		}catch(Exception ex)
+		{
+			System.out.println("Exception in DradDrop "+ ex);
+			ex.printStackTrace();
+		}
+	}
+
+
 	public boolean elementDisplayed(String locator, String Elementname)
 	{
 
@@ -262,7 +271,7 @@ public class ApplicationKeywords extends APIKeywords
 				testStepInfo(Elementname+" is Displayed in the page");
 				flag = true;
 			}
-			
+
 
 		}
 		catch(Exception ex)
@@ -274,30 +283,30 @@ public class ApplicationKeywords extends APIKeywords
 		return flag;
 
 	}
-//	public void checkSecretWidgetIspresent(String ContentIcon) {
-//		try {
-//			if (elementPresent(ContentIcon+" is pesent in  dashboard#xpath=//h2[text()='"+ContentIcon+"']")) {
-//				testStepPassed(ContentIcon+" is present in dashboared");
-//				//vstsTestStepPassed(ContentIcon+" is present in dashboared", false);
-//			}
-//			else {
-//				clickOn(OR.btn_content);
-//				dragAndDrop("//li/nobr[text()='"+ContentIcon+"']", "//ul[@id='Ul3']");
-//				if (elementPresent(ContentIcon+" is pesent in dashboard#xpath=//h2[text()='"+ContentIcon+"']")) {
-//					testStepPassed(ContentIcon+" is present in DashBoared page");
-//					//vstsTestStepPassed(ContentIcon+" is present in DashBoared page", false);
-//				}
-//				else {
-//					testStepFailed(ContentIcon+" is not present in DashBoared page");
-//					//vstsTestStepFailed(ContentIcon+" is not present in DashBoared page", false);
-//				}
-//			}
-//		}
-//		catch(Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
-	
+	//	public void checkSecretWidgetIspresent(String ContentIcon) {
+	//		try {
+	//			if (elementPresent(ContentIcon+" is pesent in  dashboard#xpath=//h2[text()='"+ContentIcon+"']")) {
+	//				testStepPassed(ContentIcon+" is present in dashboared");
+	//				//vstsTestStepPassed(ContentIcon+" is present in dashboared", false);
+	//			}
+	//			else {
+	//				clickOn(OR.btn_content);
+	//				dragAndDrop("//li/nobr[text()='"+ContentIcon+"']", "//ul[@id='Ul3']");
+	//				if (elementPresent(ContentIcon+" is pesent in dashboard#xpath=//h2[text()='"+ContentIcon+"']")) {
+	//					testStepPassed(ContentIcon+" is present in DashBoared page");
+	//					//vstsTestStepPassed(ContentIcon+" is present in DashBoared page", false);
+	//				}
+	//				else {
+	//					testStepFailed(ContentIcon+" is not present in DashBoared page");
+	//					//vstsTestStepFailed(ContentIcon+" is not present in DashBoared page", false);
+	//				}
+	//			}
+	//		}
+	//		catch(Exception e) {
+	//			e.printStackTrace();
+	//		}
+	//	}
+
 	public void validateDashboard()
 	{
 		try {
@@ -314,10 +323,10 @@ public class ApplicationKeywords extends APIKeywords
 			ex.printStackTrace();
 		}
 	}
-	
-	
 
-	
+
+
+
 	public void clickHereToLoginLink() {
 		try {
 			if(isElementDisplayed(GOR.txt_Logout_page)) {
@@ -334,12 +343,12 @@ public class ApplicationKeywords extends APIKeywords
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void CreateBankAccountSecretTemplate(String SecretItem, String SecretName, String AccountNumber, String RoutingNumber,
 			String BankName, String AddressOne, String SecondAddress, String thirdAddress, String ContactPerson, String ContactPhone,
 			String Notes, String folderPath, String folderName) {
-	
-		
+
+
 		try {
 			openSecreteTemplatePage(SecretItem);
 
@@ -353,8 +362,8 @@ public class ApplicationKeywords extends APIKeywords
 			typeIn("Contact Person#id=SecretItemDisplay_SecretItemsRepeater_ctl06_ItemValueTextBox", ContactPerson);
 			typeIn("Contact Phone#id=SecretItemDisplay_SecretItemsRepeater_ctl07_ItemValueTextBox", ContactPhone);
 			typeIn("Notes#id=SecretItemDisplay_SecretItemsRepeater_ctl08_ItemValueTextBox", Notes);
-			
-			
+
+
 			if (elementPresent("clear folder#id=SecretFolderPicker_ClearFolderLink")) {
 				clickOn("clear folder#id=SecretFolderPicker_ClearFolderLink");
 			}
@@ -364,7 +373,7 @@ public class ApplicationKeywords extends APIKeywords
 				typeIn("search box for folder path#xpath=//span[text()='Folder Search']/following-sibling::input", folderName);
 				clickOn("click on folder#xpath=//div[text()='"+folderPath+"']");
 			}
-			
+
 			clickOn("SecretTemplate Save button#id=SaveEditButton");
 			if (elementPresent("secret Template name#xpath=//span[text()='Secret Name']/parent::td/following-sibling::td//span")) {
 				String SecretnameGUI =  getText("secret Template name#xpath=//span[text()='Secret Name']/parent::td/following-sibling::td//span");
@@ -375,21 +384,21 @@ public class ApplicationKeywords extends APIKeywords
 					testStepFailed("Secret Name is different : "+SecretName);
 				}
 			}
-			
+
 			else {
 				testStepFailed("Creted Secrete Template is not present");
 			}
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	public void CreateCiscoAcountSecretTemplate(String SecretItem, String SecretName, String Host, String Username,
 			String Password, String Notes, String folderPath, String folderName, String Inherit_Secret_Policy, String Secret_Policy, String AutoChange) {
-	
-		
+
+
 		try {
 			openSecreteTemplatePage(SecretItem);
 
@@ -407,8 +416,8 @@ public class ApplicationKeywords extends APIKeywords
 				typeIn("search box for folder path#xpath=//span[text()='Folder Search']/following-sibling::input", folderName);
 				clickOn("click on folder#xpath=//div[text()='"+folderPath+"']");
 			}
-			
-			
+
+
 			if (Inherit_Secret_Policy.equals("Yes")) {
 				selectCheckBox(OR.chk_Cissco_SSh_Inherit_secret_policy);
 			}
@@ -416,13 +425,13 @@ public class ApplicationKeywords extends APIKeywords
 				unSelectCheckBox(OR.chk_Cissco_SSh_Inherit_secret_policy);
 				selectFromDropdown( "Secret policy in SSh Account#id=SecretPolicyDropDownList", Secret_Policy);
 			}
-			
+
 			if (AutoChange.equals("Yes")) {
 				selectCheckBox(OR.chk_Cissco_SSh_AutoChange);
 			}
-			
-			
-			
+
+
+
 			clickOn("SecretTemplate Save button#id=SaveEditButton");
 			if (elementPresent("secret Template name#xpath=//span[text()='Secret Name']/parent::td/following-sibling::td//span")) {
 				String SecretnameGUI =  getText("secret Template name#xpath=//span[text()='Secret Name']/parent::td/following-sibling::td//span");
@@ -431,22 +440,22 @@ public class ApplicationKeywords extends APIKeywords
 				}
 				else {
 					testStepFailed("Secret Name is different : "+SecretName);
-				    }
+				}
 			}
 			else {
 				testStepFailed("Secrete Template is not created");
 			}
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	public void CreateSqlSecretTemplate(String SecretItem, String SecretName, String Server, String Username,
 			String Password, String Notes, String folderPath, String folderName, String Inherit_Secret_Policy, String Secret_Policy, String AutoChange) {
-	
-		
+
+
 		try {
 			openSecreteTemplatePage(SecretItem);
 
@@ -464,8 +473,8 @@ public class ApplicationKeywords extends APIKeywords
 				typeIn("search box for folder path#xpath=//span[text()='Folder Search']/following-sibling::input", folderName);
 				clickOn("click on folder#xpath=//div[text()='"+folderPath+"']");
 			}
-			
-			
+
+
 			if (Inherit_Secret_Policy.equals("Yes")) {
 				selectCheckBox(OR.chk_Cissco_SSh_Inherit_secret_policy);
 			}
@@ -473,13 +482,13 @@ public class ApplicationKeywords extends APIKeywords
 				unSelectCheckBox(OR.chk_Cissco_SSh_Inherit_secret_policy);
 				selectFromDropdown( "Secret policy in SSh Account#id=SecretPolicyDropDownList", Secret_Policy);
 			}
-			
+
 			if (AutoChange.equals("Yes")) {
 				selectCheckBox(OR.chk_Cissco_SSh_AutoChange);
 			}
-			
-			
-			
+
+
+
 			clickOn("SecretTemplate Save button#id=SaveEditButton");
 			if (elementPresent("secret Template name#xpath=//span[text()='Secret Name']/parent::td/following-sibling::td//span")) {
 				String SecretnameGUI =  getText("secret Template name#xpath=//span[text()='Secret Name']/parent::td/following-sibling::td//span");
@@ -488,23 +497,23 @@ public class ApplicationKeywords extends APIKeywords
 				}
 				else {
 					testStepFailed("Secret Name is different : "+SecretName);
-				    }
+				}
 			}
 			else {
 				testStepFailed("Secrete Template is not created");
 			}
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
 		}
 
 	}
-	
-	
+
+
 	public void CreateWindowAccountSecretTemplateWithListPermision(String SecretItem, String SecretName, String Server, String Username,
 			String Password, String Notes, String folderPath, String folderName, String Inherit_Secret_Policy, String Secret_Policy, String AutoChange) {
-	
-		
+
+
 		try {
 			openSecreteTemplatePage(SecretItem);
 
@@ -522,8 +531,8 @@ public class ApplicationKeywords extends APIKeywords
 				typeIn("search box for folder path#xpath=//span[text()='Folder Search']/following-sibling::input", folderName);
 				clickOn("click on folder#xpath=//div[text()='"+folderPath+"']");
 			}
-			
-			
+
+
 			if (Inherit_Secret_Policy.equals("Yes")) {
 				selectCheckBox(OR.chk_Cissco_SSh_Inherit_secret_policy);
 			}
@@ -531,13 +540,13 @@ public class ApplicationKeywords extends APIKeywords
 				unSelectCheckBox(OR.chk_Cissco_SSh_Inherit_secret_policy);
 				selectFromDropdown( "Secret policy in SSh Account#id=SecretPolicyDropDownList", Secret_Policy);
 			}
-			
+
 			if (AutoChange.equals("Yes")) {
 				selectCheckBox(OR.chk_Cissco_SSh_AutoChange);
 			}
-			
-			
-			
+
+
+
 			clickOn("SecretTemplate Save button#id=SaveEditButton");
 			if (elementPresent("secret Template name#xpath=//td[@class='dialog_top' and contains(text(),'Access')]")) {
 				String SecretnameGUI =  getText("No Access Error Message#id=NoAccessMessageLabel");
@@ -549,17 +558,55 @@ public class ApplicationKeywords extends APIKeywords
 				testStepFailed("Secrete Template is not created");
 			}
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
 		}
 
 	}
+
+
+	public boolean clickonSecret(String SecretName, String Validatedetails,String Fields,String ValidateButtons,String Buttons)
+	{
+		boolean status = false;
 	
-	
-	
-	
-	public void openSecreteTemplatePage(String SecretTemplateItem) {
+		try {
+		clickOn("Clickon Secret#xpath=//td[@role='gridcell' and text()='"+SecretName+"']");
 		
+		
+		if(Validatedetails.equalsIgnoreCase("Yes"))
+		{
+			validateAllElementisDisplay("Details#xpath=//table[@class='InlineSecretViewTable']//td/label", Fields);
+			status=true;
+		}
+		else
+		{
+			testStepInfo("Details validation not checked");
+			status=true;
+		}
+		
+		if(ValidateButtons.equalsIgnoreCase("Yes"))
+		{
+			validateAllElementisDisplay("Validating buttons#xpath=//table[@class='InlineSecretViewTable']/following-sibling::table//td/a", Buttons);
+			status=true;
+		}
+		else
+		{
+			testStepInfo("Button validation not checked");
+			status=true;
+		}
+		}
+		catch(Exception ex)
+		
+		{
+			status=false;
+			ex.printStackTrace();
+		}
+		return status;
+		
+	}
+
+	public void openSecreteTemplatePage(String SecretTemplateItem) {
+
 		try {
 			if(!elementPresent(OR.lbl_Browse))
 			{
@@ -579,10 +626,10 @@ public class ApplicationKeywords extends APIKeywords
 					testStepFailed("Create Secret is not present in DashBoared page");
 				}
 				clickOn(OR.btn_content);
-				
+
 				selectFromDropdown("select a create secret#xpath=//select[contains(@id,'CreateSecretWidget')]", SecretTemplateItem);
 			}
-			
+
 			if (isElementDisplayed("Create Secret Page#id=SecretTypeLabel")) {
 				testStepPassed("Secret Template page is displayed");
 			}
@@ -590,23 +637,23 @@ public class ApplicationKeywords extends APIKeywords
 				testStepFailed("Secret Template page is not displayed");
 			}
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
-	
+
+
+
+
 	public void switchTofolders(String foldername) {
 		try {
-			
+
 			if(!elementPresent(OR.lbl_Browse))
 			{
 				clickOn(OR.btn_home_icon);
 				clickOn(OR.btn_AdbancedTab);
 			}
-			
+
 			if (foldername.equals("Admin") || foldername.equals("Admin_ss")) {
 				clickOn(OR.btn_Personal_Folders_DashBoard);
 				//clickOn(OR.btn_Admin_Folder_DashBoard);
@@ -620,15 +667,15 @@ public class ApplicationKeywords extends APIKeywords
 			e.printStackTrace();
 		}
 	}
-	
+
 
 	public boolean ValidateBulkOperationOkPage(String BulkOpertion, boolean Inherit) {
 		boolean messageStatus = false;
 		boolean Status = false;
-		
+
 		try {
 			int ButtonValue = validateElementisDisplay("Ok and cancel button in Bulkopertion#xpath=//div[@class='ui-dialog-buttonset']/button", "OK##Cancel");
-   
+
 			int Inheritfields = 0;
 			if (Inherit) {
 				Inheritfields = validateElementisDisplay("Inherit secret Policy#xpath=//span","Inherit Secret Policy");
@@ -647,7 +694,7 @@ public class ApplicationKeywords extends APIKeywords
 							+ " Expected[' Are you sure you want to perform this action on the selected Secrets? ']");
 				}
 			}
-			
+
 			if (Inherit && ButtonValue == 2 && Inheritfields == 2) {
 				testStepPassed("Inherit fields  and ok,cancel button are present");
 				Status = true;
@@ -664,37 +711,37 @@ public class ApplicationKeywords extends APIKeywords
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-	
+
+
 		return Status;
 	}
-	
+
 	public boolean ValidateBulkOperationComplatePage(String SecretName, String BulkOperation, String BulkErrorMessageXpath, String BulkOperationErrorMsg) {
-		 
-		    boolean Status = false;
-			waitForElementToDisplay("text for Bulk operation completed#xpath=//div[@id='CompleteMessage']", 10);
-			
-			int CompleteMsg = validateElementisDisplay("Complate Messgae#xpath=//div", "Bulk operation completed.");
-			
-			int ErrorMsg = validateElementisDisplay(BulkErrorMessageXpath, BulkOperationErrorMsg);
-			int CloseButton = validateElementisDisplay("Error Message#xpath=//div[@class='ui-dialog-buttonset']/button", "Close");
-			
-			if (CompleteMsg+ErrorMsg+CloseButton == 3) {
-				testStepPassed("Complete,Error message and Close Button is present");
-				Status = true;
-			}
-			else {
-				testStepFailed("Complete message or Error message or Close Button is not present");
-				Status = false;
-			}
-			
+
+		boolean Status = false;
+		waitForElementToDisplay("text for Bulk operation completed#xpath=//div[@id='CompleteMessage']", 10);
+
+		int CompleteMsg = validateElementisDisplay("Complate Messgae#xpath=//div", "Bulk operation completed.");
+
+		int ErrorMsg = validateElementisDisplay(BulkErrorMessageXpath, BulkOperationErrorMsg);
+		int CloseButton = validateElementisDisplay("Error Message#xpath=//div[@class='ui-dialog-buttonset']/button", "Close");
+
+		if (CompleteMsg+ErrorMsg+CloseButton == 3) {
+			testStepPassed("Complete,Error message and Close Button is present");
+			Status = true;
+		}
+		else {
+			testStepFailed("Complete message or Error message or Close Button is not present");
+			Status = false;
+		}
+
 		return Status;
 	}
-	
+
 	public boolean SecretIsCheck(String SecretName ) {
 		boolean status = false;
 		try {
-			
+
 			clickOn(OR.btn_home_icon);
 			waitTime(2);
 			if (driver.findElementByXPath("//td[text()='"+SecretName+"']/preceding-sibling::td/input").isEnabled()) {
@@ -708,27 +755,27 @@ public class ApplicationKeywords extends APIKeywords
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return status;
 	}
-	
-	
+
+
 	public void SetBulkOperationSecret(String SecretName, String BulkOperation) {
 		try {
 			if (elementPresent("Secret in Dashboard#xpath=//td[text()='"+SecretName+"']")) {
 				selectCheckBox("enable secret in dashboard#xpath=//td[text()='"+SecretName+"']/preceding-sibling::td/input");
 				selectFromDropdown(OR.drpdown_Selectbulkoperation, BulkOperation);
-				
+
 				if (elementPresent("Bulk Operation: Delete box#xpath=//span[text()='Bulk Operation: Delete']")) {
 					testStepPassed("'Bulk Operation: Delete' page should be displayed");
 				}
 				else {
 					testStepFailed("'Bulk Operation: Delete' page should not be displayed");
 				}
-				
-			    clickOn("Ok button in Bulk Option#xpath=//div[@class='ui-dialog-buttonset']/button[text()='OK']");
-			    clickOn("close button #xpath=//div[@class='ui-dialog-buttonset']/button[text()='Close']");
-				
+
+				clickOn("Ok button in Bulk Option#xpath=//div[@class='ui-dialog-buttonset']/button[text()='OK']");
+				clickOn("close button #xpath=//div[@class='ui-dialog-buttonset']/button[text()='Close']");
+
 			}
 			else {
 				testStepFailed("' "+SecretName+"' Secret is not present in Dashboard");
@@ -738,17 +785,17 @@ public class ApplicationKeywords extends APIKeywords
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+
 	public void deleteSecretfromdashboard(String SecretNames) {
 		try {
-			
+
 			if(!elementPresent(OR.lbl_Browse))
 			{
 				clickOn(OR.btn_home_icon);
 				clickOn(OR.btn_AdbancedTab);
 			}
-			
+
 			clickOn("All Folder in Home Page#xpath=//label[text()='< All Folders >']");
 			String[] secretname = SecretNames.split("##");
 			for (String Name:secretname) {
@@ -766,7 +813,7 @@ public class ApplicationKeywords extends APIKeywords
 			else {
 				testStepFailed("'Bulk Operation: Delete' page should not be displayed");
 			}
-			
+
 			clickOn("Ok button in Bulk Option#xpath=//div[@class='ui-dialog-buttonset']/button[text()='OK']");
 			clickOn("close button #xpath=//div[@class='ui-dialog-buttonset']/button[text()='Close']");
 		} catch (Exception e) {
@@ -774,18 +821,18 @@ public class ApplicationKeywords extends APIKeywords
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+
 	public void deleteSecretfromNewuser(String SecretNames, String CurrentPassword) {
 		try {
-			
-			
+
+
 			if (elementPresent("change password title#xpath=//table[@id='AdministrationDialog_DialogTable']//td[@class='dialog_top']")) {
 				typeIn("change password field#id=ChangePasswordUserControl_CurrentPasswordTextBox", CurrentPassword);
 				typeIn("new password#id=ChangePasswordUserControl_NewPasswordTextBox", "test@1234");
 				typeIn("confirm password#id=ChangePasswordUserControl_ConfirmTextBox", "test@1234");
 				clickOn("Save button#id=ChangePasswordUserControl_SaveButton");
-				
+
 				clickOn(OR.btn_Profile_Icon);
 				clickOn("Change password link#xpath=//ul[@class='linkList']//a[text()='Change Password']");
 				if (elementPresent("change password title#xpath=//table[@id='AdministrationDialog_DialogTable']//td[@class='dialog_top']")) {
@@ -796,14 +843,66 @@ public class ApplicationKeywords extends APIKeywords
 				}
 			}
 			deleteSecretfromdashboard(SecretNames);
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+	public boolean createDoubleLock(String DoubleLockName,String password)
+	{
+		boolean status = false;
+
+		try
+		{
+
+
+			clickOn(OR.btn_home_icon);
+			mouseOver(OR.btn_Admin_Tab);
+			clickOn(OR.btn_Admin_Doublelock);
+			if(elementPresent(OR.lbl_PageHeader_DoubleLocks))
+			{
+				testStepPassed("Navigated to doublelock page");
+				status = true;
+			}
+			else
+			{
+				testStepFailed("Not navigated to doublelock page");
+				status = false;
+			}
+
+			if(elementPresent("Creating double lock#xpath=//a[@id='DoubleLockGrid_ctl03_NameHyperLink' and text()='"+DoubleLockName+"']"))
+			{
+				testStepInfo("Double Lock already present");
+			}
+			else
+			{
+				clickOn("Create new#xpath=//button[text()='Create New']");
+				typeIn("Double lock name#xpath=//input[@id='DoubleLockNameTextBox']", DoubleLockName);
+				if(elementPresent("doublelock checkbox#xpath=//input[@id='DoubleLockEnabledCheckBox' and @checked='checked']"))
+				{
+					testStepInfo("Double lock enabled");
+				}
+				else
+				{
+					selectCheckBox("Enable double lock#xpath=//input[@id='DoubleLockEnabledCheckBox']");
+				}
+				clickOn(OR.btn_Configuration_Page_Save_button);
+				typeIn("password#xpath=//input[@type='password']", password);
+				clickOn(OR.btn_Ok);
+			}
+
+		}catch(Exception ex)
+		{
+			System.out.println("Exception in createDouble lock method "+ex);
+			ex.printStackTrace();
+		}
+		return status;
+
+	}
+
+
 	public boolean EnableDisableRemotePasswordChangingParameters(String RemotePasswordParams, String RemotePasswordParamsStatus) {
 		mouseOver(OR.btn_Admin_Tab);
 		Boolean Status = false;
@@ -812,15 +911,15 @@ public class ApplicationKeywords extends APIKeywords
 			if (elementPresent(OR.Remote_Password_Change_Page_dialog_top)) {
 				testStepPassed("Remote Password Change Page is displayed");			
 				String BeforePasswordChangeStatus = getText("text for Remote Change Password Parameters#xpath=//span[text()='"+RemotePasswordParams+"']/parent::td/following-sibling::td/span[@class='Label']");
-				
+
 				if (BeforePasswordChangeStatus.equals(RemotePasswordParamsStatus)) {
 					clickOn(OR.btn_home_icon);
 					Status = true;
 				}
 				else {
 					clickOn(OR.btn_Remote_Password_Change_Edit);
-			        selectCheckBox("Disable a "+RemotePasswordParams+" in remote change password#xpath=//span[text()='"+RemotePasswordParams+"']/parent::td/following-sibling::td/span[@class='CheckBox']");
-			        clickOn(OR.btn_Remote_Password_Change_Save);
+					selectCheckBox("Disable a "+RemotePasswordParams+" in remote change password#xpath=//span[text()='"+RemotePasswordParams+"']/parent::td/following-sibling::td/span[@class='CheckBox']");
+					clickOn(OR.btn_Remote_Password_Change_Save);
 					String PasswordChangeStatus = getText("text for Remote Change Password Parameters#xpath=//span[text()='"+RemotePasswordParams+"']/parent::td/following-sibling::td/span[@class='Label']");
 					if (PasswordChangeStatus.equals(RemotePasswordParamsStatus)) {
 						testStepPassed("RemotePasswordParams is PasswordChangeStatus");
@@ -841,38 +940,38 @@ public class ApplicationKeywords extends APIKeywords
 		}
 		return Status;
 	}
-	
-	
+
+
 	public boolean enableDiasableRemotePasswordandHBInSecretTemplates(String SecretTemplate, String SecretTemplateParas, String SecretTemplateHearthbeatStatus) {
 		boolean Status = false;
 		try {
 			mouseOver(OR.btn_Admin_Tab);
 			clickOn(OR.btn_Secret_Template);
-			
+
 			if (elementPresent(OR.Secret_Template_Page)) {
 				testStepPassed("Secret Template page is displayed");
 				selectFromDropdown("select a secret template#id=SecretDropDownList", SecretTemplate);
 				clickOn("clicking edit button in Secret Template#xpath=//button[text()='Edit']");
-				
+
 				if (elementPresent(OR.Secret_Template_Edit_Page)) {
 					testStepPassed("Secret Template Edit page is displayed");
 					clickOn("clicking 'Configure Password Changing' in Secret Template Designer page #xpath=//button[text()='Configure Password Changing']");
-				    String HeartBeatStatus = getText("status for "+SecretTemplateParas+"#xpath=//span[text()='"+SecretTemplateParas+"']/parent::td/following-sibling::td/span[@class='Label']");
-				    if (HeartBeatStatus.equals(SecretTemplateHearthbeatStatus)) {
+					String HeartBeatStatus = getText("status for "+SecretTemplateParas+"#xpath=//span[text()='"+SecretTemplateParas+"']/parent::td/following-sibling::td/span[@class='Label']");
+					if (HeartBeatStatus.equals(SecretTemplateHearthbeatStatus)) {
 						clickOn(OR.btn_home_icon);
 						Status = true;
 					}
 					else {
 						clickOn("clicking edit button in Secret Template#xpath=//button[text()='Edit']");
-			            clickOn("Enable HearthBeaa Checkboxt#xpath=//span[text()='"+SecretTemplateParas+"']/parent::td/following-sibling::td//input[@type='checkbox']");
-			            clickOn(OR.btn_Remote_Password_Change_Save);
-			            String HeartBeatStatusafter = getText("status for "+SecretTemplateParas+"#xpath=//span[text()='"+SecretTemplateParas+"']/parent::td/following-sibling::td/span[@class='Label']");
+						clickOn("Enable HearthBeaa Checkboxt#xpath=//span[text()='"+SecretTemplateParas+"']/parent::td/following-sibling::td//input[@type='checkbox']");
+						clickOn(OR.btn_Remote_Password_Change_Save);
+						String HeartBeatStatusafter = getText("status for "+SecretTemplateParas+"#xpath=//span[text()='"+SecretTemplateParas+"']/parent::td/following-sibling::td/span[@class='Label']");
 						if (SecretTemplateHearthbeatStatus.equals(HeartBeatStatusafter)) {
 							testStepPassed(SecretTemplateParas+" in secret template is "+SecretTemplateHearthbeatStatus);
 							Status = true;
 						}
 						else {
-//						System.out.println("PasswordChangeStatus"+PasswordChangeStatus);
+							//						System.out.println("PasswordChangeStatus"+PasswordChangeStatus);
 							testStepFailed(SecretTemplateParas+" in secret template is unchecked"+SecretTemplateHearthbeatStatus);
 							Status = false;
 						}
@@ -891,9 +990,9 @@ public class ApplicationKeywords extends APIKeywords
 		}
 		return Status;
 	}
-	
-	
-	
+
+
+
 	public void enableSecretInDashboard(String[] SecretName, String foldername) {
 		try {
 			switchTofolders(foldername);
@@ -910,12 +1009,12 @@ public class ApplicationKeywords extends APIKeywords
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void CreateBankAccountSecretTemplateFromBasiclink(String SecretItem, String SecretName, String AccountNumber, String RoutingNumber,
 			String BankName, String AddressOne, String SecondAddress, String thirdAddress, String ContactPerson, String ContactPhone,
 			String Notes, String folderPath, String folderName) {
-	
-		
+
+
 		try {
 			//select[contains(@id,'SecretTypeDropDown')]
 			selectFromDropdown("select a create secret#xpath=//select[contains(@id,'SecretTypeDropDown')]", SecretItem);
@@ -929,8 +1028,8 @@ public class ApplicationKeywords extends APIKeywords
 			typeIn("Contact Person#id=SecretItemDisplay_SecretItemsRepeater_ctl06_ItemValueTextBox", ContactPerson);
 			typeIn("Contact Phone#id=SecretItemDisplay_SecretItemsRepeater_ctl07_ItemValueTextBox", ContactPhone);
 			typeIn("Notes#id=SecretItemDisplay_SecretItemsRepeater_ctl08_ItemValueTextBox", Notes);
-			
-			
+
+
 			if (elementPresent("clear folder#id=SecretFolderPicker_ClearFolderLink")) {
 				clickOn("clear folder#id=SecretFolderPicker_ClearFolderLink");
 			}
@@ -940,7 +1039,7 @@ public class ApplicationKeywords extends APIKeywords
 				typeIn("search box for folder path#xpath=//span[text()='Folder Search']/following-sibling::input", folderName);
 				clickOn("click on folder#xpath=//div[text()='"+folderPath+"']");
 			}
-			
+
 			clickOn("SecretTemplate Save button#id=SaveEditButton");
 			if (elementPresent("secret Template name#xpath=//span[text()='Secret Name']/parent::td/following-sibling::td//span")) {
 				String SecretnameGUI =  getText("secret Template name#xpath=//span[text()='Secret Name']/parent::td/following-sibling::td//span");
@@ -949,33 +1048,33 @@ public class ApplicationKeywords extends APIKeywords
 				}
 				else {
 					testStepFailed("Secret Name is different : "+SecretName);
-				    }
+				}
 			}
 			else {
 				testStepFailed("Secrete Template is not created");
 			}
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
 		}
-		
+
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	public String getAlertText() {
 		String Alerttext = null;
 		try {
-		    Alerttext = driver.switchTo().alert().getText();
+			Alerttext = driver.switchTo().alert().getText();
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		return Alerttext;
 	}
-	
+
 	public void SwitchtoWindow(int windowindex) {
 		try {
 			List<String> tabs = new ArrayList<String>(driver.getWindowHandles());
@@ -986,55 +1085,55 @@ public class ApplicationKeywords extends APIKeywords
 			e.printStackTrace();
 		}
 	}
-	
+
 	// method use to close the second window and switch to first window
 	public void CloseSecondWindow() {
-	    try {
+		try {
 			List<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 			if (tabs.size() == 2) {
 				((JavascriptExecutor)driver).executeScript("window.close()");
-			    driver.switchTo().window(tabs.get(0));
+				driver.switchTo().window(tabs.get(0));
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void closerApplication(String AppExeName) {
 		try {
-	    String st;
-		String dir = System.getProperty("user.dir");
-	    System.out.println("current dir = " + dir+"\\test.txt");
-		File file = new File(dir+"\\data\\tasksProcesser.txt");
-		if (file.exists()) {
-			file.delete();
-		}
-		String csvPath = "cmd /c tasklist /Fo csv > \""+dir+"\\data\\tasksProcesser.txt\"";
-		Runtime.getRuntime().exec(csvPath);
-		waitTime(5);
-		BufferedReader br = new BufferedReader(new FileReader(dir+"\\data\\tasksProcesser.txt"));
-		  while ((st = br.readLine()) != null) {				  
-		    if (st.contains("\""+AppExeName+"\"")) {
-		    	Runtime.getRuntime().exec("taskkill /F /im "+AppExeName);
-		    	break;
-		    }
-		  }
-		  br.close();
+			String st;
+			String dir = System.getProperty("user.dir");
+			System.out.println("current dir = " + dir+"\\test.txt");
+			File file = new File(dir+"\\data\\tasksProcesser.txt");
+			if (file.exists()) {
+				file.delete();
+			}
+			String csvPath = "cmd /c tasklist /Fo csv > \""+dir+"\\data\\tasksProcesser.txt\"";
+			Runtime.getRuntime().exec(csvPath);
+			waitTime(5);
+			BufferedReader br = new BufferedReader(new FileReader(dir+"\\data\\tasksProcesser.txt"));
+			while ((st = br.readLine()) != null) {				  
+				if (st.contains("\""+AppExeName+"\"")) {
+					Runtime.getRuntime().exec("taskkill /F /im "+AppExeName);
+					break;
+				}
+			}
+			br.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void waitForApplicationLunch(String AppExeName, int WaitTime) {
 		try {
-		    String st;
-		    boolean status = false;
+			String st;
+			boolean status = false;
 			String dir = System.getProperty("user.dir");
-		    System.out.println("current dir = " + dir+"\\test.txt");
-		    for (int i=0; i<=WaitTime; i++) {
-		    	File file = new File(dir+"\\data\\tasksProcesser.txt");
+			System.out.println("current dir = " + dir+"\\test.txt");
+			for (int i=0; i<=WaitTime; i++) {
+				File file = new File(dir+"\\data\\tasksProcesser.txt");
 				if (file.exists()) {
 					file.delete();
 				}
@@ -1043,44 +1142,44 @@ public class ApplicationKeywords extends APIKeywords
 				waitTime(2);
 				BufferedReader br = new BufferedReader(new FileReader(dir+"\\data\\tasksProcesser.txt"));
 				while ((st = br.readLine()) != null) {				  
-				    if (st.contains("\""+AppExeName+"\"")) {
-				    	status = true;
-				    	System.out.println("Application is launched"+st);
-				    	break;
-				    }
+					if (st.contains("\""+AppExeName+"\"")) {
+						status = true;
+						System.out.println("Application is launched"+st);
+						break;
+					}
 				}
 				if (!status) {
-					  waitTime(1);
+					waitTime(1);
 				}
 				else {
 					break;
 				}
 				br.close();
-		    }
-		    if (status) {
-		    	testStepInfo("Application is lanuched");
-		    }
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
+			if (status) {
+				testStepInfo("Application is lanuched");
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-	
+
 	public boolean VerifyApplicationIsLaunch(String AppExeName) {
 		boolean VerifyStatus = false;
 		try {
-		    String st;
-		   // boolean VerifyStatus = false;
+			String st;
+			// boolean VerifyStatus = false;
 			String dir = System.getProperty("user.dir");
 			waitForApplicationLunch(AppExeName, 10);
 			waitTime(5);
 			BufferedReader AppBR = new BufferedReader(new FileReader(dir+"\\data\\tasksProcesser.txt"));
 			while ((st = AppBR.readLine()) != null) {				  
-			    if (st.contains("\""+AppExeName+"\"")) {
-			    	VerifyStatus = true;
-			    	testStepPassed("Application is launched");
-			    	break;
-			    }
+				if (st.contains("\""+AppExeName+"\"")) {
+					VerifyStatus = true;
+					testStepPassed("Application is launched");
+					break;
+				}
 			}
 			if (!VerifyStatus) {
 				testStepFailed("Application is not launched");
@@ -1092,11 +1191,11 @@ public class ApplicationKeywords extends APIKeywords
 		}
 		return VerifyStatus;
 	}
-	
-	
+
+
 	// new scripts
-	
-	
+
+
 	public boolean validateAllElementisDisplay(String xpath, String fields) {
 		Boolean Status = false;
 		String[] elefields = fields.split("##"); 
@@ -1112,7 +1211,7 @@ public class ApplicationKeywords extends APIKeywords
 		}
 		return Status;
 	}
-	
+
 	public int validateElementisDisplay(String xpath, String fields) {
 		String[] elefields = fields.split("##");
 		int i=0;
@@ -1128,24 +1227,34 @@ public class ApplicationKeywords extends APIKeywords
 		}
 		return i;
 	}
-	
-//	public void ValidateCheckboxischecked(String xpath, String element) {
-//		
-//		try {
-//			if (driver.findElementByXPath(xpath).isEnabled()) {
-//				testStepPassed(element+" is checked");
-//				vstsTestStepPassed(element+" is checked", false);
-//			}
-//			else {
-//				testStepFailed(element+ " is not checked");
-//				vstsTestStepFailed(element+ " is not checked", true);
-//			}
-//		}
-//		catch(Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
-	
+
+	public void switchtoTab(int tab)
+	{
+
+
+		ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+		System.out.println(tabs.size());
+		driver.switchTo().window(tabs.get(tab));
+
+	}
+
+	//	public void ValidateCheckboxischecked(String xpath, String element) {
+	//		
+	//		try {
+	//			if (driver.findElementByXPath(xpath).isEnabled()) {
+	//				testStepPassed(element+" is checked");
+	//				vstsTestStepPassed(element+" is checked", false);
+	//			}
+	//			else {
+	//				testStepFailed(element+ " is not checked");
+	//				vstsTestStepFailed(element+ " is not checked", true);
+	//			}
+	//		}
+	//		catch(Exception e) {
+	//			e.printStackTrace();
+	//		}
+	//	}
+
 	public boolean ValidateEnterValusInTextField(String Xpath, String TextValue, String Field) {
 		boolean Status = false;
 		String Username_value = getAttributeValue(Xpath, "value");
@@ -1158,10 +1267,10 @@ public class ApplicationKeywords extends APIKeywords
 		}
 		return Status;
 	}
-	
-	
+
+
 	public boolean ValidatetextfieldwithEnteringtext(String Xpath, String TextValue, String Field) {
-		
+
 		boolean Status = false;
 		typeIn(Xpath, TextValue);
 		waitTime(2);
@@ -1175,7 +1284,7 @@ public class ApplicationKeywords extends APIKeywords
 		}
 		return Status;
 	}
-	
+
 	public boolean PerformSecretChecked(String SecretName) {
 		boolean MultipleStatus = false;
 		try {
@@ -1199,16 +1308,16 @@ public class ApplicationKeywords extends APIKeywords
 					testStepFailed("' "+Name+"' Secret is not present in Dashboard");
 				}
 			}
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return MultipleStatus;
 	}
-	
+
 	//sathish
-	
+
 	public void DeleteContentInDashBoard()
 	{
 		try {
@@ -1226,7 +1335,7 @@ public class ApplicationKeywords extends APIKeywords
 			ex.printStackTrace();
 		}
 	}
-	
+
 	public boolean validateDashboardwithVSTS()
 	{
 		boolean status= false;
@@ -1254,31 +1363,31 @@ public class ApplicationKeywords extends APIKeywords
 		}
 		return status;
 	}
-	
+
 	public boolean validateAlertText(String AlertMsg, boolean vsts)
 	{
 		boolean flag = false;
-		
-		
+
+
 		try
 		{
 			Alert alr = driver.switchTo().alert();
 			String AlertText =alr.getText();
-			
+
 			if(AlertText.contains(AlertMsg))
 			{
 				testStepPassed("The Alert message is Validated");
 				if(vsts==true)
-				vstsTestStepPassed("The Alert message is Validated", false);
+					vstsTestStepPassed("The Alert message is Validated", false);
 				flag = true;
 			}
 			else
 			{
 				testStepFailed("Unable to validate alert message");
 				if(vsts==false)
-				vstsTestStepFailed("Unable to validate alert message", true);
+					vstsTestStepFailed("Unable to validate alert message", true);
 			}
-			
+
 		}
 		catch(Exception ex)
 		{
@@ -1287,7 +1396,7 @@ public class ApplicationKeywords extends APIKeywords
 		}
 		return flag;
 	}
-	
+
 	public void ClipBoardtoTextFile(String path) throws IOException
 	{
 		try
@@ -1361,19 +1470,19 @@ public class ApplicationKeywords extends APIKeywords
 		}
 
 	}
-	
+
 	public boolean validatetitleWithAutoit(String filepathwithparameters, String messages) {
 		String line = null;
-    	boolean Status = false;
-    	try {
+		boolean Status = false;
+		try {
 			Process Remort = Runtime.getRuntime().exec(filepathwithparameters);
 			BufferedReader reader = new BufferedReader(new InputStreamReader(Remort.getInputStream()));
 			while ((line = reader.readLine()) != null) {
 				if (line.contains(messages)) {
 					Status = true;
-				    break;
+					break;
 				}
-				
+
 				System.out.println("li ne ======  "+line);
 			}
 			if(!Status) {
@@ -1385,6 +1494,6 @@ public class ApplicationKeywords extends APIKeywords
 		}
 		return Status;
 	}
-	
-	
+
+
 }

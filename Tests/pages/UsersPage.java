@@ -69,6 +69,7 @@ public class UsersPage extends ApplicationKeywords{
 			if (elementPresent(EditUserPage_Header)) {
 				testStepPassed("Edit user page is displayed");
 				
+				waitTime(3);
 				typeIn(txtbox_Username_Userpage, Usersname);
 				typeIn(txtbox_DispalyName_Userpage, DisplayName);
 				typeIn(txtbox_Email_Address_Userpage, EmailAddress);
