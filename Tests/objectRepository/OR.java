@@ -186,7 +186,8 @@ public class OR
   	
   	//logout
     public static final String Logout_Dialogbox        = "Logout Dialog box#id=NewDialogLogout_DialogTable";
-    
+   
+    //welcome
     
 	public static final String drag_src_Welcome = "//li/nobr[text()='Welcome']";
 	public static final String drop_Destination = "//ul[@id='Ul3']";
