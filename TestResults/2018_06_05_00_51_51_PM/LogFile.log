@@ -1,0 +1,507 @@
+ INFO | 2018-06-05 12:51:51,213 | Common.java | 84 | Startup activites...
+ INFO | 2018-06-05 12:51:51,213 | Common.java | 84 | Test Output Directory creation successful :D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM
+ INFO | 2018-06-05 12:51:51,213 | Common.java | 84 | Log File creation successful : LogFile.log
+ INFO | 2018-06-05 12:51:51,223 | Common.java | 84 | Getting value of CssStyle from Test Configuration file : Style3
+ INFO | 2018-06-05 12:51:51,223 | Common.java | 84 | Getting value of CssStyle from Test Configuration file : Style3
+ INFO | 2018-06-05 12:51:51,413 | Common.java | 84 | Getting value of GridExecution from Test Configuration file : Yes
+ INFO | 2018-06-05 12:51:51,563 | Common.java | 84 | Getting value of AppURL from Test Configuration file : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer
+ INFO | 2018-06-05 12:51:51,563 | Common.java | 84 | Getting value of Tc_Settings_Excelpath from Test Configuration file : ./data/TestCaseSettings.xls
+ INFO | 2018-06-05 12:51:51,613 | Common.java | 84 | Getting value of Test Suite from Test Configuration file : Regression_Suite
+ INFO | 2018-06-05 12:51:51,613 | Common.java | 84 | Getting value of Test Suite from Test Configuration file : Regression_Suite
+ INFO | 2018-06-05 12:51:51,613 | Common.java | 84 | Getting value of Test Suite from Test Configuration file : Regression_Suite
+ INFO | 2018-06-05 12:51:52,326 | Common.java | 84 | Getting value of ElementLoadWaitTime from Test Configuration file : 60
+ INFO | 2018-06-05 12:51:52,326 | Common.java | 84 | Getting value of TextLoadWaitTime from Test Configuration file : 45
+ INFO | 2018-06-05 12:51:52,326 | Common.java | 84 | Getting value of PageLoadWaitTime from Test Configuration file : 60
+ INFO | 2018-06-05 12:51:52,326 | Common.java | 84 | Getting value of ImplicitlyWaitTime from Test Configuration file : 45
+ INFO | 2018-06-05 12:51:52,326 | Common.java | 84 | Element time out set
+ INFO | 2018-06-05 12:51:52,326 | Common.java | 84 | Opening Chrome Browser...
+ INFO | 2018-06-05 12:51:52,326 | Common.java | 84 | Getting value of AppiumTimeOut from Test Configuration file : 600
+ INFO | 2018-06-05 12:51:52,346 | Common.java | 84 | Getting value of GridExecution from Test Configuration file : Yes
+ INFO | 2018-06-05 12:51:52,346 | Common.java | 84 | Getting value of GridExecution from Test Configuration file : Yes
+ INFO | 2018-06-05 12:51:56,329 | Common.java | 84 | Successfully Maximised Browser Window
+ INFO | 2018-06-05 12:51:56,360 | Common.java | 84 | Browser: Open Successful : chrome
+ INFO | 2018-06-05 12:51:56,360 | Common.java | 84 | Open Browser : chrome
+ INFO | 2018-06-05 12:51:56,360 | Common.java | 84 | Getting value of AppURL from Test Configuration file : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer
+ INFO | 2018-06-05 12:51:56,360 | Common.java | 84 | Navigating to URL : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer
+ INFO | 2018-06-05 12:51:57,008 | Common.java | 84 | Navigation Successful : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer
+ INFO | 2018-06-05 12:51:57,009 | Common.java | 84 | Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer
+ INFO | 2018-06-05 12:51:57,016 | Common.java | 84 | Getting value of indium_logo_path from Test Configuration file : .\\Logos\\Indium-Software-Logo.jpg
+ INFO | 2018-06-05 12:51:57,016 | Common.java | 84 | Getting value of client_logo_path from Test Configuration file : .\\Logos\\client_logo.jpg
+ INFO | 2018-06-05 12:51:57,017 | Common.java | 84 | Getting value of indium_logo_path from Test Configuration file : .\\Logos\\Indium-Software-Logo.jpg
+ INFO | 2018-06-05 12:51:57,017 | Common.java | 84 | Getting value of client_logo_path from Test Configuration file : .\\Logos\\client_logo.jpg
+ INFO | 2018-06-05 12:51:57,024 | Common.java | 84 | Getting value of Project Name from Test Configuration file : Thycotic.Work
+ INFO | 2018-06-05 12:51:57,024 | Common.java | 84 | Getting value of Server URL from Test Configuration file : https://thycotic.visualstudio.com
+ INFO | 2018-06-05 12:51:57,024 | Common.java | 84 | Getting value of Tester User Name from Test Configuration file : sathish.m@indiumsoft.com
+ INFO | 2018-06-05 12:51:57,025 | Common.java | 84 | Getting value of Tester PAT from Test Configuration file : 55jny2hhevawflx5penenm4ccgnyv54bkysnvxa3r7eefdmsxrda
+ INFO | 2018-06-05 12:51:57,025 | Common.java | 84 | Getting value of Suite ID from Test Configuration file : 51353
+ INFO | 2018-06-05 12:51:57,026 | Common.java | 84 | Getting value of Console Application Location from Test Configuration file : \others\csharp\VSTS_Console_Applications
+ INFO | 2018-06-05 12:51:57,027 | Common.java | 84 | Command to execute to create NEW TEST RUN: D:\Data\Official\Sathish\ThycoticAutomation\others\csharp\VSTS_Console_Applications\CreateTestRun\Debug\VSTSCreateTestRun.exe Thycotic.Work 51353 2018_06_05_00_51_51_PM https://thycotic.visualstudio.com sathish.m@indiumsoft.com 55jny2hhevawflx5penenm4ccgnyv54bkysnvxa3r7eefdmsxrda 43447
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43376
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43377
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43378
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43379
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43380
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43381
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43382
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43383
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43384
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43385
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43386
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43387
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43388
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43389
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43390
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43391
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43392
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43393
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43394
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43395
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43396
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43397
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43398
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43399
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43400
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43401
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43402
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43403
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43404
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43405
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43406
+ INFO | 2018-06-05 12:52:18,981 | Common.java | 84 | Point ID:43447 Test Case ID: 43407
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43408
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43409
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43410
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43411
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43412
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43413
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43414
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43415
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43416
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43417
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43418
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43419
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43420
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43421
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43422
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43423
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43424
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43425
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43426
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43427
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43428
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43429
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43430
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43431
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43432
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43433
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43434
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43435
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43436
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43437
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43438
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43439
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43440
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43441
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43442
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43443
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43444
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43445
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43446
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43447
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID: Equal43447
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43448
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43449
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43450
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43451
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43452
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43453
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43454
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43455
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43456
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43457
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43458
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43459
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43460
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43461
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43462
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43463
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43464
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43465
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43466
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43467
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43468
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43469
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43470
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43471
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43472
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43473
+ INFO | 2018-06-05 12:52:18,982 | Common.java | 84 | Point ID:43447 Test Case ID: 43474
+ INFO | 2018-06-05 12:52:18,992 | Common.java | 84 | Point ID:43447 Test Case ID: 43475
+ INFO | 2018-06-05 12:52:18,992 | Common.java | 84 | Point ID:43447 Test Case ID: 43476
+ INFO | 2018-06-05 12:52:18,992 | Common.java | 84 | Point ID:43447 Test Case ID: 43477
+ INFO | 2018-06-05 12:52:18,992 | Common.java | 84 | Point ID:43447 Test Case ID: 43478
+ INFO | 2018-06-05 12:52:18,992 | Common.java | 84 | Point ID:43447 Test Case ID: 43479
+ INFO | 2018-06-05 12:52:18,992 | Common.java | 84 | Point ID:43447 Test Case ID: 43480
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | Point ID:43447 Test Case ID: 43481
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | Point ID:43447 Test Case ID: 43482
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | Point ID:43447 Test Case ID: 43483
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | Point ID:43447 Test Case ID: 43484
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | Point ID:43447 Test Case ID: 43485
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | Point ID:43447 Test Case ID: 43486
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | Point ID:43447 Test Case ID: 43487
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | Point ID:43447 Test Case ID: 43488
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | Getting value of ElementLoadWaitTime from Test Configuration file : 60
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | Getting value of TextLoadWaitTime from Test Configuration file : 45
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | Getting value of PageLoadWaitTime from Test Configuration file : 60
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | Getting value of ImplicitlyWaitTime from Test Configuration file : 45
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | Element time out set
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | ##### Start of Test Case : Validate Strong field is displayed after clicking generate button #####
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:19,002 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:19,022 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:19,022 | Common.java | 84 | Test Case tag is created
+ INFO | 2018-06-05 12:52:19,022 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:19,032 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:19,152 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:19,252 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:19,352 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:19,412 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:19,524 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:19,616 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:19,748 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:19,874 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:19,964 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:20,034 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:20,124 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:20,235 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:20,336 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:20,439 | Common.java | 84 | Getting value of TestDataFile from Test Configuration file : .\data\TestData.xls
+ INFO | 2018-06-05 12:52:20,609 | Common.java | 84 | Successfully deleted all cookies
+ INFO | 2018-06-05 12:52:20,609 | Common.java | 84 | Navigating to URL : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer
+ INFO | 2018-06-05 12:52:21,042 | Common.java | 84 | Navigation Successful : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer
+ INFO | 2018-06-05 12:52:21,043 | Common.java | 84 | Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer
+ INFO | 2018-06-05 12:52:21,043 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:21,043 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:21,043 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:21,047 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:21,048 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:21,049 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:21,050 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:21,050 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:21,256 | Common.java | 84 | Parsing : thycotic login page#id=LoginDialog_DialogTable
+ INFO | 2018-06-05 12:52:21,256 | Common.java | 84 | PC-Identify By : id
+ INFO | 2018-06-05 12:52:21,256 | Common.java | 84 | PC-Locator : LoginDialog_DialogTable
+ INFO | 2018-06-05 12:52:21,256 | Common.java | 84 | PCLocator Description : thycotic login page
+ INFO | 2018-06-05 12:52:21,286 | Common.java | 84 | Launch Url Successfully
+ INFO | 2018-06-05 12:52:21,286 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:21,286 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:21,286 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:21,286 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:21,286 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:21,296 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:21,296 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:21,296 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:21,336 | Common.java | 84 | Parsing : entry value in username#id=LoginUserControl1_UserNameTextBox
+ INFO | 2018-06-05 12:52:21,336 | Common.java | 84 | PC-Identify By : id
+ INFO | 2018-06-05 12:52:21,336 | Common.java | 84 | PC-Locator : LoginUserControl1_UserNameTextBox
+ INFO | 2018-06-05 12:52:21,336 | Common.java | 84 | PCLocator Description : entry value in username
+ INFO | 2018-06-05 12:52:21,508 | Common.java | 84 | Type 'Admin_ss' in : entry value in username
+ INFO | 2018-06-05 12:52:21,508 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:21,509 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:21,509 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:21,510 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:21,511 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:21,512 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:21,512 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:21,512 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:21,536 | Common.java | 84 | Parsing : entry value in password field#id=LoginUserControl1_PasswordTextBox
+ INFO | 2018-06-05 12:52:21,537 | Common.java | 84 | PC-Identify By : id
+ INFO | 2018-06-05 12:52:21,537 | Common.java | 84 | PC-Locator : LoginUserControl1_PasswordTextBox
+ INFO | 2018-06-05 12:52:21,537 | Common.java | 84 | PCLocator Description : entry value in password field
+ INFO | 2018-06-05 12:52:21,739 | Common.java | 84 | Type 'indium' in : entry value in password field
+ INFO | 2018-06-05 12:52:21,740 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:21,740 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:21,740 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:21,741 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:21,741 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:21,743 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:21,743 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:21,743 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:21,764 | Common.java | 84 | Parsing : clicking login button#id=LoginUserControl1_LoginButton
+ INFO | 2018-06-05 12:52:21,764 | Common.java | 84 | PC-Identify By : id
+ INFO | 2018-06-05 12:52:21,764 | Common.java | 84 | PC-Locator : LoginUserControl1_LoginButton
+ INFO | 2018-06-05 12:52:21,764 | Common.java | 84 | PCLocator Description : clicking login button
+ INFO | 2018-06-05 12:52:22,702 | Common.java | 84 | Click on :clicking login button
+ INFO | 2018-06-05 12:52:22,702 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:22,702 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:22,703 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:22,705 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:22,706 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:22,709 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:22,710 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:22,710 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:22,744 | Common.java | 84 | Parsing : Browser Button in DashBoard#xpath=//td[text()='Browse']
+ INFO | 2018-06-05 12:52:22,744 | Common.java | 84 | PC-Identify By : xpath
+ INFO | 2018-06-05 12:52:22,745 | Common.java | 84 | PC-Locator : //td[text()='Browse']
+ INFO | 2018-06-05 12:52:22,745 | Common.java | 84 | PCLocator Description : Browser Button in DashBoard
+ INFO | 2018-06-05 12:52:22,809 | Common.java | 84 | Successfully Login to SecretServer
+ INFO | 2018-06-05 12:52:22,809 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:22,809 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:22,810 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:22,812 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:22,812 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:22,817 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:22,818 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:22,818 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:22,852 | Common.java | 84 | Parsing : Admin#xpath=//a[@id='headerControl_Navigation1_AdministrationLink' and text()='Admin']
+ INFO | 2018-06-05 12:52:22,852 | Common.java | 84 | PC-Identify By : xpath
+ INFO | 2018-06-05 12:52:22,852 | Common.java | 84 | PC-Locator : //a[@id='headerControl_Navigation1_AdministrationLink' and text()='Admin']
+ INFO | 2018-06-05 12:52:22,853 | Common.java | 84 | PCLocator Description : Admin
+ INFO | 2018-06-05 12:52:23,207 | Common.java | 84 | Move the mouse over 'Admin'
+ INFO | 2018-06-05 12:52:23,207 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:23,207 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:23,207 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:23,209 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:23,210 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:23,217 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:23,217 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:23,217 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:23,260 | Common.java | 84 | Parsing : Distributed Engine#xpath=//li//a[text()='Distributed Engine']
+ INFO | 2018-06-05 12:52:23,261 | Common.java | 84 | PC-Identify By : xpath
+ INFO | 2018-06-05 12:52:23,261 | Common.java | 84 | PC-Locator : //li//a[text()='Distributed Engine']
+ INFO | 2018-06-05 12:52:23,261 | Common.java | 84 | PCLocator Description : Distributed Engine
+ INFO | 2018-06-05 12:52:23,355 | Common.java | 84 | Waiting for 1 seconds...
+ INFO | 2018-06-05 12:52:24,815 | Common.java | 84 | Click on :Distributed Engine
+ INFO | 2018-06-05 12:52:24,815 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:24,815 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:24,815 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:24,817 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:24,817 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:24,819 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:24,819 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:24,819 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:24,844 | Common.java | 84 | Parsing : Distributed Engine status#xpath=//span[@id='EnableDistributedEngineFieldLabel']/../following-sibling::td/span
+ INFO | 2018-06-05 12:52:24,844 | Common.java | 84 | PC-Identify By : xpath
+ INFO | 2018-06-05 12:52:24,844 | Common.java | 84 | PC-Locator : //span[@id='EnableDistributedEngineFieldLabel']/../following-sibling::td/span
+ INFO | 2018-06-05 12:52:24,844 | Common.java | 84 | PCLocator Description : Distributed Engine status
+ INFO | 2018-06-05 12:52:24,885 | Common.java | 84 | Sucessfully got the text 'Yes'
+ INFO | 2018-06-05 12:52:24,886 | Common.java | 84 | Distributed engine status change toYes
+ INFO | 2018-06-05 12:52:24,886 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:24,886 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:24,886 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:24,887 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:24,887 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:24,889 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:24,889 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:24,889 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:24,907 | Common.java | 84 | Parsing : home icon in dashboard#xpath=//a[contains(@id,'HomeLink') and text()='Home']
+ INFO | 2018-06-05 12:52:24,907 | Common.java | 84 | PC-Identify By : xpath
+ INFO | 2018-06-05 12:52:24,908 | Common.java | 84 | PC-Locator : //a[contains(@id,'HomeLink') and text()='Home']
+ INFO | 2018-06-05 12:52:24,908 | Common.java | 84 | PCLocator Description : home icon in dashboard
+ INFO | 2018-06-05 12:52:25,221 | Common.java | 84 | Click on :home icon in dashboard
+ INFO | 2018-06-05 12:52:25,222 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:25,222 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:25,222 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:25,232 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:25,233 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:25,240 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:25,240 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:25,240 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:25,262 | Common.java | 84 | Getting value of Console Application Location from Test Configuration file : \others\csharp\VSTS_Console_Applications
+ INFO | 2018-06-05 12:52:25,262 | Common.java | 84 | Command to execute to Update TEST Step: D:\Data\Official\Sathish\ThycoticAutomation\others\csharp\VSTS_Console_Applications\UpdateStatus\Debug\VSTSStackSolution.exe 2018_06_05_00_51_51_PM Thycotic.Work 51353 43447 1 "Distributed Engine status passed" Passed "NA" https://thycotic.visualstudio.com sathish.m@indiumsoft.com 55jny2hhevawflx5penenm4ccgnyv54bkysnvxa3r7eefdmsxrda
+ INFO | 2018-06-05 12:52:28,436 | Common.java | 84 | Test Case Title: Verify a user is able to create a New Secret  for the template 'SQL Server Account' in the `Advanced' view section
+ INFO | 2018-06-05 12:52:28,436 | Common.java | 84 | Test Case ID: 43447
+ INFO | 2018-06-05 12:52:28,436 | Common.java | 84 | Given StepID: 1
+ INFO | 2018-06-05 12:52:28,477 | Common.java | 84 | Parsing : Profile Icon in Dashboard#xpath=//a[contains(@href,'Profile/Home')]/i
+ INFO | 2018-06-05 12:52:28,477 | Common.java | 84 | PC-Identify By : xpath
+ INFO | 2018-06-05 12:52:28,477 | Common.java | 84 | PC-Locator : //a[contains(@href,'Profile/Home')]/i
+ INFO | 2018-06-05 12:52:28,477 | Common.java | 84 | PCLocator Description : Profile Icon in Dashboard
+ INFO | 2018-06-05 12:52:28,587 | Common.java | 84 | Move the mouse over 'Profile Icon in Dashboard'
+ INFO | 2018-06-05 12:52:28,587 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:28,587 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:28,587 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:28,588 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:28,588 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:28,588 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:28,588 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:28,588 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:28,609 | Common.java | 84 | Parsing : click on logout button#xpath=//a[@href='/SecretServer/Logout.aspx' and text()='Logout']
+ INFO | 2018-06-05 12:52:28,609 | Common.java | 84 | PC-Identify By : xpath
+ INFO | 2018-06-05 12:52:28,609 | Common.java | 84 | PC-Locator : //a[@href='/SecretServer/Logout.aspx' and text()='Logout']
+ INFO | 2018-06-05 12:52:28,609 | Common.java | 84 | PCLocator Description : click on logout button
+ INFO | 2018-06-05 12:52:28,685 | Common.java | 84 | Parsing : click on logout button#xpath=//a[@href='/SecretServer/Logout.aspx' and text()='Logout']
+ INFO | 2018-06-05 12:52:28,685 | Common.java | 84 | PC-Identify By : xpath
+ INFO | 2018-06-05 12:52:28,685 | Common.java | 84 | PC-Locator : //a[@href='/SecretServer/Logout.aspx' and text()='Logout']
+ INFO | 2018-06-05 12:52:28,685 | Common.java | 84 | PCLocator Description : click on logout button
+ INFO | 2018-06-05 12:52:28,955 | Common.java | 84 | Click on :click on logout button
+ INFO | 2018-06-05 12:52:28,955 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:28,955 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:28,955 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:28,957 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:28,957 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:28,960 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:28,960 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:28,960 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:28,983 | Common.java | 84 | Parsing : Logout Dialog box#id=NewDialogLogout_DialogTable
+ INFO | 2018-06-05 12:52:28,983 | Common.java | 84 | PC-Identify By : id
+ INFO | 2018-06-05 12:52:28,983 | Common.java | 84 | PC-Locator : NewDialogLogout_DialogTable
+ INFO | 2018-06-05 12:52:28,983 | Common.java | 84 | PCLocator Description : Logout Dialog box
+ INFO | 2018-06-05 12:52:29,009 | Common.java | 84 | Successfully Logout from SecretServer
+ INFO | 2018-06-05 12:52:29,009 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:29,009 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:29,009 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:29,015 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:29,015 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:29,017 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:29,017 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:29,017 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:29,135 | Common.java | 84 | Successfully deleted all cookies
+ INFO | 2018-06-05 12:52:29,135 | Common.java | 84 | Navigating to URL : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer
+ INFO | 2018-06-05 12:52:29,442 | Common.java | 84 | Navigation Successful : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer
+ INFO | 2018-06-05 12:52:29,442 | Common.java | 84 | Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer
+ INFO | 2018-06-05 12:52:29,442 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:29,442 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:29,443 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:29,445 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:29,445 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:29,453 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:29,454 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:29,454 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:29,475 | Common.java | 84 | Parsing : thycotic login page#id=LoginDialog_DialogTable
+ INFO | 2018-06-05 12:52:29,475 | Common.java | 84 | PC-Identify By : id
+ INFO | 2018-06-05 12:52:29,475 | Common.java | 84 | PC-Locator : LoginDialog_DialogTable
+ INFO | 2018-06-05 12:52:29,476 | Common.java | 84 | PCLocator Description : thycotic login page
+ INFO | 2018-06-05 12:52:29,524 | Common.java | 84 | Launch Url Successfully
+ INFO | 2018-06-05 12:52:29,524 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:29,524 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:29,524 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:29,534 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:29,534 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:29,534 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:29,534 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:29,534 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:29,584 | Common.java | 84 | Parsing : entry value in username#id=LoginUserControl1_UserNameTextBox
+ INFO | 2018-06-05 12:52:29,584 | Common.java | 84 | PC-Identify By : id
+ INFO | 2018-06-05 12:52:29,584 | Common.java | 84 | PC-Locator : LoginUserControl1_UserNameTextBox
+ INFO | 2018-06-05 12:52:29,584 | Common.java | 84 | PCLocator Description : entry value in username
+ INFO | 2018-06-05 12:52:29,778 | Common.java | 84 | Type 'Admin_ss' in : entry value in username
+ INFO | 2018-06-05 12:52:29,778 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:29,778 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:29,778 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:29,779 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:29,780 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:29,781 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:29,781 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:29,781 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:29,805 | Common.java | 84 | Parsing : entry value in password field#id=LoginUserControl1_PasswordTextBox
+ INFO | 2018-06-05 12:52:29,805 | Common.java | 84 | PC-Identify By : id
+ INFO | 2018-06-05 12:52:29,806 | Common.java | 84 | PC-Locator : LoginUserControl1_PasswordTextBox
+ INFO | 2018-06-05 12:52:29,806 | Common.java | 84 | PCLocator Description : entry value in password field
+ INFO | 2018-06-05 12:52:29,960 | Common.java | 84 | Type 'indium' in : entry value in password field
+ INFO | 2018-06-05 12:52:29,960 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:29,960 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:29,960 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:29,961 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:29,962 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:29,963 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:29,963 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:29,963 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:29,984 | Common.java | 84 | Parsing : clicking login button#id=LoginUserControl1_LoginButton
+ INFO | 2018-06-05 12:52:29,985 | Common.java | 84 | PC-Identify By : id
+ INFO | 2018-06-05 12:52:29,985 | Common.java | 84 | PC-Locator : LoginUserControl1_LoginButton
+ INFO | 2018-06-05 12:52:29,985 | Common.java | 84 | PCLocator Description : clicking login button
+ INFO | 2018-06-05 12:52:30,766 | Common.java | 84 | Click on :clicking login button
+ INFO | 2018-06-05 12:52:30,766 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:30,766 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:30,766 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:30,769 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:30,770 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:30,778 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:30,778 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:30,778 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:30,799 | Common.java | 84 | Parsing : Browser Button in DashBoard#xpath=//td[text()='Browse']
+ INFO | 2018-06-05 12:52:30,799 | Common.java | 84 | PC-Identify By : xpath
+ INFO | 2018-06-05 12:52:30,799 | Common.java | 84 | PC-Locator : //td[text()='Browse']
+ INFO | 2018-06-05 12:52:30,799 | Common.java | 84 | PCLocator Description : Browser Button in DashBoard
+ INFO | 2018-06-05 12:52:30,852 | Common.java | 84 | Successfully Login to SecretServer
+ INFO | 2018-06-05 12:52:30,853 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:52:30,853 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:52:30,853 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:52:30,855 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:52:30,855 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:52:30,858 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:52:30,858 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:52:30,858 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 12:52:31,541 | Common.java | 84 | Getting value of Console Application Location from Test Configuration file : \others\csharp\VSTS_Console_Applications
+ INFO | 2018-06-05 12:52:31,542 | Common.java | 84 | Command to execute to Update TEST Step: D:\Data\Official\Sathish\ThycoticAutomation\others\csharp\VSTS_Console_Applications\UpdateStatus\Debug\VSTSStackSolution.exe 2018_06_05_00_51_51_PM Thycotic.Work 51353 43447 2 "Successfully Login to SecretServer" Passed "D:/Data/Official/Sathish/ThycoticAutomation/TestResults/2018_06_05_00_51_51_PM/Screenshots/VSTS_434472.png" https://thycotic.visualstudio.com sathish.m@indiumsoft.com 55jny2hhevawflx5penenm4ccgnyv54bkysnvxa3r7eefdmsxrda
+ INFO | 2018-06-05 12:52:38,007 | Common.java | 84 | Test Case Title: Verify a user is able to create a New Secret  for the template 'SQL Server Account' in the `Advanced' view section
+ INFO | 2018-06-05 12:52:38,007 | Common.java | 84 | Test Case ID: 43447
+ INFO | 2018-06-05 12:52:38,007 | Common.java | 84 | Given StepID: 2
+ INFO | 2018-06-05 12:52:38,007 | Common.java | 84 | Adding Screenshot Path: D:/Data/Official/Sathish/ThycoticAutomation/TestResults/2018_06_05_00_51_51_PM/Screenshots/VSTS_434472.png
+ INFO | 2018-06-05 12:52:38,007 | Common.java | 84 | Completed Uploading Screenshot
+ INFO | 2018-06-05 12:59:57,648 | Common.java | 84 | Parsing : To retrive the browse label#xpath=//td[contains(@id,'pinTab') and text()='Browse']
+ INFO | 2018-06-05 12:59:57,649 | Common.java | 84 | PC-Identify By : xpath
+ INFO | 2018-06-05 12:59:57,669 | Common.java | 84 | PC-Locator : //td[contains(@id,'pinTab') and text()='Browse']
+ INFO | 2018-06-05 12:59:57,669 | Common.java | 84 | PCLocator Description : To retrive the browse label
+ INFO | 2018-06-05 12:59:57,839 | Common.java | 84 | Parsing : tab create secret in left tab#xpath=//h2[text()='Create Secret']
+ INFO | 2018-06-05 12:59:57,849 | Common.java | 84 | PC-Identify By : xpath
+ INFO | 2018-06-05 12:59:57,849 | Common.java | 84 | PC-Locator : //h2[text()='Create Secret']
+ INFO | 2018-06-05 12:59:57,859 | Common.java | 84 | PCLocator Description : tab create secret in left tab
+ INFO | 2018-06-05 12:59:58,089 | Common.java | 84 | Parsing : select a create secret#xpath=//select[contains(@id,'CreateSecretWidget')]
+ INFO | 2018-06-05 12:59:58,099 | Common.java | 84 | PC-Identify By : xpath
+ INFO | 2018-06-05 12:59:58,099 | Common.java | 84 | PC-Locator : //select[contains(@id,'CreateSecretWidget')]
+ INFO | 2018-06-05 12:59:58,099 | Common.java | 84 | PCLocator Description : select a create secret
+ INFO | 2018-06-05 12:59:59,605 | Common.java | 84 | Select 'SQL Server Account' from : select a create secret
+ INFO | 2018-06-05 12:59:59,608 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 12:59:59,611 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 12:59:59,614 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 12:59:59,716 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 12:59:59,722 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 12:59:59,839 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 12:59:59,839 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 12:59:59,849 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 13:00:01,186 | Common.java | 84 | Parsing : Create Secret Page#id=SecretTypeLabel
+ INFO | 2018-06-05 13:00:01,196 | Common.java | 84 | PC-Identify By : id
+ INFO | 2018-06-05 13:00:01,196 | Common.java | 84 | PC-Locator : SecretTypeLabel
+ INFO | 2018-06-05 13:00:01,196 | Common.java | 84 | PCLocator Description : Create Secret Page
+ INFO | 2018-06-05 13:00:01,427 | Common.java | 84 | Secret Template page is displayed
+ INFO | 2018-06-05 13:00:01,427 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 13:00:01,427 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 13:00:01,427 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 13:00:01,547 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 13:00:01,557 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 13:00:01,657 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 13:00:01,657 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 13:00:01,667 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 13:00:09,794 | Common.java | 84 | Parsing : Validating Header New in Secrets#xpath=//table[@id='SecretViewDialog_DialogTable']//td[contains(text(),'New')]
+ INFO | 2018-06-05 13:00:09,794 | Common.java | 84 | PC-Identify By : xpath
+ INFO | 2018-06-05 13:00:09,795 | Common.java | 84 | PC-Locator : //table[@id='SecretViewDialog_DialogTable']//td[contains(text(),'New')]
+ INFO | 2018-06-05 13:00:09,795 | Common.java | 84 | PCLocator Description : Validating Header New in Secrets
+ INFO | 2018-06-05 13:00:09,995 | Common.java | 84 | New field is present
+ INFO | 2018-06-05 13:00:10,005 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 13:00:10,005 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 13:00:10,005 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 13:00:10,105 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 13:00:10,115 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 13:00:10,205 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 13:00:10,205 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 13:00:10,215 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 13:00:23,653 | Common.java | 84 | Navigated to the secret page
+ INFO | 2018-06-05 13:00:23,653 | Common.java | 84 | MachineName:D:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\PC.xml
+ INFO | 2018-06-05 13:00:23,663 | Common.java | 84 | CurrentMachineName:PC
+ INFO | 2018-06-05 13:00:23,663 | Common.java | 84 | CurrentTestCaseName:TC_43447
+ INFO | 2018-06-05 13:00:23,764 | Common.java | 84 | XML file is opened
+ INFO | 2018-06-05 13:00:23,774 | Common.java | 84 | Test step is created
+ INFO | 2018-06-05 13:00:23,874 | Common.java | 84 | XML file is saved and closed
+ INFO | 2018-06-05 13:00:23,874 | Common.java | 84 | Input FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//PC.xml
+ INFO | 2018-06-05 13:00:23,874 | Common.java | 84 | Output FileD:\Data\Official\Sathish\ThycoticAutomation\TestResults\2018_06_05_00_51_51_PM\PC-Windows(7)-Chrome-64\ResultFiles\//TC_43447.html
+ INFO | 2018-06-05 13:00:25,914 | Common.java | 84 | Getting value of Console Application Location from Test Configuration file : \others\csharp\VSTS_Console_Applications
+ INFO | 2018-06-05 13:00:25,924 | Common.java | 84 | Command to execute to Update TEST Step: D:\Data\Official\Sathish\ThycoticAutomation\others\csharp\VSTS_Console_Applications\UpdateStatus\Debug\VSTSStackSolution.exe 2018_06_05_00_51_51_PM Thycotic.Work 51353 43447 3 "Navigated to the secret page" Passed "NA" https://thycotic.visualstudio.com sathish.m@indiumsoft.com 55jny2hhevawflx5penenm4ccgnyv54bkysnvxa3r7eefdmsxrda
+ INFO | 2018-06-05 13:00:29,081 | Common.java | 84 | Test Case Title: Verify a user is able to create a New Secret  for the template 'SQL Server Account' in the `Advanced' view section
+ INFO | 2018-06-05 13:00:29,091 | Common.java | 84 | Test Case ID: 43447
+ INFO | 2018-06-05 13:00:29,101 | Common.java | 84 | Given StepID: 3
+ INFO | 2018-06-05 13:00:59,086 | Common.java | 84 | Parsing : Selected option in Secret#xpath=//select[@name='SecretTypeDropDown']/option[@selected='selected' and text()='SQL Server Account
+ INFO | 2018-06-05 13:00:59,086 | Common.java | 84 | PC-Identify By : xpath
+ INFO | 2018-06-05 13:00:59,096 | Common.java | 84 | PC-Locator : //select[@name='SecretTypeDropDown']/option[@selected='selected' and text()='SQL Server Account
+ INFO | 2018-06-05 13:00:59,096 | Common.java | 84 | PCLocator Description : Selected option in Secret

@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?><Scenario MachineName="PC">
+  <TestCase description="Validate Strong field is displayed after clicking generate button" id="TC_43380">
+    <TestStep Message="Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Launch Url Successfully" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : entry value in username" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : entry value in password field" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clicking login button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Login to SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select 'Pin' from : select a create secret" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret Template page is displayed" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'NewTestPin' in : Secret Name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type '1232456' in : PIN code" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Creating PIN Secret' in : Notes" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clear folder" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :No Selected Folder" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin' in : search box for folder path" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :click on folder" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :SecretTemplate Save button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret Name is same : NewTestPin" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :home icon in dashboard" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Personal Folders button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Admin Folders button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret is present in Dashboard page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Secret Name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="View field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Edit field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Share field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="View Audit field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="The Secret Elements are found" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :View button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="NewTestPin field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Secret Page is validated" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="General field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Personalize field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Expiration field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Security field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Elements validated in secrets page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :DeleteButton" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Deletion Pop-Up is displayed" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on Alert OK button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Navigated to DashBoard Page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Personal Folders button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Admin Folders button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret is not present in Dashboard page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Move the mouse over 'Profile Icon in Dashboard'" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :click on logout button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Logout from SecretServer" ScreenShotName="" Status="Pass"/>
+  </TestCase>
+<TestCase description="Validate Strong field is displayed after clicking generate button" id="TC_43394">
+    <TestStep Message="Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Launch Url Successfully" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : entry value in username" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : entry value in password field" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clicking login button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Login to SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select 'Active Directory Account' from : select a create secret" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret Template page is displayed" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="New field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Navigated to the secret page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Verified Presence of Active directory Account" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Clear button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Folder path cleared" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'NewActiveDirectory' in : Secret Name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'DC' in : Entering Server or Doman name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : Entering Username textbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : Entering Password textbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Creating Active direct Secret' in : Entering Note textbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="NewActiveDirectory is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="DC is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Admin_ss is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="indium is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Creating Active direct Secret is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Able to enter text in respective text fields" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :NO folder" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select a folder pop up is present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin' in : Folder Search" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="The link is present after entering folder name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Link of folder" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :click on SaveandNew" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="New field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Navigated to the secret page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :home icon in dashboard" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Personal Folders button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Admin Folders button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret is present in Dashboard page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :All Folder in Home Page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Checked on the enable secret in dashboard checkbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select 'Delete' from : To click the dropdown" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="'Bulk Operation: Delete' page should be displayed" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Ok button in Bulk Option" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :close button " ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Move the mouse over 'Profile Icon in Dashboard'" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :click on logout button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Logout from SecretServer" ScreenShotName="" Status="Pass"/>
+  </TestCase>
+<TestCase description="Validate Strong field is displayed after clicking generate button" id="TC_43447">
+    <TestStep Message="Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Launch Url Successfully" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : entry value in username" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : entry value in password field" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clicking login button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Login to SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Move the mouse over 'Admin'" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Distributed Engine" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Distributed engine status change toYes" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Click on :home icon in dashboard" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Move the mouse over 'Profile Icon in Dashboard'" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :click on logout button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Logout from SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Launch Url Successfully" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : entry value in username" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : entry value in password field" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clicking login button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Login to SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select 'SQL Server Account' from : select a create secret" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret Template page is displayed" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="New field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Navigated to the secret page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Verified Presence of Active directory Account" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret Template field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Secret Name field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Server field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Username field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Password field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Notes field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Folder field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Inherit Secret Policy field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Secret Policy field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Site field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Elements validated in sql page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Validated the presence of folder link" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Element found" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Clear button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Folder path cleared" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'NewSQLServer' in : Secret Name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'DC' in : Entering Server or Doman name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : Entering Username textbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : Entering Password textbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Creating SQL server account Secret' in : Entering Note textbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="NewSQLServer is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="DC is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Admin_ss is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="indium is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Creating SQL server account Secret is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Able to enter text in respective text fields" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :NO folder" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select a folder pop up is present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin' in : Folder Search" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="The link is present after entering folder name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Link of folder" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Local is selected by default" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :SecretTemplate Save button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="secret saved" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :back" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Navigated to DashBoard Page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :home icon in dashboard" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :home icon in dashboard" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Personal Folders button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Admin Folders button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret is present in Dashboard page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :All Folder in Home Page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="enable secret in dashboard element is present but its not in clickable/editable state within '60' timeout" ScreenShotName="..\..\Screenshots\TestFailure1" Status="Fail"/>
+  <TestStep Message="" ScreenShotName="..\..\Screenshots\TestFailure2" Status="Fail"/>
+  <TestStep Message="Select 'Delete' from : To click the dropdown" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="'Bulk Operation: Delete' page should not be displayed" ScreenShotName="..\..\Screenshots\TestFailure3" Status="Fail"/>
+  <TestStep Message="Ok button in Bulk Option element not found in '5' seconds timeout " ScreenShotName="..\..\Screenshots\TestFailure4" Status="Fail"/>
+  <TestStep Message="Click on :Ok button in Bulk Option" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="close button  element not found in '5' seconds timeout " ScreenShotName="..\..\Screenshots\TestFailure5" Status="Fail"/>
+  <TestStep Message="Click on :close button " ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Move the mouse over 'Profile Icon in Dashboard'" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :click on logout button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Logout from SecretServer" ScreenShotName="" Status="Pass"/>
+  </TestCase>
+<TestCase description="Validate Strong field is displayed after clicking generate button" id="TC_43462">
+    <TestStep Message="Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Launch Url Successfully" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : entry value in username" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : entry value in password field" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clicking login button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Login to SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Basic tab" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Navigated to basic page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Create New button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="New field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Navigated to the secret page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Secret dropdown" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Pin' in : Search box" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Secret item" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Verified Presence of Pin" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret Template field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Secret Name field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Pin Code field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Notes field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Folder field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Inherit Secret Policy field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Secret Policy field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Site field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Elements validated in sql page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Validated the presence of folder link" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Clear button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Folder path cleared" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'NewPin' in : Secret Name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type '1279879' in : PIN code" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Creating Pin Secret' in : Entering Note textbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="NewPin is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="1279879 is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Creating Pin Secret is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Values sucessfuly entered in textbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :folder link" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select a folder pop up is present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin' in : Folder Search" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Admin is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Value Entered in folder Search" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="The link is present after entering folder name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Link of folder" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Element Inherit secret policy is present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Save and Share" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Checkbox checked" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Unchecked the Inherit secret folders checkbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Add Group/User field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Elementspresent" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Owner field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Edit field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="View field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="List field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="drop down elements present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Groups field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Users field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="drop down elements present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select 'Everyone' from : users drop down" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Everyone option is present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="able to do operation" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="able to do operation" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Remove everyone" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Everyone option is not present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Configuration page save button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="NewPin field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="secret saved" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :home icon in dashboard" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Advanced tab in start page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :All Folder in Home Page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Checked on the enable secret in dashboard checkbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select 'Delete' from : To click the dropdown" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="'Bulk Operation: Delete' page should be displayed" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Ok button in Bulk Option" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :close button " ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Move the mouse over 'Profile Icon in Dashboard'" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :click on logout button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Logout from SecretServer" ScreenShotName="" Status="Pass"/>
+  </TestCase>
+<TestCase description="Validate Strong field is displayed after clicking generate button" id="TC_43468">
+    <TestStep Message="Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Launch Url Successfully" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : entry value in username" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : entry value in password field" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clicking login button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Login to SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Move the mouse over 'Admin Tab'" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Folders icon in Admin Tab" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="user Page is displayed" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="User Is Already Created" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Click on :home icon in dashboard" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select 'Pin' from : select a create secret" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret Template page is displayed" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'NewPin' in : Secret Name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type '1279879' in : PIN code" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Creating Pin Secret' in : Notes" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clear folder" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :No Selected Folder" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin' in : search box for folder path" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :click on folder" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :SecretTemplate Save button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret Name is same : NewPin" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :home icon in dashboard" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Personal Folders button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Admin Folders button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret is present in Dashboard page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Move the mouse over 'Profile Icon in Dashboard'" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :click on logout button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Logout from SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Launch Url Successfully" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : entry value in username" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : entry value in password field" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clicking login button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Login to SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Secret" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="View field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Edit field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Share field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="View Audit field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Pin Secret deatails Validated" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Share button in secret details" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Shared Page sucessfully validated" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Edit button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Checkbox present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Unchecked the Inherit folder permission checkbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Add Group/User field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Elementspresent" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Owner field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Edit field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="View field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="List field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="drop down elements present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Groups field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Users field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="drop down elements present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select 'NewUser' from : users drop down" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Everyone option is present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Owner field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Edit field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="View field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="List field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="able to do operation" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Configuration page save button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Navigated to DashBoard Page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Navigated to Dashboard page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Move the mouse over 'Profile Icon in Dashboard'" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :click on logout button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Logout from SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Launch Url Successfully" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'NewUser' in : entry value in username" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : entry value in password field" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clicking login button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Login to SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :home icon in dashboard" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :&lt; All Folders &gt; Folders button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret is present in Dashboard page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :All Folder in Home Page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Checked on the enable secret in dashboard checkbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select 'Delete' from : To click the dropdown" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="'Bulk Operation: Delete' page should be displayed" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Ok button in Bulk Option" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :close button " ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Move the mouse over 'Profile Icon in Dashboard'" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :click on logout button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Logout from SecretServer" ScreenShotName="" Status="Pass"/>
+  </TestCase>
+<TestCase description="Validate Strong field is displayed after clicking generate button" id="TC_43476">
+    <TestStep Message="Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Launch Url Successfully" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : entry value in username" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : entry value in password field" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clicking login button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Login to SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :To click the content button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Create custom secret temp element not found in '60' seconds timeout " ScreenShotName="..\..\Screenshots\TestFailure6" Status="Fail"/>
+  <TestStep Message="Click on :Create custom secret temp" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Welcome Elements not found" ScreenShotName="..\..\Screenshots\TestFailure7" Status="Fail"/>
+  <TestStep Message="Create btn element not found in '5' seconds timeout " ScreenShotName="..\..\Screenshots\TestFailure8" Status="Fail"/>
+  <TestStep Message="Click on :Create btn" ScreenShotName="" Status="Pass"/>
+  </TestCase>
+<TestCase description="Validate Strong field is displayed after clicking generate button" id="TC_43515">
+    <TestStep Message="Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Launch Url Successfully" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : entry value in username" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : entry value in password field" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clicking login button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Login to SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Advanced tab in start page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select 'Active Directory Account' from : select a create secret" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret Template page is displayed" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="New field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Navigated to the secret page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Verified Presence of Active directory Account" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret Template field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Secret Name field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Domain field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Username field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Password field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Notes field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Folder field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Inherit Secret Policy field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Secret Policy field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Site field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="AutoChange? field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Elements pesent in AD page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Link pesent in AD page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Clear button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Folder path cleared" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'NewActiveDirectory' in : Secret Name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'DC' in : Entering Server or Doman name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : Entering Username textbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : Entering Password textbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Creating Active direct Secret' in : Entering Note textbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="NewActiveDirectory is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="DC is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Admin_ss is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="indium is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Creating Active direct Secret is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Able to enter text in respective text fields" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="New folder is present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :NO folder" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select a folder pop up is present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin' in : Folder Search" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="The link is present after entering folder name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Link of folder" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Unchecked the Inherit Secret policy checkbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="The Inherit Secret Policy is unchecked" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Local option is present in site drop down" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Save and Share" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Navigated to Secret Share Page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Move the mouse over 'Secret permissions help'" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Help message is present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Unchecked the Inherit folders checkbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Add Group/user and shared with options are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Owner field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Edit field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="View field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="List field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="The permissions are present in Admin Dropdown" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="The Owner permission is present by default" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select 'Edit' from : Edit option" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Permission can be changed to Edit/View/List" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="NewUser field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="User elements found" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select 'NewUser' from : Add Group/User dropdown" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="User is present in Share with table" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Owner field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Edit field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="View field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="List field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="The permissions are present in user Dropdown" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Owner field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Edit field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="View field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="List field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="All Fields are present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="The permissions are present in user Dropdown" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select 'View' from : user drp" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Permission can be changed to Edit/View/List" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Remove User Group" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="User is not present in Share with table" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Configuration page save button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="No Longer message is Present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :OK Button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Please select atleast one owner for secret message is Present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Move the mouse over 'Profile Icon in Dashboard'" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :click on logout button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Logout from SecretServer" ScreenShotName="" Status="Pass"/>
+  </TestCase>
+</Scenario>

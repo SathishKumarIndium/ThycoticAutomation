@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><Scenario MachineName="PC">
+  <TestCase description="Validate Strong field is displayed after clicking generate button" id="TC_43462">
+    <TestStep Message="Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Launch Url Successfully" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : entry value in username" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : entry value in password field" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clicking login button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Login to SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Basic tab" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Navigated to basic page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Create New button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="New field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Navigated to the secret page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret Dropdown element is present but its not in clickable/editable state within '60' timeout" ScreenShotName="..\..\Screenshots\TestFailure1" Status="Fail"/>
+  <TestStep Message="Select 'Pin' from : Secret Dropdown" ScreenShotName="..\..\Screenshots\TestFailure2" Status="Fail"/>
+  <TestStep Message="Unable to verify the presence of Active Directory Account" ScreenShotName="..\..\Screenshots\TestFailure3" Status="Fail"/>
+  <TestStep Message="Secret Template field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Secret Name field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Pin Code Fields is not present" ScreenShotName="..\..\Screenshots\TestFailure4" Status="Fail"/>
+  <TestStep Message="Some fields are not present" ScreenShotName="..\..\Screenshots\TestFailure5" Status="Fail"/>
+  <TestStep Message="Unable to validate in sql page" ScreenShotName="..\..\Screenshots\TestFailure6" Status="Fail"/>
+  <TestStep Message="Validated the presence of folder link" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Clear button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Folder path cleared" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'NewPin' in : Secret Name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type '1279879' in : PIN code" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Creating Pin Secret' in : Entering Note textbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="NewPin is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="1279879 is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Creating Pin Secret is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Values sucessfuly entered in textbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :folder link" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Select a folder pop up is present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin' in : Folder Search" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Admin is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Value Entered in folder Search" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="The link is present after entering folder name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Link of folder" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Element Inherit secret policy is present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Save and Share" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Unable to check checkbox" ScreenShotName="..\..\Screenshots\TestFailure7" Status="Fail"/>
+  <TestStep Message="Inherit secret folders element not found in '5' seconds timeout " ScreenShotName="..\..\Screenshots\TestFailure8" Status="Fail"/>
+  <TestStep Message="" ScreenShotName="..\..\Screenshots\TestFailure9" Status="Fail"/>
+  </TestCase>
+</Scenario>

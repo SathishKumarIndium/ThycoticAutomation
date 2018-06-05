@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><Scenario MachineName="PC">
+  <TestCase description="Validate Strong field is displayed after clicking generate button" id="TC_43462">
+    <TestStep Message="Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Launch Url Successfully" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : entry value in username" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : entry value in password field" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clicking login button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Login to SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Basic tab" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Navigated to basic page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Create New button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="New field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Navigated to the secret page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret Dropdown element is present but its not in clickable/editable state within '60' timeout" ScreenShotName="..\..\Screenshots\TestFailure1" Status="Fail"/>
+  <TestStep Message="Select 'Pin' from : Secret Dropdown" ScreenShotName="..\..\Screenshots\TestFailure2" Status="Fail"/>
+  <TestStep Message="Click on :Basic tab" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Navigated to basic page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Create New button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="New field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Navigated to the secret page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret Dropdown element is present but its not in clickable/editable state within '5' timeout" ScreenShotName="..\..\Screenshots\TestFailure3" Status="Fail"/>
+  <TestStep Message="Select 'Pin' from : Secret Dropdown" ScreenShotName="..\..\Screenshots\TestFailure4" Status="Fail"/>
+  <TestStep Message="Basic tab element not found in '5' seconds timeout " ScreenShotName="..\..\Screenshots\TestFailure5" Status="Fail"/>
+  <TestStep Message="Basic tab element found but its not in editable/clickable state within 5 timeouts" ScreenShotName="..\..\Screenshots\TestFailure6" Status="Fail"/>
+  <TestStep Message="Navigated to basic page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Create New button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="New field is present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Navigated to the secret page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret Dropdown element is present but its not in clickable/editable state within '5' timeout" ScreenShotName="..\..\Screenshots\TestFailure7" Status="Fail"/>
+  <TestStep Message="Select 'Pin' from : Secret Dropdown" ScreenShotName="..\..\Screenshots\TestFailure8" Status="Fail"/>
+  </TestCase>
+</Scenario>

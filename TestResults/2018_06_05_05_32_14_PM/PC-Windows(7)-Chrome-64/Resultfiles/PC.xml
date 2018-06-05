@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><Scenario MachineName="PC">
+  <TestCase description="Validate Strong field is displayed after clicking generate button" id="TC_43476">
+    <TestStep Message="Navigate to : http://localhost/SecretServer/Login.aspx?ReturnUrl=%2fSecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Launch Url Successfully" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'Admin_ss' in : entry value in username" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'indium' in : entry value in password field" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :clicking login button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Login to SecretServer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Widget already present" ScreenShotName="" Status="Info"/>
+  <TestStep Message="Click on :Create custom secret temp" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Welcome Elements found" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Create btn" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Navigated to create new secret template page" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'TestTemplate' in : Secret Name" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="TestTemplate is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Secret name is Entered" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Create btn" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Navigated to create new secret template Designer" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'TestField' in : Fields textbox" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="TestField is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Field name is Entered" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :+ (save button)" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="TestField is present in table" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Copy secret button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Dialogue box is present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Type 'TestTemplate1' in : New secret temp" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="TestTemplate1 is able to enter in textfield" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="new Field name is Entered" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :Ok btn" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Completed message is present" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :home icon in dashboard" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="TestTemplate is Present in drop down" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Move the mouse over 'Profile Icon in Dashboard'" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Click on :click on logout button" ScreenShotName="" Status="Pass"/>
+  <TestStep Message="Successfully Logout from SecretServer" ScreenShotName="" Status="Pass"/>
+  </TestCase>
+</Scenario>
