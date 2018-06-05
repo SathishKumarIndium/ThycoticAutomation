@@ -1825,6 +1825,7 @@ public class SecretPage extends ApplicationKeywords{
 		clickOn(OR.btn_home_icon);
 		
 		
+		
 		if(elementPresent("Field is present in create new#xpath=//select[@id='CreateSecretWidget_1002']/option[text()='"+newSecretTemp+"1"+"']"))
 		{
 			testStepPassed(""+newSecretTemp+" is Present in drop down");

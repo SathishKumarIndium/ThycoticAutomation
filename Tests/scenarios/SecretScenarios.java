@@ -482,6 +482,7 @@ public class SecretScenarios extends ApplicationKeywords{
 			String newSecretTemp = retrieve("New Secret Temp");
 			String Field = retrieve("Field");
 
+			
 			loginpage.LaunchUrl(url, "No");
 			loginpage.Login(Username, Password, "Yes");
 			secretpage.ValidateCreateCustomSecretTemplate(newSecretTemp, Field);
